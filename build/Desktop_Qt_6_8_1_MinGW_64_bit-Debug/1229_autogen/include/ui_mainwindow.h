@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -32,6 +33,10 @@ public:
     QLabel *label_4;
     QPushButton *pushButton;
     QLabel *label_5;
+    QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox_3;
+    QCheckBox *checkBox_4;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -76,7 +81,7 @@ public:
         label_4->setMaximumSize(QSize(80, 30));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(370, 300, 60, 20));
+        pushButton->setGeometry(QRect(370, 330, 60, 20));
         pushButton->setMinimumSize(QSize(60, 20));
         pushButton->setMaximumSize(QSize(60, 20));
         label_5 = new QLabel(centralwidget);
@@ -84,6 +89,18 @@ public:
         label_5->setGeometry(QRect(470, 200, 200, 30));
         label_5->setMinimumSize(QSize(200, 30));
         label_5->setMaximumSize(QSize(200, 30));
+        checkBox = new QCheckBox(centralwidget);
+        checkBox->setObjectName("checkBox");
+        checkBox->setGeometry(QRect(280, 300, 60, 16));
+        checkBox_2 = new QCheckBox(centralwidget);
+        checkBox_2->setObjectName("checkBox_2");
+        checkBox_2->setGeometry(QRect(350, 300, 60, 16));
+        checkBox_3 = new QCheckBox(centralwidget);
+        checkBox_3->setObjectName("checkBox_3");
+        checkBox_3->setGeometry(QRect(420, 300, 60, 16));
+        checkBox_4 = new QCheckBox(centralwidget);
+        checkBox_4->setObjectName("checkBox_4");
+        checkBox_4->setGeometry(QRect(480, 300, 60, 16));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -106,6 +123,10 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700;\">\347\241\256\350\256\244\345\257\206\347\240\201</span></p></body></html>", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\346\263\250\345\206\214", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:700; color:#ff0004;\">&quot;\351\224\231\350\257\257&quot;, &quot;\350\264\246\345\217\267\345\277\205\351\241\273\346\230\257 9~12 \344\275\215\345\255\227\347\254\246\357\274\201</span></p></body></html>", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "\346\266\210\350\264\271\350\200\205", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("MainWindow", "\345\225\206\345\256\266", nullptr));
+        checkBox_3->setText(QCoreApplication::translate("MainWindow", "\351\252\221\346\211\213", nullptr));
+        checkBox_4->setText(QCoreApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230", nullptr));
     } // retranslateUi
 
 };

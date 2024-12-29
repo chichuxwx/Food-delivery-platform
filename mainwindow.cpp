@@ -34,6 +34,7 @@ void MainWindow::on_pushButton_clicked()
     QString password = ui->lineEdit_2->text();
     QString confirmPassword = ui->lineEdit_3->text();
 
+
     if (!validateAccount(account)) {
         QMessageBox::warning(this, "错误", "账号必须是 9~12 位字符！");
         return;
@@ -46,6 +47,7 @@ void MainWindow::on_pushButton_clicked()
         Login->show();
         Login->setdetails(account,password);
         this->close();
+
     }
 }
 
@@ -83,4 +85,55 @@ void MainWindow::changebuttonstatues(){
         !ui->lineEdit_2->text().isEmpty() &&
         !ui->lineEdit_3->text().isEmpty();
         ui->pushButton->setEnabled(isReady);
+    bool checkBoxReady = ui->checkBox->isChecked() ||
+                         ui->checkBox_2->isChecked() ||
+                         ui->checkBox_3->isChecked() ||
+                         ui->checkBox_4->isChecked();
+
+    // 当文本框和 CheckBox 都满足条件时，按钮才可点击
+    ui->pushButton->setEnabled(isReady && checkBoxReady);
 }
+
+void MainWindow::on_checkBox_stateChanged(int arg1)
+{
+    if (arg1 == Qt::Checked) {
+        ui->checkBox_2->setChecked(false);
+        ui->checkBox_3->setChecked(false);
+        ui->checkBox_4->setChecked(false);
+    }
+    changebuttonstatues(); // 更新按钮状态
+}
+
+
+void MainWindow::on_checkBox_2_stateChanged(int arg1)
+{
+    if (arg1 == Qt::Checked) {
+        ui->checkBox->setChecked(false);
+        ui->checkBox_3->setChecked(false);
+        ui->checkBox_4->setChecked(false);
+    }
+    changebuttonstatues(); // 更新按钮状态
+}
+
+
+void MainWindow::on_checkBox_3_stateChanged(int arg1)
+{
+    if (arg1 == Qt::Checked) {
+        ui->checkBox_2->setChecked(false);
+        ui->checkBox->setChecked(false);
+        ui->checkBox_4->setChecked(false);
+    }
+    changebuttonstatues(); // 更新按钮状态
+}
+
+
+void MainWindow::on_checkBox_4_stateChanged(int arg1)
+{
+    if (arg1 == Qt::Checked) {
+        ui->checkBox_2->setChecked(false);
+        ui->checkBox_3->setChecked(false);
+        ui->checkBox->setChecked(false);
+    }
+    changebuttonstatues(); // 更新按钮状态
+}
+

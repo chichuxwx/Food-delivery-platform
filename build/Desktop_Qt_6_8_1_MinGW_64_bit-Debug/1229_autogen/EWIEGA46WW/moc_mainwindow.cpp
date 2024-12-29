@@ -48,7 +48,11 @@ static constexpr auto qt_meta_stringdata_ZN10MainWindowE = QtMocHelpers::stringD
     "arg1",
     "on_lineEdit_2_textEdited",
     "on_lineEdit_3_textEdited",
-    "changebuttonstatues"
+    "changebuttonstatues",
+    "on_checkBox_stateChanged",
+    "on_checkBox_2_stateChanged",
+    "on_checkBox_3_stateChanged",
+    "on_checkBox_4_stateChanged"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -60,7 +64,7 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10MainWindowE[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,12 +72,16 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10MainWindowE[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   50,    2, 0x08,    1 /* Private */,
-       6,    0,   57,    2, 0x08,    5 /* Private */,
-       7,    1,   58,    2, 0x08,    6 /* Private */,
-       9,    1,   61,    2, 0x08,    8 /* Private */,
-      10,    1,   64,    2, 0x08,   10 /* Private */,
-      11,    0,   67,    2, 0x08,   12 /* Private */,
+       1,    3,   74,    2, 0x08,    1 /* Private */,
+       6,    0,   81,    2, 0x08,    5 /* Private */,
+       7,    1,   82,    2, 0x08,    6 /* Private */,
+       9,    1,   85,    2, 0x08,    8 /* Private */,
+      10,    1,   88,    2, 0x08,   10 /* Private */,
+      11,    0,   91,    2, 0x08,   12 /* Private */,
+      12,    1,   92,    2, 0x08,   13 /* Private */,
+      13,    1,   95,    2, 0x08,   15 /* Private */,
+      14,    1,   98,    2, 0x08,   17 /* Private */,
+      15,    1,  101,    2, 0x08,   19 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QRect, QMetaType::QPointF, QMetaType::QPointF,    3,    4,    5,
@@ -82,6 +90,10 @@ Q_CONSTINIT static const uint qt_meta_data_ZN10MainWindowE[] = {
     QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void, QMetaType::QString,    8,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::Int,    8,
 
        0        // eod
 };
@@ -112,7 +124,19 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'changebuttonstatues'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_checkBox_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_checkBox_2_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_checkBox_3_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_checkBox_4_stateChanged'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -128,6 +152,10 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_lineEdit_2_textEdited((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 4: _t->on_lineEdit_3_textEdited((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 5: _t->changebuttonstatues(); break;
+        case 6: _t->on_checkBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 7: _t->on_checkBox_2_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_checkBox_3_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 9: _t->on_checkBox_4_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
@@ -152,14 +180,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 10;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 10;
     }
     return _id;
 }
