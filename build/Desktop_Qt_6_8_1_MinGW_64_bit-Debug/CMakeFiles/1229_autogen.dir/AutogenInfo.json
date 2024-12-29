@@ -265,12 +265,37 @@
 	"DEP_FILE_RULE_NAME" : "1229_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"E:/Qtwork/1229/consumer_interface.h",
+			"MU",
+			"EWIEGA46WW/moc_consumer_interface.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/detailedmenu.h",
+			"MU",
+			"EWIEGA46WW/moc_detailedmenu.cpp",
+			null
+		],
+		[ "E:/Qtwork/1229/head.h", "MU", "EWIEGA46WW/moc_head.cpp", null ],
 		[ "E:/Qtwork/1229/logic.h", "MU", "EWIEGA46WW/moc_logic.cpp", null ],
 		[ "E:/Qtwork/1229/login.h", "MU", "EWIEGA46WW/moc_login.cpp", null ],
 		[
 			"E:/Qtwork/1229/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/shoppingcart.h",
+			"MU",
+			"EWIEGA46WW/moc_shoppingcart.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/storepage.h",
+			"MU",
+			"EWIEGA46WW/moc_storepage.cpp",
 			null
 		]
 	],
@@ -345,10 +370,14 @@
 	"SETTINGS_FILE" : "E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/1229_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "E:/Qtwork/1229/consumer_interface.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/detailedmenu.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/logic.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/login.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/main.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/mainwindow.cpp", "MU", null ]
+		[ "E:/Qtwork/1229/mainwindow.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/shoppingcart.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/storepage.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

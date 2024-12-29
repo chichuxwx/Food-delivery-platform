@@ -1,11 +1,8 @@
-// #include<iostream>
-// using namespace std;
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-// #include "secondwindow.h"
-#include "login.h"
 #include <QMessageBox>
-#include "logic.h"
+#include "head.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->pushButton->setEnabled(false);
     ui->label_5->close();
-
+    this->setFixedSize(600, 800);
 }
 
 MainWindow::~MainWindow()
@@ -135,5 +132,13 @@ void MainWindow::on_checkBox_4_stateChanged(int arg1)
         ui->checkBox->setChecked(false);
     }
     changebuttonstatues(); // 更新按钮状态
+}
+
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    login *Login=new login();
+    Login->show();
+    this->close();
 }
 

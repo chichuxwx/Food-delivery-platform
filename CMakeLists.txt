@@ -26,6 +26,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         logic.cpp
         logic.h
         login.h login.cpp login.ui
+        consumer_interface.h consumer_interface.cpp consumer_interface.ui
+        storepage.h storepage.cpp storepage.ui
+        shoppingcart.h shoppingcart.cpp shoppingcart.ui
+        head.h
+        detailedmenu.h detailedmenu.cpp detailedmenu.ui
 
 
 

@@ -37,6 +37,7 @@ public:
     QCheckBox *checkBox_2;
     QCheckBox *checkBox_3;
     QCheckBox *checkBox_4;
+    QPushButton *pushButton_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -47,60 +48,65 @@ public:
         centralwidget->setObjectName("centralwidget");
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(350, 210, 113, 20));
+        lineEdit->setGeometry(QRect(200, 150, 113, 20));
         lineEdit->setMaximumSize(QSize(113, 20));
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(350, 240, 113, 20));
+        lineEdit_2->setGeometry(QRect(200, 180, 113, 20));
         lineEdit_2->setMaximumSize(QSize(113, 20));
         lineEdit_2->setEchoMode(QLineEdit::EchoMode::Password);
         lineEdit_3 = new QLineEdit(centralwidget);
         lineEdit_3->setObjectName("lineEdit_3");
-        lineEdit_3->setGeometry(QRect(350, 270, 113, 20));
+        lineEdit_3->setGeometry(QRect(200, 210, 113, 20));
         lineEdit_3->setMaximumSize(QSize(113, 20));
         lineEdit_3->setEchoMode(QLineEdit::EchoMode::Password);
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(380, 160, 60, 50));
+        label->setGeometry(QRect(230, 100, 60, 50));
         label->setMinimumSize(QSize(60, 50));
         label->setMaximumSize(QSize(60, 50));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(280, 210, 40, 30));
+        label_2->setGeometry(QRect(130, 150, 40, 30));
         label_2->setMinimumSize(QSize(40, 30));
         label_2->setMaximumSize(QSize(40, 30));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(280, 240, 40, 30));
+        label_3->setGeometry(QRect(130, 180, 40, 30));
         label_3->setMinimumSize(QSize(40, 30));
         label_3->setMaximumSize(QSize(40, 30));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(280, 270, 80, 30));
+        label_4->setGeometry(QRect(130, 210, 80, 30));
         label_4->setMinimumSize(QSize(80, 30));
         label_4->setMaximumSize(QSize(80, 30));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(370, 330, 60, 20));
+        pushButton->setGeometry(QRect(220, 270, 60, 20));
         pushButton->setMinimumSize(QSize(60, 20));
         pushButton->setMaximumSize(QSize(60, 20));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(470, 200, 200, 30));
+        label_5->setGeometry(QRect(320, 140, 200, 30));
         label_5->setMinimumSize(QSize(200, 30));
         label_5->setMaximumSize(QSize(200, 30));
         checkBox = new QCheckBox(centralwidget);
         checkBox->setObjectName("checkBox");
-        checkBox->setGeometry(QRect(280, 300, 60, 16));
+        checkBox->setGeometry(QRect(130, 240, 60, 16));
         checkBox_2 = new QCheckBox(centralwidget);
         checkBox_2->setObjectName("checkBox_2");
-        checkBox_2->setGeometry(QRect(350, 300, 60, 16));
+        checkBox_2->setGeometry(QRect(200, 240, 60, 16));
         checkBox_3 = new QCheckBox(centralwidget);
         checkBox_3->setObjectName("checkBox_3");
-        checkBox_3->setGeometry(QRect(420, 300, 60, 16));
+        checkBox_3->setGeometry(QRect(270, 240, 60, 16));
         checkBox_4 = new QCheckBox(centralwidget);
         checkBox_4->setObjectName("checkBox_4");
-        checkBox_4->setGeometry(QRect(480, 300, 60, 16));
+        checkBox_4->setGeometry(QRect(330, 240, 60, 16));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(50, 110, 60, 20));
+        pushButton_2->setMinimumSize(QSize(60, 20));
+        pushButton_2->setMaximumSize(QSize(60, 20));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -127,6 +133,7 @@ public:
         checkBox_2->setText(QCoreApplication::translate("MainWindow", "\345\225\206\345\256\266", nullptr));
         checkBox_3->setText(QCoreApplication::translate("MainWindow", "\351\252\221\346\211\213", nullptr));
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

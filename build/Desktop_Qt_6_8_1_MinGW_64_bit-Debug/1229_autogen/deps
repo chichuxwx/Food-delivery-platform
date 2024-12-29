@@ -145,6 +145,7 @@
 	E:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs.h \
 	E:/Qt/6.8.1/mingw_64/include/QtGui/qwindowdefs_win.h \
 	E:/Qt/6.8.1/mingw_64/include/QtWidgets/QMainWindow \
+	E:/Qt/6.8.1/mingw_64/include/QtWidgets/QWidget \
 	E:/Qt/6.8.1/mingw_64/include/QtWidgets/qmainwindow.h \
 	E:/Qt/6.8.1/mingw_64/include/QtWidgets/qsizepolicy.h \
 	E:/Qt/6.8.1/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -534,6 +535,9 @@
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
+	E:/Qtwork/1229/consumer_interface.cpp \
+	E:/Qtwork/1229/consumer_interface.h \
+	E:/Qtwork/1229/head.h \
 	E:/Qtwork/1229/logic.cpp \
 	E:/Qtwork/1229/logic.h \
 	E:/Qtwork/1229/login.cpp \
@@ -541,6 +545,13 @@
 	E:/Qtwork/1229/main.cpp \
 	E:/Qtwork/1229/mainwindow.cpp \
 	E:/Qtwork/1229/mainwindow.h \
+	E:/Qtwork/1229/shoppingcart.cpp \
+	E:/Qtwork/1229/shoppingcart.h \
+	E:/Qtwork/1229/storepage.cpp \
+	E:/Qtwork/1229/storepage.h \
+	E:/Qtwork/1229/consumer_interface.ui \
 	E:/Qtwork/1229/login.ui \
 	E:/Qtwork/1229/mainwindow.ui \
+	E:/Qtwork/1229/shoppingcart.ui \
+	E:/Qtwork/1229/storepage.ui \
 	E:/Qt/Tools/CMake_64/bin/cmake.exe
