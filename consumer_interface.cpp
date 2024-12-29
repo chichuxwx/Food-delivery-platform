@@ -37,3 +37,11 @@ void Consumer_interface::on_pushButton_5_clicked()
     this->close();
 }
 
+
+void Consumer_interface::on_pushButton_3_clicked()
+{
+    OrderStatus *orderstatus=new OrderStatus();
+    orderstatus->show();
+    this->close();
+}
+

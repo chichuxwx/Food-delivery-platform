@@ -31,6 +31,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         shoppingcart.h shoppingcart.cpp shoppingcart.ui
         head.h
         detailedmenu.h detailedmenu.cpp detailedmenu.ui
+        orderstatus.h orderstatus.cpp orderstatus.ui
+        con_reviews.h con_reviews.cpp con_reviews.ui
+        StarRatingWidget.h
 
 
 

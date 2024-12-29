@@ -30,3 +30,25 @@ void Storepage::on_pushButton_8_clicked()
     this->close();
 }
 
+
+void Storepage::on_pushButton_clicked()
+{
+    DetailedMenu *detail =new DetailedMenu();
+    detail->show();
+    this->close();
+}
+
+
+void Storepage::on_pushButton_3_clicked()
+{
+    DetailedMenu *detail =new DetailedMenu();
+    detail->show();
+    this->close();
+}
+
+
+void Storepage::on_pushButton_7_clicked()
+{
+
+}
+

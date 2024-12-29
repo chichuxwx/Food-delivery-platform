@@ -40,14 +40,14 @@ public:
     {
         if (login->objectName().isEmpty())
             login->setObjectName("login");
-        login->resize(800, 600);
+        login->resize(800, 836);
         centralwidget = new QWidget(login);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setMinimumSize(QSize(600, 800));
         centralwidget->setMaximumSize(QSize(600, 800));
         lineEdit_2 = new QLineEdit(centralwidget);
         lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(230, 200, 113, 20));
+        lineEdit_2->setGeometry(QRect(230, 240, 113, 20));
         lineEdit_2->setMaximumSize(QSize(113, 20));
         lineEdit_2->setEchoMode(QLineEdit::EchoMode::Password);
         label_2 = new QLabel(centralwidget);
@@ -57,7 +57,7 @@ public:
         label_2->setMaximumSize(QSize(40, 30));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(190, 200, 40, 30));
+        label_3->setGeometry(QRect(190, 240, 40, 30));
         label_3->setMinimumSize(QSize(40, 30));
         label_3->setMaximumSize(QSize(40, 30));
         lineEdit = new QLineEdit(centralwidget);
@@ -66,22 +66,23 @@ public:
         lineEdit->setMaximumSize(QSize(113, 20));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(230, 230, 60, 20));
-        pushButton->setMinimumSize(QSize(60, 20));
-        pushButton->setMaximumSize(QSize(60, 20));
+        pushButton->setGeometry(QRect(150, 300, 100, 30));
+        pushButton->setMinimumSize(QSize(100, 30));
+        pushButton->setMaximumSize(QSize(100, 30));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(260, 110, 60, 50));
+        label->setGeometry(QRect(260, 100, 60, 50));
         label->setMinimumSize(QSize(60, 50));
         label->setMaximumSize(QSize(60, 50));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(300, 230, 60, 20));
-        pushButton_2->setMinimumSize(QSize(60, 20));
-        pushButton_2->setMaximumSize(QSize(60, 20));
+        pushButton_2->setGeometry(QRect(300, 300, 100, 30));
+        pushButton_2->setMinimumSize(QSize(100, 30));
+        pushButton_2->setMaximumSize(QSize(100, 30));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(170, 260, 56, 18));
+        pushButton_3->setGeometry(QRect(100, 360, 100, 30));
+        pushButton_3->setMinimumSize(QSize(100, 30));
         login->setCentralWidget(centralwidget);
         menubar = new QMenuBar(login);
         menubar->setObjectName("menubar");

@@ -28,15 +28,15 @@ public:
     QPushButton *pushButton_6;
     QLabel *label_8;
     QLabel *label_6;
-    QLabel *label_7;
     QLabel *label_10;
     QPushButton *pushButton_7;
     QLabel *label_11;
     QLabel *label_12;
-    QLabel *label_13;
     QSpinBox *spinBox;
     QSpinBox *spinBox_2;
     QPushButton *pushButton_8;
+    QPushButton *pushButton;
+    QPushButton *pushButton_3;
 
     void setupUi(QWidget *Storepage)
     {
@@ -65,7 +65,7 @@ public:
         label_9->setGeometry(QRect(110, 190, 40, 12));
         pushButton_6 = new QPushButton(Storepage);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(230, 180, 100, 50));
+        pushButton_6->setGeometry(QRect(230, 180, 100, 30));
         pushButton_6->setMinimumSize(QSize(100, 30));
         pushButton_6->setMaximumSize(QSize(100, 30));
         label_8 = new QLabel(Storepage);
@@ -74,9 +74,6 @@ public:
         label_6 = new QLabel(Storepage);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(70, 190, 40, 12));
-        label_7 = new QLabel(Storepage);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(160, 190, 40, 12));
         label_10 = new QLabel(Storepage);
         label_10->setObjectName("label_10");
         label_10->setGeometry(QRect(110, 320, 40, 12));
@@ -91,9 +88,6 @@ public:
         label_12 = new QLabel(Storepage);
         label_12->setObjectName("label_12");
         label_12->setGeometry(QRect(70, 320, 40, 12));
-        label_13 = new QLabel(Storepage);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(160, 320, 40, 12));
         spinBox = new QSpinBox(Storepage);
         spinBox->setObjectName("spinBox");
         spinBox->setGeometry(QRect(350, 180, 42, 22));
@@ -102,9 +96,15 @@ public:
         spinBox_2->setGeometry(QRect(350, 310, 42, 22));
         pushButton_8 = new QPushButton(Storepage);
         pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setGeometry(QRect(30, 730, 100, 50));
+        pushButton_8->setGeometry(QRect(30, 730, 100, 30));
         pushButton_8->setMinimumSize(QSize(100, 30));
         pushButton_8->setMaximumSize(QSize(100, 30));
+        pushButton = new QPushButton(Storepage);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(150, 190, 56, 18));
+        pushButton_3 = new QPushButton(Storepage);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setGeometry(QRect(150, 320, 56, 18));
 
         retranslateUi(Storepage);
 
@@ -121,13 +121,13 @@ public:
         pushButton_6->setText(QCoreApplication::translate("Storepage", "\345\212\240\345\205\245\350\264\255\347\211\251\350\275\246", nullptr));
         label_8->setText(QCoreApplication::translate("Storepage", "\345\233\276\347\211\2071", nullptr));
         label_6->setText(QCoreApplication::translate("Storepage", "\350\217\234\345\220\215", nullptr));
-        label_7->setText(QCoreApplication::translate("Storepage", "\350\257\246\346\203\205", nullptr));
         label_10->setText(QCoreApplication::translate("Storepage", "\350\257\204\345\210\206", nullptr));
         pushButton_7->setText(QCoreApplication::translate("Storepage", "\345\212\240\345\205\245\350\264\255\347\211\251\350\275\246", nullptr));
         label_11->setText(QCoreApplication::translate("Storepage", "\345\233\276\347\211\2072", nullptr));
         label_12->setText(QCoreApplication::translate("Storepage", "\350\217\234\345\220\215", nullptr));
-        label_13->setText(QCoreApplication::translate("Storepage", "\350\257\246\346\203\205", nullptr));
         pushButton_8->setText(QCoreApplication::translate("Storepage", "\350\264\255\347\211\251\350\275\246", nullptr));
+        pushButton->setText(QCoreApplication::translate("Storepage", "\350\257\246\346\203\205", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("Storepage", "\350\257\246\346\203\205", nullptr));
     } // retranslateUi
 
 };
