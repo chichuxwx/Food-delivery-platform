@@ -583,18 +583,45 @@
 	E:/Qtwork/1229/main.cpp \
 	E:/Qtwork/1229/mainwindow.cpp \
 	E:/Qtwork/1229/mainwindow.h \
+	E:/Qtwork/1229/order_review.cpp \
+	E:/Qtwork/1229/order_review.h \
 	E:/Qtwork/1229/orderstatus.cpp \
 	E:/Qtwork/1229/orderstatus.h \
+	E:/Qtwork/1229/rider_inform.cpp \
+	E:/Qtwork/1229/rider_inform.h \
+	E:/Qtwork/1229/rider_main.cpp \
+	E:/Qtwork/1229/rider_main.h \
+	E:/Qtwork/1229/shangjia.cpp \
+	E:/Qtwork/1229/shangjia.h \
+	E:/Qtwork/1229/shangjia2.cpp \
+	E:/Qtwork/1229/shangjia2.h \
+	E:/Qtwork/1229/shangjia3.cpp \
+	E:/Qtwork/1229/shangjia3.h \
 	E:/Qtwork/1229/shoppingcart.cpp \
 	E:/Qtwork/1229/shoppingcart.h \
 	E:/Qtwork/1229/storepage.cpp \
 	E:/Qtwork/1229/storepage.h \
+	E:/Qtwork/1229/task_completed.cpp \
+	E:/Qtwork/1229/task_completed.h \
+	E:/Qtwork/1229/task_inform.cpp \
+	E:/Qtwork/1229/task_inform.h \
+	E:/Qtwork/1229/zhuce.cpp \
+	E:/Qtwork/1229/zhuce.h \
 	E:/Qtwork/1229/con_reviews.ui \
 	E:/Qtwork/1229/consumer_interface.ui \
 	E:/Qtwork/1229/detailedmenu.ui \
 	E:/Qtwork/1229/login.ui \
 	E:/Qtwork/1229/mainwindow.ui \
+	E:/Qtwork/1229/order_review.ui \
 	E:/Qtwork/1229/orderstatus.ui \
+	E:/Qtwork/1229/rider_inform.ui \
+	E:/Qtwork/1229/rider_main.ui \
+	E:/Qtwork/1229/shangjia.ui \
+	E:/Qtwork/1229/shangjia2.ui \
+	E:/Qtwork/1229/shangjia3.ui \
 	E:/Qtwork/1229/shoppingcart.ui \
 	E:/Qtwork/1229/storepage.ui \
+	E:/Qtwork/1229/task_completed.ui \
+	E:/Qtwork/1229/task_inform.ui \
+	E:/Qtwork/1229/zhuce.ui \
 	E:/Qt/Tools/CMake_64/bin/cmake.exe

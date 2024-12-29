@@ -34,6 +34,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         orderstatus.h orderstatus.cpp orderstatus.ui
         con_reviews.h con_reviews.cpp con_reviews.ui
         StarRatingWidget.h
+        order_review.cpp order_review.h order_review.ui rider_inform.cpp rider_inform.h rider_inform.ui rider_main.cpp rider_main.h rider_main.ui task_completed.cpp task_completed.h task_completed.ui task_inform.cpp task_inform.h task_inform.ui zhuce.cpp zhuce.h zhuce.ui
+        shangjia.cpp shangjia.h shangjia.ui shangjia2.cpp shangjia2.h shangjia2.ui shangjia3.cpp shangjia3.h shangjia3.ui
 
 
 

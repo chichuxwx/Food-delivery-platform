@@ -36,3 +36,19 @@ void login::on_pushButton_3_clicked()
     this->close();
 }
 
+
+void login::on_pushButton_4_clicked()
+{
+    Rider_main *ridermain=new Rider_main();
+    ridermain->show();
+    this->close();
+}
+
+
+void login::on_pushButton_5_clicked()
+{
+    shangjia *sjmain=new shangjia();
+    sjmain->show();
+    this->close();
+}
+

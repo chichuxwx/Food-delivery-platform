@@ -11,5 +11,20 @@
 #include "detailedmenu.h"
 #include "orderstatus.h"
 #include "con_reviews.h"
-
+#include"mainwindow.h"
+#include"rider_inform.h"
+#include"rider_main.h"
+#include<QMessageBox>
+#include "ui_rider_inform.h"
+#include "ui_mainwindow.h"
+#include "task_inform.h"
+#include "ui_task_inform.h"
+#include "ui_rider_main.h"
+#include "task_completed.h"
+#include "ui_task_completed.h"
+#include "order_review.h"
+#include "ui_order_review.h"
+#include "shangjia.h"
+#include "shangjia2.h"
+#include "shangjia3.h"
 #endif // HEAD_H
