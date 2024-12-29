@@ -46,7 +46,6 @@ void MainWindow::on_pushButton_clicked()
         Login->show();
         Login->setdetails(account,password);
         this->close();
-
     }
 }
 
