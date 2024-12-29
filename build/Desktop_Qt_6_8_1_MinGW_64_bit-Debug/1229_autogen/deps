@@ -564,17 +564,63 @@
 	E:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
 	E:/Qtwork/1229/CMakeLists.txt \
 	E:/Qtwork/1229/StarRatingWidget.h \
+	E:/Qtwork/1229/admin/admini_check.cpp \
+	E:/Qtwork/1229/admin/admini_check.h \
+	E:/Qtwork/1229/admin/admini_info.cpp \
+	E:/Qtwork/1229/admin/admini_info.h \
+	E:/Qtwork/1229/admin/admini_info_done.cpp \
+	E:/Qtwork/1229/admin/admini_info_done.h \
+	E:/Qtwork/1229/admin/admini_main.cpp \
+	E:/Qtwork/1229/admin/admini_main.h \
+	E:/Qtwork/1229/admin/adminiwindow.cpp \
+	E:/Qtwork/1229/admin/adminiwindow.h \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/1229_autogen/moc_predefs.h \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
-	E:/Qtwork/1229/con_reviews.cpp \
-	E:/Qtwork/1229/con_reviews.h \
-	E:/Qtwork/1229/consumer_interface.cpp \
-	E:/Qtwork/1229/consumer_interface.h \
-	E:/Qtwork/1229/detailedmenu.cpp \
-	E:/Qtwork/1229/detailedmenu.h \
+	E:/Qtwork/1229/business/dishchange.cpp \
+	E:/Qtwork/1229/business/dishchange.h \
+	E:/Qtwork/1229/business/evalute.cpp \
+	E:/Qtwork/1229/business/evalute.h \
+	E:/Qtwork/1229/business/good_act.cpp \
+	E:/Qtwork/1229/business/good_act.h \
+	E:/Qtwork/1229/business/good_mange.cpp \
+	E:/Qtwork/1229/business/good_mange.h \
+	E:/Qtwork/1229/business/inform.cpp \
+	E:/Qtwork/1229/business/inform.h \
+	E:/Qtwork/1229/business/inform_change.cpp \
+	E:/Qtwork/1229/business/inform_change.h \
+	E:/Qtwork/1229/business/shangjia.cpp \
+	E:/Qtwork/1229/business/shangjia.h \
+	E:/Qtwork/1229/business/shangjia2.cpp \
+	E:/Qtwork/1229/business/shangjia2.h \
+	E:/Qtwork/1229/business/shangjia3.cpp \
+	E:/Qtwork/1229/business/shangjia3.h \
+	E:/Qtwork/1229/business/workbench.cpp \
+	E:/Qtwork/1229/business/workbench.h \
+	E:/Qtwork/1229/consumer/address.cpp \
+	E:/Qtwork/1229/consumer/address.h \
+	E:/Qtwork/1229/consumer/change_inform.cpp \
+	E:/Qtwork/1229/consumer/change_inform.h \
+	E:/Qtwork/1229/consumer/complaints.cpp \
+	E:/Qtwork/1229/consumer/complaints.h \
+	E:/Qtwork/1229/consumer/con_reviews.cpp \
+	E:/Qtwork/1229/consumer/con_reviews.h \
+	E:/Qtwork/1229/consumer/consumer_information.cpp \
+	E:/Qtwork/1229/consumer/consumer_information.h \
+	E:/Qtwork/1229/consumer/consumer_interface.cpp \
+	E:/Qtwork/1229/consumer/consumer_interface.h \
+	E:/Qtwork/1229/consumer/detailedmenu.cpp \
+	E:/Qtwork/1229/consumer/detailedmenu.h \
+	E:/Qtwork/1229/consumer/histroy_record.cpp \
+	E:/Qtwork/1229/consumer/histroy_record.h \
+	E:/Qtwork/1229/consumer/orderstatus.cpp \
+	E:/Qtwork/1229/consumer/orderstatus.h \
+	E:/Qtwork/1229/consumer/shoppingcart.cpp \
+	E:/Qtwork/1229/consumer/shoppingcart.h \
+	E:/Qtwork/1229/consumer/storepage.cpp \
+	E:/Qtwork/1229/consumer/storepage.h \
 	E:/Qtwork/1229/head.h \
 	E:/Qtwork/1229/logic.cpp \
 	E:/Qtwork/1229/logic.h \
@@ -583,45 +629,47 @@
 	E:/Qtwork/1229/main.cpp \
 	E:/Qtwork/1229/mainwindow.cpp \
 	E:/Qtwork/1229/mainwindow.h \
-	E:/Qtwork/1229/order_review.cpp \
-	E:/Qtwork/1229/order_review.h \
-	E:/Qtwork/1229/orderstatus.cpp \
-	E:/Qtwork/1229/orderstatus.h \
-	E:/Qtwork/1229/rider_inform.cpp \
-	E:/Qtwork/1229/rider_inform.h \
-	E:/Qtwork/1229/rider_main.cpp \
-	E:/Qtwork/1229/rider_main.h \
-	E:/Qtwork/1229/shangjia.cpp \
-	E:/Qtwork/1229/shangjia.h \
-	E:/Qtwork/1229/shangjia2.cpp \
-	E:/Qtwork/1229/shangjia2.h \
-	E:/Qtwork/1229/shangjia3.cpp \
-	E:/Qtwork/1229/shangjia3.h \
-	E:/Qtwork/1229/shoppingcart.cpp \
-	E:/Qtwork/1229/shoppingcart.h \
-	E:/Qtwork/1229/storepage.cpp \
-	E:/Qtwork/1229/storepage.h \
-	E:/Qtwork/1229/task_completed.cpp \
-	E:/Qtwork/1229/task_completed.h \
-	E:/Qtwork/1229/task_inform.cpp \
-	E:/Qtwork/1229/task_inform.h \
-	E:/Qtwork/1229/zhuce.cpp \
-	E:/Qtwork/1229/zhuce.h \
-	E:/Qtwork/1229/con_reviews.ui \
-	E:/Qtwork/1229/consumer_interface.ui \
-	E:/Qtwork/1229/detailedmenu.ui \
+	E:/Qtwork/1229/rider/order_review.cpp \
+	E:/Qtwork/1229/rider/order_review.h \
+	E:/Qtwork/1229/rider/rider_inform.cpp \
+	E:/Qtwork/1229/rider/rider_inform.h \
+	E:/Qtwork/1229/rider/rider_main.cpp \
+	E:/Qtwork/1229/rider/rider_main.h \
+	E:/Qtwork/1229/rider/task_completed.cpp \
+	E:/Qtwork/1229/rider/task_completed.h \
+	E:/Qtwork/1229/rider/task_inform.cpp \
+	E:/Qtwork/1229/rider/task_inform.h \
+	E:/Qtwork/1229/admin/admini_check.ui \
+	E:/Qtwork/1229/admin/admini_info.ui \
+	E:/Qtwork/1229/admin/admini_info_done.ui \
+	E:/Qtwork/1229/admin/admini_main.ui \
+	E:/Qtwork/1229/admin/adminiwindow.ui \
+	E:/Qtwork/1229/business/dishchange.ui \
+	E:/Qtwork/1229/business/evalute.ui \
+	E:/Qtwork/1229/business/good_act.ui \
+	E:/Qtwork/1229/business/good_mange.ui \
+	E:/Qtwork/1229/business/inform.ui \
+	E:/Qtwork/1229/business/inform_change.ui \
+	E:/Qtwork/1229/business/shangjia.ui \
+	E:/Qtwork/1229/business/shangjia2.ui \
+	E:/Qtwork/1229/business/shangjia3.ui \
+	E:/Qtwork/1229/business/workbench.ui \
+	E:/Qtwork/1229/consumer/address.ui \
+	E:/Qtwork/1229/consumer/change_inform.ui \
+	E:/Qtwork/1229/consumer/complaints.ui \
+	E:/Qtwork/1229/consumer/con_reviews.ui \
+	E:/Qtwork/1229/consumer/consumer_information.ui \
+	E:/Qtwork/1229/consumer/consumer_interface.ui \
+	E:/Qtwork/1229/consumer/detailedmenu.ui \
+	E:/Qtwork/1229/consumer/histroy_record.ui \
+	E:/Qtwork/1229/consumer/orderstatus.ui \
+	E:/Qtwork/1229/consumer/shoppingcart.ui \
+	E:/Qtwork/1229/consumer/storepage.ui \
 	E:/Qtwork/1229/login.ui \
 	E:/Qtwork/1229/mainwindow.ui \
-	E:/Qtwork/1229/order_review.ui \
-	E:/Qtwork/1229/orderstatus.ui \
-	E:/Qtwork/1229/rider_inform.ui \
-	E:/Qtwork/1229/rider_main.ui \
-	E:/Qtwork/1229/shangjia.ui \
-	E:/Qtwork/1229/shangjia2.ui \
-	E:/Qtwork/1229/shangjia3.ui \
-	E:/Qtwork/1229/shoppingcart.ui \
-	E:/Qtwork/1229/storepage.ui \
-	E:/Qtwork/1229/task_completed.ui \
-	E:/Qtwork/1229/task_inform.ui \
-	E:/Qtwork/1229/zhuce.ui \
+	E:/Qtwork/1229/rider/order_review.ui \
+	E:/Qtwork/1229/rider/rider_inform.ui \
+	E:/Qtwork/1229/rider/rider_main.ui \
+	E:/Qtwork/1229/rider/task_completed.ui \
+	E:/Qtwork/1229/rider/task_inform.ui \
 	E:/Qt/Tools/CMake_64/bin/cmake.exe

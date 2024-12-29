@@ -52,3 +52,11 @@ void login::on_pushButton_5_clicked()
     this->close();
 }
 
+
+void login::on_pushButton_6_clicked()
+{
+    admini_main *adminMain=new admini_main();
+    adminMain->show();
+    this->close();
+}
+

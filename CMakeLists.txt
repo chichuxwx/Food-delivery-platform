@@ -26,16 +26,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         logic.cpp
         logic.h
         login.h login.cpp login.ui
-        consumer_interface.h consumer_interface.cpp consumer_interface.ui
-        storepage.h storepage.cpp storepage.ui
-        shoppingcart.h shoppingcart.cpp shoppingcart.ui
-        head.h
-        detailedmenu.h detailedmenu.cpp detailedmenu.ui
-        orderstatus.h orderstatus.cpp orderstatus.ui
-        con_reviews.h con_reviews.cpp con_reviews.ui
-        StarRatingWidget.h
-        order_review.cpp order_review.h order_review.ui rider_inform.cpp rider_inform.h rider_inform.ui rider_main.cpp rider_main.h rider_main.ui task_completed.cpp task_completed.h task_completed.ui task_inform.cpp task_inform.h task_inform.ui zhuce.cpp zhuce.h zhuce.ui
-        shangjia.cpp shangjia.h shangjia.ui shangjia2.cpp shangjia2.h shangjia2.ui shangjia3.cpp shangjia3.h shangjia3.ui
+        admin/admini_check.cpp admin/admini_check.h admin/admini_check.ui admin/admini_info.cpp admin/admini_info.h admin/admini_info.ui admin/admini_info_done.cpp admin/admini_info_done.h admin/admini_info_done.ui admin/admini_main.cpp admin/admini_main.h admin/admini_main.ui admin/adminiwindow.cpp admin/adminiwindow.h admin/adminiwindow.ui business/dishchange.cpp business/dishchange.h business/dishchange.ui business/evalute.cpp business/evalute.h business/evalute.ui business/good_act.cpp business/good_act.h business/good_act.ui business/good_mange.cpp business/good_mange.h business/good_mange.ui business/inform.cpp business/inform.h business/inform.ui business/inform_change.cpp business/inform_change.h business/inform_change.ui business/shangjia.cpp business/shangjia.h business/shangjia.ui business/shangjia2.cpp business/shangjia2.h business/shangjia2.ui business/shangjia3.cpp business/shangjia3.h business/shangjia3.ui  business/workbench.cpp business/workbench.h business/workbench.ui consumer/con_reviews.cpp consumer/con_reviews.h consumer/con_reviews.ui consumer/consumer_information.cpp consumer/consumer_information.h consumer/consumer_information.ui consumer/consumer_interface.cpp consumer/consumer_interface.h consumer/consumer_interface.ui consumer/detailedmenu.cpp consumer/detailedmenu.h consumer/detailedmenu.ui consumer/orderstatus.cpp consumer/orderstatus.h consumer/orderstatus.ui consumer/shoppingcart.cpp consumer/shoppingcart.h consumer/shoppingcart.ui consumer/storepage.cpp consumer/storepage.h consumer/storepage.ui rider/order_review.cpp rider/order_review.h rider/order_review.ui rider/rider_inform.cpp rider/rider_inform.h rider/rider_inform.ui rider/rider_main.cpp rider/rider_main.h rider/rider_main.ui rider/task_completed.cpp rider/task_completed.h rider/task_completed.ui rider/task_inform.cpp rider/task_inform.h rider/task_inform.ui head.h logic.cpp logic.h login.cpp login.h login.ui main.cpp mainwindow.cpp mainwindow.h mainwindow.ui StarRatingWidget.h
+        consumer/address.cpp consumer/address.h consumer/address.ui consumer/change_inform.cpp consumer/change_inform.h consumer/change_inform.ui consumer/histroy_record.cpp consumer/histroy_record.h consumer/histroy_record.ui
+        consumer/complaints.h consumer/complaints.cpp consumer/complaints.ui
+
 
 
 

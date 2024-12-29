@@ -272,21 +272,159 @@
 			null
 		],
 		[
-			"E:/Qtwork/1229/con_reviews.h",
+			"E:/Qtwork/1229/admin/admini_check.h",
 			"MU",
-			"EWIEGA46WW/moc_con_reviews.cpp",
+			"6AXHBYGC25/moc_admini_check.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/consumer_interface.h",
+			"E:/Qtwork/1229/admin/admini_info.h",
 			"MU",
-			"EWIEGA46WW/moc_consumer_interface.cpp",
+			"6AXHBYGC25/moc_admini_info.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/detailedmenu.h",
+			"E:/Qtwork/1229/admin/admini_info_done.h",
 			"MU",
-			"EWIEGA46WW/moc_detailedmenu.cpp",
+			"6AXHBYGC25/moc_admini_info_done.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/admin/admini_main.h",
+			"MU",
+			"6AXHBYGC25/moc_admini_main.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/admin/adminiwindow.h",
+			"MU",
+			"6AXHBYGC25/moc_adminiwindow.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/dishchange.h",
+			"MU",
+			"6A7BGRXJ44/moc_dishchange.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/evalute.h",
+			"MU",
+			"6A7BGRXJ44/moc_evalute.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/good_act.h",
+			"MU",
+			"6A7BGRXJ44/moc_good_act.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/good_mange.h",
+			"MU",
+			"6A7BGRXJ44/moc_good_mange.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/inform.h",
+			"MU",
+			"6A7BGRXJ44/moc_inform.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/inform_change.h",
+			"MU",
+			"6A7BGRXJ44/moc_inform_change.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/shangjia.h",
+			"MU",
+			"6A7BGRXJ44/moc_shangjia.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/shangjia2.h",
+			"MU",
+			"6A7BGRXJ44/moc_shangjia2.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/shangjia3.h",
+			"MU",
+			"6A7BGRXJ44/moc_shangjia3.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/workbench.h",
+			"MU",
+			"6A7BGRXJ44/moc_workbench.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/address.h",
+			"MU",
+			"VNFHWQKLGQ/moc_address.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/change_inform.h",
+			"MU",
+			"VNFHWQKLGQ/moc_change_inform.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/complaints.h",
+			"MU",
+			"VNFHWQKLGQ/moc_complaints.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/con_reviews.h",
+			"MU",
+			"VNFHWQKLGQ/moc_con_reviews.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/consumer_information.h",
+			"MU",
+			"VNFHWQKLGQ/moc_consumer_information.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/consumer_interface.h",
+			"MU",
+			"VNFHWQKLGQ/moc_consumer_interface.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/detailedmenu.h",
+			"MU",
+			"VNFHWQKLGQ/moc_detailedmenu.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/histroy_record.h",
+			"MU",
+			"VNFHWQKLGQ/moc_histroy_record.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/orderstatus.h",
+			"MU",
+			"VNFHWQKLGQ/moc_orderstatus.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/shoppingcart.h",
+			"MU",
+			"VNFHWQKLGQ/moc_shoppingcart.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/storepage.h",
+			"MU",
+			"VNFHWQKLGQ/moc_storepage.cpp",
 			null
 		],
 		[ "E:/Qtwork/1229/head.h", "MU", "EWIEGA46WW/moc_head.cpp", null ],
@@ -299,72 +437,35 @@
 			null
 		],
 		[
-			"E:/Qtwork/1229/order_review.h",
+			"E:/Qtwork/1229/rider/order_review.h",
 			"MU",
-			"EWIEGA46WW/moc_order_review.cpp",
+			"PRPB7REQVI/moc_order_review.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/orderstatus.h",
+			"E:/Qtwork/1229/rider/rider_inform.h",
 			"MU",
-			"EWIEGA46WW/moc_orderstatus.cpp",
+			"PRPB7REQVI/moc_rider_inform.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/rider_inform.h",
+			"E:/Qtwork/1229/rider/rider_main.h",
 			"MU",
-			"EWIEGA46WW/moc_rider_inform.cpp",
+			"PRPB7REQVI/moc_rider_main.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/rider_main.h",
+			"E:/Qtwork/1229/rider/task_completed.h",
 			"MU",
-			"EWIEGA46WW/moc_rider_main.cpp",
+			"PRPB7REQVI/moc_task_completed.cpp",
 			null
 		],
 		[
-			"E:/Qtwork/1229/shangjia.h",
+			"E:/Qtwork/1229/rider/task_inform.h",
 			"MU",
-			"EWIEGA46WW/moc_shangjia.cpp",
+			"PRPB7REQVI/moc_task_inform.cpp",
 			null
-		],
-		[
-			"E:/Qtwork/1229/shangjia2.h",
-			"MU",
-			"EWIEGA46WW/moc_shangjia2.cpp",
-			null
-		],
-		[
-			"E:/Qtwork/1229/shangjia3.h",
-			"MU",
-			"EWIEGA46WW/moc_shangjia3.cpp",
-			null
-		],
-		[
-			"E:/Qtwork/1229/shoppingcart.h",
-			"MU",
-			"EWIEGA46WW/moc_shoppingcart.cpp",
-			null
-		],
-		[
-			"E:/Qtwork/1229/storepage.h",
-			"MU",
-			"EWIEGA46WW/moc_storepage.cpp",
-			null
-		],
-		[
-			"E:/Qtwork/1229/task_completed.h",
-			"MU",
-			"EWIEGA46WW/moc_task_completed.cpp",
-			null
-		],
-		[
-			"E:/Qtwork/1229/task_inform.h",
-			"MU",
-			"EWIEGA46WW/moc_task_inform.cpp",
-			null
-		],
-		[ "E:/Qtwork/1229/zhuce.h", "MU", "EWIEGA46WW/moc_zhuce.cpp", null ]
+		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/1229_autogen/include",
@@ -437,25 +538,41 @@
 	"SETTINGS_FILE" : "E:/Qtwork/1229/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/CMakeFiles/1229_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "E:/Qtwork/1229/con_reviews.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/consumer_interface.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/detailedmenu.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/admini_check.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/admini_info.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/admini_info_done.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/admini_main.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/adminiwindow.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/dishchange.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/evalute.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/good_act.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/good_mange.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/inform.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/inform_change.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/shangjia.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/shangjia2.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/shangjia3.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/workbench.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/address.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/change_inform.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/complaints.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/con_reviews.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/consumer_information.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/consumer_interface.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/detailedmenu.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/histroy_record.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/orderstatus.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/shoppingcart.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/storepage.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/logic.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/login.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/mainwindow.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/order_review.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/orderstatus.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/rider_inform.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/rider_main.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/shangjia.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/shangjia2.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/shangjia3.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/shoppingcart.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/storepage.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/task_completed.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/task_inform.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/zhuce.cpp", "MU", null ]
+		[ "E:/Qtwork/1229/rider/order_review.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/rider_inform.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/rider_main.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/task_completed.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/task_inform.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
