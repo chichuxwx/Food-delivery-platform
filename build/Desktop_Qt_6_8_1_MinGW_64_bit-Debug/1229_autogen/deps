@@ -629,6 +629,8 @@
 	E:/Qtwork/1229/main.cpp \
 	E:/Qtwork/1229/mainwindow.cpp \
 	E:/Qtwork/1229/mainwindow.h \
+	E:/Qtwork/1229/map.cpp \
+	E:/Qtwork/1229/map.h \
 	E:/Qtwork/1229/rider/order_review.cpp \
 	E:/Qtwork/1229/rider/order_review.h \
 	E:/Qtwork/1229/rider/rider_inform.cpp \
@@ -667,6 +669,7 @@
 	E:/Qtwork/1229/consumer/storepage.ui \
 	E:/Qtwork/1229/login.ui \
 	E:/Qtwork/1229/mainwindow.ui \
+	E:/Qtwork/1229/map.ui \
 	E:/Qtwork/1229/rider/order_review.ui \
 	E:/Qtwork/1229/rider/rider_inform.ui \
 	E:/Qtwork/1229/rider/rider_main.ui \

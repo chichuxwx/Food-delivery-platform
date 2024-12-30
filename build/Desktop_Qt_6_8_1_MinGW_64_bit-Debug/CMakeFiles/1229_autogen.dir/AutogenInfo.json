@@ -436,6 +436,7 @@
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
 		],
+		[ "E:/Qtwork/1229/map.h", "MU", "EWIEGA46WW/moc_map.cpp", null ],
 		[
 			"E:/Qtwork/1229/rider/order_review.h",
 			"MU",
@@ -568,6 +569,7 @@
 		[ "E:/Qtwork/1229/login.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/mainwindow.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/map.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/order_review.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_inform.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_main.cpp", "MU", null ],

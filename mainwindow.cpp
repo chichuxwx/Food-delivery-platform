@@ -30,7 +30,17 @@ void MainWindow::on_pushButton_clicked()
     QString account = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
     QString confirmPassword = ui->lineEdit_3->text();
+    // int userType;
 
+    /*if (ui->checkBox->isChecked()) {
+        userType = 1;
+    } else if (ui->checkBox_2->isChecked()) {
+        userType = 2;
+    } else if (ui->checkBox_3->isChecked()) {
+        userType = 3;
+    } else if (ui->checkBox_4->isChecked()) {
+        userType = 4;
+    }*/
 
     if (!validateAccount(account)) {
         QMessageBox::warning(this, "错误", "账号必须是 9~12 位字符！");
@@ -94,6 +104,7 @@ void MainWindow::changebuttonstatues(){
 void MainWindow::on_checkBox_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
+        userType=1;
         ui->checkBox_2->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -105,6 +116,7 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
 void MainWindow::on_checkBox_2_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
+        userType=2;
         ui->checkBox->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -116,6 +128,7 @@ void MainWindow::on_checkBox_2_stateChanged(int arg1)
 void MainWindow::on_checkBox_3_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
+        userType=3;
         ui->checkBox_2->setChecked(false);
         ui->checkBox->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -127,6 +140,7 @@ void MainWindow::on_checkBox_3_stateChanged(int arg1)
 void MainWindow::on_checkBox_4_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
+        userType=4;
         ui->checkBox_2->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox->setChecked(false);

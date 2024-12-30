@@ -28,6 +28,7 @@
 #include "VNFHWQKLGQ/moc_storepage.cpp"
 #include "EWIEGA46WW/moc_login.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
+#include "EWIEGA46WW/moc_map.cpp"
 #include "PRPB7REQVI/moc_order_review.cpp"
 #include "PRPB7REQVI/moc_rider_inform.cpp"
 #include "PRPB7REQVI/moc_rider_main.cpp"
