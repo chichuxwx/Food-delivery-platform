@@ -1,12 +1,14 @@
 #include "logic.h"
 
 // 验证账号
-bool validateAccount(const QString &account) {
+bool validateAccount(const QString &account)
+{
     return account.length() >= 8 && account.length() <= 13;
 }
 
 // 验证密码和确认密码
-bool validatePassword(const QString &password, const QString &confirmPassword) {
+bool validatePassword(const QString &password, const QString &confirmPassword)
+{
     bool hasLetter = false;
     bool hasDigit = false;
 
