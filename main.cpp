@@ -1,5 +1,7 @@
 #include "mainwindow.h"
-
+#include <QWebEngineView>
+#include <QWebEngineProfile>
+#include <QWebEngineSettings>
 #include <QApplication>
 
 int main(int argc, char *argv[])

@@ -21554,3 +21554,5 @@ E:/Qtwork/1229/consumer/histroy_record.cpp
  uic:ui_histroy_record.h
 E:/Qtwork/1229/map.cpp
  uic:ui_map.h
+E:/Qtwork/1229/database.h
+E:/Qtwork/1229/database.cpp

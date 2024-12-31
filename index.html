@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高德地图 API 示例</title>
+    <!-- 引入高德地图 JS API -->
+    <script src="https://webapi.amap.com/maps?v=2.0&key=48adc8d10a87e574fc925f8135b72e52"></script>
+    <style>
+        /* 设置地图容器的大小 */
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 地图容器 -->
+    <div id="map"></div>
+
+    <script>
+        // 初始化地图
+        var map = new AMap.Map('map', {
+            zoom: 10,  // 设置地图初始缩放级别
+            center: [116.397428, 39.90923]  // 设置地图中心点，默认北京
+        });
+
+        // 在地图中心添加标记
+        var marker = new AMap.Marker({
+            position: [116.397428, 39.90923],  // 标记的位置
+            title: '北京'
+        });
+        marker.setMap(map);
+    </script>
+
+</body>
+</html>

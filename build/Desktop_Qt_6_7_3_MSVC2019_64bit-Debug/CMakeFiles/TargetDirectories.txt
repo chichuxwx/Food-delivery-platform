@@ -1,0 +1,9 @@
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_qmlimportscan.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/edit_cache.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/rebuild_cache.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/list_install_components.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/install.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/install/local.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_autogen_timestamp_deps.dir
+E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_autogen.dir

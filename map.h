@@ -3,9 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
-class Map;
-}
+// 确保包含由 Qt Designer 自动生成的 ui_map.h 文件
+#include "ui_map.h"
 
 class Map : public QWidget
 {
@@ -15,8 +14,11 @@ public:
     explicit Map(QWidget *parent = nullptr);
     ~Map();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
-    Ui::Map *ui;
+    Ui::Map *ui; // 指向 UI 的指针
 };
 
 #endif // MAP_H
