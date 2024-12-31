@@ -30,6 +30,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         consumer/address.cpp consumer/address.h consumer/address.ui consumer/change_inform.cpp consumer/change_inform.h consumer/change_inform.ui consumer/histroy_record.cpp consumer/histroy_record.h consumer/histroy_record.ui
         consumer/complaints.h consumer/complaints.cpp consumer/complaints.ui
         map.h map.cpp map.ui
+        database.cpp database.h
 
 
 
