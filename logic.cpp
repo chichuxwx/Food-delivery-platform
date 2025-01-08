@@ -3,7 +3,7 @@
 // 验证账号
 bool validateAccount(const QString &account)
 {
-    return account.length() >= 8 && account.length() <= 13;
+    return account.length() >= 9 && account.length() <= 13;
 }
 
 // 验证密码和确认密码

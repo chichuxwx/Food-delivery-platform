@@ -29,6 +29,21 @@ void good_act::on_pushButton_2_clicked()
     qint64  value_desc;
     value =ui->lineEdit_value->text().toLongLong(&ok,10);
     value=ui->lineEdit_value_desc->text().toLongLong(&ok,10);
+
+    QJsonObject loginCommand;
+    loginCommand["command"] = "store";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+    // 发送账号和密码
+    QJsonObject credentials;
+    credentials["满"] = value;
+    credentials["减"] = value_desc;
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+
     QMessageBox::information(this,"成功","设置成功");
     //信息更新
 

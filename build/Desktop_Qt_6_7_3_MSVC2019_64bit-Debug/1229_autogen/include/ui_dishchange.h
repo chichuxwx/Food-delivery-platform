@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
@@ -23,12 +24,14 @@ class Ui_dishchange
 public:
     QPushButton *pushButton_back;
     QPushButton *pushButton;
+    QWidget *widget;
+    QGridLayout *gridLayout;
     QLabel *label;
     QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
     QLineEdit *lineEdit_dish;
+    QLabel *label_3;
     QLineEdit *lineEdit_price;
+    QLabel *label_4;
     QLineEdit *lineEdit_3;
 
     void setupUi(QWidget *dishchange)
@@ -39,60 +42,83 @@ public:
         dishchange->setMinimumSize(QSize(600, 800));
         pushButton_back = new QPushButton(dishchange);
         pushButton_back->setObjectName("pushButton_back");
-        pushButton_back->setGeometry(QRect(0, 0, 100, 60));
-        pushButton_back->setMinimumSize(QSize(100, 60));
-        pushButton_back->setMaximumSize(QSize(100, 60));
+        pushButton_back->setGeometry(QRect(10, 10, 60, 20));
+        pushButton_back->setMinimumSize(QSize(60, 20));
+        pushButton_back->setMaximumSize(QSize(60, 20));
         QFont font;
-        font.setPointSize(20);
+        font.setFamilies({QString::fromUtf8("Microsoft YaHei")});
+        font.setPointSize(9);
         pushButton_back->setFont(font);
         pushButton = new QPushButton(dishchange);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(0, 90, 600, 100));
-        pushButton->setMinimumSize(QSize(600, 100));
-        pushButton->setMaximumSize(QSize(600, 100));
-        pushButton->setFont(font);
-        label = new QLabel(dishchange);
+        pushButton->setGeometry(QRect(100, 90, 400, 40));
+        pushButton->setMinimumSize(QSize(400, 40));
+        pushButton->setMaximumSize(QSize(400, 40));
+        QFont font1;
+        font1.setPointSize(20);
+        pushButton->setFont(font1);
+        widget = new QWidget(dishchange);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(20, 200, 560, 202));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
         label->setObjectName("label");
-        label->setGeometry(QRect(0, 220, 200, 200));
         label->setMinimumSize(QSize(200, 200));
         label->setMaximumSize(QSize(200, 200));
-        label->setFont(font);
+        label->setFont(font1);
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_2 = new QLabel(dishchange);
+
+        gridLayout->addWidget(label, 0, 0, 3, 1);
+
+        label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(230, 240, 50, 30));
         label_2->setMinimumSize(QSize(50, 30));
         label_2->setMaximumSize(QSize(50, 30));
-        QFont font1;
-        font1.setPointSize(15);
-        label_2->setFont(font1);
-        label_3 = new QLabel(dishchange);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(230, 300, 50, 30));
-        label_3->setMinimumSize(QSize(50, 30));
-        label_3->setMaximumSize(QSize(50, 30));
-        label_3->setFont(font1);
-        label_4 = new QLabel(dishchange);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(230, 360, 50, 30));
-        label_4->setMinimumSize(QSize(50, 30));
-        label_4->setMaximumSize(QSize(50, 30));
-        label_4->setFont(font1);
-        lineEdit_dish = new QLineEdit(dishchange);
+        QFont font2;
+        font2.setPointSize(15);
+        label_2->setFont(font2);
+
+        gridLayout->addWidget(label_2, 0, 1, 1, 1);
+
+        lineEdit_dish = new QLineEdit(widget);
         lineEdit_dish->setObjectName("lineEdit_dish");
-        lineEdit_dish->setGeometry(QRect(290, 230, 300, 50));
         lineEdit_dish->setMinimumSize(QSize(300, 50));
         lineEdit_dish->setMaximumSize(QSize(300, 50));
-        lineEdit_price = new QLineEdit(dishchange);
+
+        gridLayout->addWidget(lineEdit_dish, 0, 2, 1, 1);
+
+        label_3 = new QLabel(widget);
+        label_3->setObjectName("label_3");
+        label_3->setMinimumSize(QSize(50, 30));
+        label_3->setMaximumSize(QSize(50, 30));
+        label_3->setFont(font2);
+
+        gridLayout->addWidget(label_3, 1, 1, 1, 1);
+
+        lineEdit_price = new QLineEdit(widget);
         lineEdit_price->setObjectName("lineEdit_price");
-        lineEdit_price->setGeometry(QRect(290, 290, 300, 50));
         lineEdit_price->setMinimumSize(QSize(300, 50));
         lineEdit_price->setMaximumSize(QSize(300, 50));
-        lineEdit_3 = new QLineEdit(dishchange);
+
+        gridLayout->addWidget(lineEdit_price, 1, 2, 1, 1);
+
+        label_4 = new QLabel(widget);
+        label_4->setObjectName("label_4");
+        label_4->setMinimumSize(QSize(50, 30));
+        label_4->setMaximumSize(QSize(50, 30));
+        label_4->setFont(font2);
+
+        gridLayout->addWidget(label_4, 2, 1, 1, 1);
+
+        lineEdit_3 = new QLineEdit(widget);
         lineEdit_3->setObjectName("lineEdit_3");
-        lineEdit_3->setGeometry(QRect(290, 350, 300, 50));
         lineEdit_3->setMinimumSize(QSize(300, 50));
         lineEdit_3->setMaximumSize(QSize(300, 50));
+
+        gridLayout->addWidget(lineEdit_3, 2, 2, 1, 1);
+
 
         retranslateUi(dishchange);
 

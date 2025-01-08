@@ -19,6 +19,18 @@ admini_info::~admini_info()
 void admini_info::on_pushButton_clicked()
 {
     admini_info_done *ConsumerInterface=new admini_info_done();
+    QJsonObject loginCommand;
+    loginCommand["command"] = "read_admin";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+    // 发送账号查询
+    QJsonObject credentials;
+    //credentials["类型"] = account; //之后删
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+
     ConsumerInterface->show();
     this->close();
 }

@@ -341,6 +341,9 @@ Qt6QuickWidgets_DIR:PATH=E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6QuickWidgets
 //The directory containing a CMake configuration file for Qt6Quick.
 Qt6Quick_DIR:PATH=E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Quick
 
+//The directory containing a CMake configuration file for Qt6Sql.
+Qt6Sql_DIR:PATH=E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql
+
 //The directory containing a CMake configuration file for Qt6WebChannel.
 Qt6WebChannel_DIR:PATH=E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebChannel
 
@@ -1206,6 +1209,8 @@ QT_FEATURE_splashscreen:INTERNAL=ON
 QT_FEATURE_splitter:INTERNAL=ON
 //Qt feature: sql (from target Qt6::Core)
 QT_FEATURE_sql:INTERNAL=ON
+//Qt feature: sqlmodel (from target Qt6::Sql)
+QT_FEATURE_sqlmodel:INTERNAL=ON
 //Qt feature: sse2 (from target Qt6::Core)
 QT_FEATURE_sse2:INTERNAL=ON
 //Qt feature: sse3 (from target Qt6::Core)

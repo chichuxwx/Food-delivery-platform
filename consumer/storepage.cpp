@@ -26,6 +26,7 @@ void Storepage::on_pushButton_2_clicked()
 void Storepage::on_pushButton_8_clicked()
 {
     Shoppingcart *shopcart=new Shoppingcart();
+
     shopcart->show();
     this->close();
 }

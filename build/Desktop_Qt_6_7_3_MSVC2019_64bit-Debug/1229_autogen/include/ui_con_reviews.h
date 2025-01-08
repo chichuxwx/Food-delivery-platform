@@ -37,7 +37,7 @@ public:
         Con_reviews->setMaximumSize(QSize(600, 800));
         pushButton_2 = new QPushButton(Con_reviews);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(30, 20, 60, 20));
+        pushButton_2->setGeometry(QRect(10, 10, 60, 20));
         pushButton_2->setMinimumSize(QSize(60, 20));
         pushButton_2->setMaximumSize(QSize(60, 20));
         label_5 = new QLabel(Con_reviews);
@@ -50,9 +50,9 @@ public:
         label_6->setMinimumSize(QSize(200, 60));
         pushButton_8 = new QPushButton(Con_reviews);
         pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setGeometry(QRect(450, 690, 100, 30));
-        pushButton_8->setMinimumSize(QSize(100, 30));
-        pushButton_8->setMaximumSize(QSize(100, 30));
+        pushButton_8->setGeometry(QRect(100, 690, 400, 40));
+        pushButton_8->setMinimumSize(QSize(400, 40));
+        pushButton_8->setMaximumSize(QSize(400, 40));
         textEdit = new QTextEdit(Con_reviews);
         textEdit->setObjectName("textEdit");
         textEdit->setGeometry(QRect(100, 540, 421, 141));

@@ -39,6 +39,13 @@ void task_inform::on_pushButton_clicked()
 {
     this->hide();
     task_completed*taskcompleted=new task_completed;
+
+    QJsonObject loginCommand;
+    loginCommand["command"] = "change";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
     taskcompleted->show();
 }
 

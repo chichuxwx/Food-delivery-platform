@@ -34,8 +34,10 @@ Map::Map(QWidget *parent) :
 <body>
     <div id="container" style="width:100%; height:100%;"></div>
     <script type="text/javascript">
-        var map = new AMap.Map("container", {
-            resizeEnable: true
+         var map = new AMap.Map("container", {
+            center: [112.936894,28.172738],
+            zoom: 16,
+            dragEnable: true
         });
 
         // 输入提示功能

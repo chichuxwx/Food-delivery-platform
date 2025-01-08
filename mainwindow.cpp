@@ -2,12 +2,14 @@
 #include <QMessageBox>
 #include "./ui_mainwindow.h"
 #include "head.h"
-
+#include <iostream>
+using namespace std;
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent),
+     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ServerConnectionManager::instance().connectToServer("127.0.0.1", 5556);
     ui->pushButton->setEnabled(false);
     ui->label_5->close();
     this->setFixedSize(600, 800);
@@ -28,6 +30,22 @@ void MainWindow::on_pushButton_clicked()
     QString account = ui->lineEdit->text();
     QString password = ui->lineEdit_2->text();
     QString confirmPassword = ui->lineEdit_3->text();
+
+    QJsonObject storeCommand;
+    storeCommand["command"] = "store";
+    QJsonDocument loginDoc(storeCommand);
+    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(Data);
+
+    // 发送账号和密码
+    QJsonObject credentials;
+    credentials["账号"] = account;
+    credentials["密码"] = password;
+    credentials["类型"] = userType;
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+
     // int userType;
 
     /*if (ui->checkBox->isChecked()) {
@@ -150,5 +168,16 @@ void MainWindow::on_pushButton_3_clicked()
     Map *map=new Map();
     map->show();
     this->close();
+}
+
+
+void MainWindow::on_pushButton_4_clicked()
+{
+        socket->connectToHost("127.0.0.1", 5556);  // 连接到本地服务端
+        if (socket->waitForConnected(1000000)) {
+            cout<<"连接到服务端成功!\n";
+        } else {
+            cout<<"连接失败!\n";
+        }
 }
 

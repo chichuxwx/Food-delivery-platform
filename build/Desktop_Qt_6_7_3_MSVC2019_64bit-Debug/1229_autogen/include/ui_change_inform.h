@@ -40,7 +40,14 @@ public:
         change_inform->setMinimumSize(QSize(600, 800));
         pushButton = new QPushButton(change_inform);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(50, 20, 141, 61));
+        pushButton->setGeometry(QRect(10, 10, 60, 20));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+        pushButton->setMinimumSize(QSize(60, 20));
+        pushButton->setMaximumSize(QSize(60, 20));
         groupBox = new QGroupBox(change_inform);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(40, 130, 501, 321));

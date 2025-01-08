@@ -31,7 +31,11 @@ void shangjia::on_pushButton_3_clicked()
 
 void shangjia::on_pushButton_7_clicked()
 {
-    //这是接单按钮 它应该干点什么 但是我不会 QAQ
+    QJsonObject loginCommand;
+    loginCommand["command"] = "change";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
 }
 
 

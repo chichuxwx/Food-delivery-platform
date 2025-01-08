@@ -888,6 +888,41 @@
 		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsTargets-relwithdebinfo.cmake",
 		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsAdditionalTargetInfo.cmake",
 		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets-debug.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake",
+		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-debug.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-debug.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-debug.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-debug.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
 		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
 		"E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/.qt/qml_imports/1229_conf.cmake"
 	],
@@ -897,6 +932,12 @@
 	"DEP_FILE_RULE_NAME" : "1229_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[
+			"E:/Qtwork/1229/ServerConnectionManager.h",
+			"MU",
+			"EWIEGA46WW/moc_ServerConnectionManager.cpp",
+			null
+		],
 		[
 			"E:/Qtwork/1229/StarRatingWidget.h",
 			"MU",
@@ -1098,6 +1139,12 @@
 			"MU",
 			"PRPB7REQVI/moc_task_inform.cpp",
 			null
+		],
+		[
+			"E:/Qtwork/1229/rider/timeworker.h",
+			"MU",
+			"PRPB7REQVI/moc_timeworker.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -1214,7 +1261,8 @@
 		[ "E:/Qtwork/1229/rider/rider_inform.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/task_completed.cpp", "MU", null ],
-		[ "E:/Qtwork/1229/rider/task_inform.cpp", "MU", null ]
+		[ "E:/Qtwork/1229/rider/task_inform.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/timeworker.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

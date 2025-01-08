@@ -28,6 +28,11 @@ void inform_change::on_pushButton_2_clicked()
     QMessageBox::information(this,"成功","修改成功");
     //再重新更新信息
 
+    QJsonObject loginCommand;
+    loginCommand["command"] = "change";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
 
 }
 

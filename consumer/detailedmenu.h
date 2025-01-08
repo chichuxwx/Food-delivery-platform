@@ -30,6 +30,8 @@ private slots:
 
     void changebuttonstatues();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::DetailedMenu *ui;
 };

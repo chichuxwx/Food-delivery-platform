@@ -31,3 +31,25 @@ void admini_main::on_pushButton_5_clicked()
     this->close();
 }
 
+
+void admini_main::on_pushButton_clicked()
+{
+    QJsonObject loginCommand;
+    loginCommand["command"] = "change";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+}
+
+
+void admini_main::on_pushButton_2_clicked()
+{
+    QJsonObject loginCommand;
+    loginCommand["command"] = "read_admin";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+}
+

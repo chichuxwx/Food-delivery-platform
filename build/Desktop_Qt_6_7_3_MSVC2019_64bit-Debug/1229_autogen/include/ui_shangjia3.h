@@ -11,6 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
@@ -21,16 +23,22 @@ QT_BEGIN_NAMESPACE
 class Ui_shangjia3
 {
 public:
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_2;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
-    QPushButton *pushButton_6;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QWidget *layoutWidget1;
+    QHBoxLayout *horizontalLayout_2;
     QPushButton *pushButton_4;
-    QTextBrowser *textBrowser_3;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_5;
+    QWidget *widget;
+    QGridLayout *gridLayout;
     QTextBrowser *textBrowser;
-    QTextBrowser *textBrowser_2;
     QLabel *label;
+    QTextBrowser *textBrowser_2;
+    QTextBrowser *textBrowser_3;
     QTextBrowser *textBrowser_4;
 
     void setupUi(QWidget *shangjia3)
@@ -38,39 +46,99 @@ public:
         if (shangjia3->objectName().isEmpty())
             shangjia3->setObjectName("shangjia3");
         shangjia3->resize(600, 800);
-        pushButton_3 = new QPushButton(shangjia3);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(420, 20, 150, 80));
-        pushButton_5 = new QPushButton(shangjia3);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(420, 660, 150, 80));
-        pushButton_2 = new QPushButton(shangjia3);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(230, 20, 150, 80));
-        pushButton = new QPushButton(shangjia3);
+        layoutWidget = new QWidget(shangjia3);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(0, 0, 601, 42));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(20, 20, 150, 80));
-        pushButton_6 = new QPushButton(shangjia3);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(220, 660, 150, 80));
-        pushButton_4 = new QPushButton(shangjia3);
+        pushButton->setMinimumSize(QSize(175, 40));
+        pushButton->setMaximumSize(QSize(175, 40));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Microsoft YaHei")});
+        pushButton->setFont(font);
+
+        horizontalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(layoutWidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setMinimumSize(QSize(175, 40));
+        pushButton_2->setMaximumSize(QSize(175, 40));
+        pushButton_2->setFont(font);
+
+        horizontalLayout->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(layoutWidget);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setMinimumSize(QSize(175, 40));
+        pushButton_3->setMaximumSize(QSize(175, 40));
+        pushButton_3->setFont(font);
+
+        horizontalLayout->addWidget(pushButton_3);
+
+        layoutWidget1 = new QWidget(shangjia3);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(0, 760, 601, 42));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pushButton_4 = new QPushButton(layoutWidget1);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(20, 660, 150, 80));
-        textBrowser_3 = new QTextBrowser(shangjia3);
-        textBrowser_3->setObjectName("textBrowser_3");
-        textBrowser_3->setGeometry(QRect(330, 220, 200, 31));
-        textBrowser = new QTextBrowser(shangjia3);
+        pushButton_4->setMinimumSize(QSize(175, 40));
+        pushButton_4->setMaximumSize(QSize(175, 40));
+        pushButton_4->setFont(font);
+
+        horizontalLayout_2->addWidget(pushButton_4);
+
+        pushButton_6 = new QPushButton(layoutWidget1);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setMinimumSize(QSize(175, 40));
+        pushButton_6->setMaximumSize(QSize(175, 40));
+        pushButton_6->setFont(font);
+
+        horizontalLayout_2->addWidget(pushButton_6);
+
+        pushButton_5 = new QPushButton(layoutWidget1);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setMinimumSize(QSize(175, 40));
+        pushButton_5->setMaximumSize(QSize(175, 40));
+        pushButton_5->setFont(font);
+
+        horizontalLayout_2->addWidget(pushButton_5);
+
+        widget = new QWidget(shangjia3);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(50, 120, 501, 278));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        textBrowser = new QTextBrowser(widget);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(50, 130, 511, 31));
-        textBrowser_2 = new QTextBrowser(shangjia3);
-        textBrowser_2->setObjectName("textBrowser_2");
-        textBrowser_2->setGeometry(QRect(330, 180, 200, 31));
-        label = new QLabel(shangjia3);
+
+        gridLayout->addWidget(textBrowser, 0, 0, 1, 2);
+
+        label = new QLabel(widget);
         label->setObjectName("label");
-        label->setGeometry(QRect(70, 190, 69, 19));
-        textBrowser_4 = new QTextBrowser(shangjia3);
+
+        gridLayout->addWidget(label, 1, 0, 2, 1);
+
+        textBrowser_2 = new QTextBrowser(widget);
+        textBrowser_2->setObjectName("textBrowser_2");
+
+        gridLayout->addWidget(textBrowser_2, 1, 1, 1, 1);
+
+        textBrowser_3 = new QTextBrowser(widget);
+        textBrowser_3->setObjectName("textBrowser_3");
+
+        gridLayout->addWidget(textBrowser_3, 2, 1, 1, 1);
+
+        textBrowser_4 = new QTextBrowser(widget);
         textBrowser_4->setObjectName("textBrowser_4");
-        textBrowser_4->setGeometry(QRect(50, 260, 511, 31));
+
+        gridLayout->addWidget(textBrowser_4, 3, 0, 1, 2);
+
 
         retranslateUi(shangjia3);
 
@@ -80,20 +148,12 @@ public:
     void retranslateUi(QWidget *shangjia3)
     {
         shangjia3->setWindowTitle(QCoreApplication::translate("shangjia3", "Form", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("shangjia3", "\345\267\262\351\200\201\350\276\276", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("shangjia3", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("shangjia3", "\345\276\205\351\200\201\350\276\276", nullptr));
         pushButton->setText(QCoreApplication::translate("shangjia3", "\346\226\260\344\273\273\345\212\241", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("shangjia3", "\345\267\245\344\275\234\345\217\260", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("shangjia3", "\345\276\205\351\200\201\350\276\276", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("shangjia3", "\345\267\262\351\200\201\350\276\276", nullptr));
         pushButton_4->setText(QCoreApplication::translate("shangjia3", "\350\256\242\345\215\225", nullptr));
-        textBrowser_3->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\234\260\345\235\200\345\217\212\345\244\207\346\263\250</p></body></html>", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("shangjia3", "\345\267\245\344\275\234\345\217\260", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("shangjia3", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -102,6 +162,7 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\350\256\242\345\215\2251</p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("shangjia3", "\350\256\242\345\215\225\344\277\241\346\201\257", nullptr));
         textBrowser_2->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -110,7 +171,14 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\350\217\234\345\223\201\345\217\212\350\247\204\346\240\274</p></body></html>", nullptr));
-        label->setText(QCoreApplication::translate("shangjia3", "\350\256\242\345\215\225\344\277\241\346\201\257", nullptr));
+        textBrowser_3->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\234\260\345\235\200\345\217\212\345\244\207\346\263\250</p></body></html>", nullptr));
         textBrowser_4->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

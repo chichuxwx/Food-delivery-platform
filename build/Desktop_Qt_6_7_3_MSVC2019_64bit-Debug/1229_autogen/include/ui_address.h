@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
@@ -21,12 +22,14 @@ class Ui_address
 {
 public:
     QPushButton *pushButton;
+    QWidget *widget;
+    QGridLayout *gridLayout;
     QPushButton *pushButton_2;
     QTextBrowser *textBrowser;
-    QTextBrowser *textBrowser_2;
     QPushButton *pushButton_3;
-    QTextBrowser *textBrowser_3;
+    QTextBrowser *textBrowser_2;
     QPushButton *pushButton_4;
+    QTextBrowser *textBrowser_3;
 
     void setupUi(QWidget *address)
     {
@@ -36,25 +39,74 @@ public:
         address->setMinimumSize(QSize(600, 800));
         pushButton = new QPushButton(address);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(60, 30, 101, 51));
-        pushButton_2 = new QPushButton(address);
+        pushButton->setGeometry(QRect(10, 10, 60, 20));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+        pushButton->setMinimumSize(QSize(60, 20));
+        pushButton->setMaximumSize(QSize(60, 20));
+        widget = new QWidget(address);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(60, 140, 491, 211));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(60, 140, 101, 31));
-        textBrowser = new QTextBrowser(address);
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
+        pushButton_2->setMinimumSize(QSize(70, 30));
+        pushButton_2->setMaximumSize(QSize(70, 30));
+
+        gridLayout->addWidget(pushButton_2, 0, 0, 1, 1);
+
+        textBrowser = new QTextBrowser(widget);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setGeometry(QRect(180, 140, 281, 31));
-        textBrowser_2 = new QTextBrowser(address);
-        textBrowser_2->setObjectName("textBrowser_2");
-        textBrowser_2->setGeometry(QRect(180, 210, 281, 31));
-        pushButton_3 = new QPushButton(address);
+        sizePolicy.setHeightForWidth(textBrowser->sizePolicy().hasHeightForWidth());
+        textBrowser->setSizePolicy(sizePolicy);
+        textBrowser->setMinimumSize(QSize(150, 30));
+        textBrowser->setMaximumSize(QSize(150, 30));
+
+        gridLayout->addWidget(textBrowser, 0, 1, 1, 1);
+
+        pushButton_3 = new QPushButton(widget);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(60, 210, 101, 31));
-        textBrowser_3 = new QTextBrowser(address);
-        textBrowser_3->setObjectName("textBrowser_3");
-        textBrowser_3->setGeometry(QRect(180, 280, 281, 31));
-        pushButton_4 = new QPushButton(address);
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
+        pushButton_3->setMinimumSize(QSize(70, 30));
+        pushButton_3->setMaximumSize(QSize(70, 30));
+
+        gridLayout->addWidget(pushButton_3, 1, 0, 1, 1);
+
+        textBrowser_2 = new QTextBrowser(widget);
+        textBrowser_2->setObjectName("textBrowser_2");
+        sizePolicy.setHeightForWidth(textBrowser_2->sizePolicy().hasHeightForWidth());
+        textBrowser_2->setSizePolicy(sizePolicy);
+        textBrowser_2->setMinimumSize(QSize(150, 30));
+        textBrowser_2->setMaximumSize(QSize(150, 30));
+
+        gridLayout->addWidget(textBrowser_2, 1, 1, 1, 1);
+
+        pushButton_4 = new QPushButton(widget);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(60, 280, 101, 31));
+        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy);
+        pushButton_4->setMinimumSize(QSize(70, 30));
+        pushButton_4->setMaximumSize(QSize(70, 30));
+
+        gridLayout->addWidget(pushButton_4, 2, 0, 1, 1);
+
+        textBrowser_3 = new QTextBrowser(widget);
+        textBrowser_3->setObjectName("textBrowser_3");
+        sizePolicy.setHeightForWidth(textBrowser_3->sizePolicy().hasHeightForWidth());
+        textBrowser_3->setSizePolicy(sizePolicy);
+        textBrowser_3->setMinimumSize(QSize(150, 30));
+        textBrowser_3->setMaximumSize(QSize(150, 30));
+
+        gridLayout->addWidget(textBrowser_3, 2, 1, 1, 1);
+
 
         retranslateUi(address);
 

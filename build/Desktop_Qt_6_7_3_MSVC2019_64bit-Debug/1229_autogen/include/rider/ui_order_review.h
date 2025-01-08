@@ -44,10 +44,18 @@ public:
         order_review->setMinimumSize(QSize(600, 800));
         pushButton = new QPushButton(order_review);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(20, 30, 141, 51));
+        pushButton->setGeometry(QRect(10, 10, 60, 20));
+        pushButton->setMinimumSize(QSize(60, 20));
+        pushButton->setMaximumSize(QSize(60, 20));
         label = new QLabel(order_review);
         label->setObjectName("label");
-        label->setGeometry(QRect(240, 100, 111, 61));
+        label->setGeometry(QRect(245, 100, 110, 60));
+        label->setMinimumSize(QSize(110, 60));
+        label->setMaximumSize(QSize(110, 60));
+        QFont font;
+        font.setPointSize(14);
+        font.setBold(true);
+        label->setFont(font);
         groupBox = new QGroupBox(order_review);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(20, 150, 551, 591));
@@ -91,7 +99,7 @@ public:
     {
         order_review->setWindowTitle(QCoreApplication::translate("order_review", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("order_review", "\351\200\200\345\207\272", nullptr));
-        label->setText(QCoreApplication::translate("order_review", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">\350\257\204\344\273\267\346\237\245\347\234\213</span></p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("order_review", "<html><head/><body><p align=\"center\">\350\257\204\344\273\267\346\237\245\347\234\213</p></body></html>", nullptr));
         groupBox->setTitle(QCoreApplication::translate("order_review", "\350\256\242\345\215\225\350\257\204\344\273\267", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("order_review", "\350\256\242\345\215\2251", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("order_review", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

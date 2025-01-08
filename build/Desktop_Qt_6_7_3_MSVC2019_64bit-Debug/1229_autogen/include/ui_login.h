@@ -17,6 +17,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -31,14 +32,20 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
     QLabel *label_2;
     QLineEdit *lineEdit;
+    QSpacerItem *horizontalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_4;
     QLabel *label_3;
     QLineEdit *lineEdit_2;
+    QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer_6;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QLabel *label_4;
@@ -73,12 +80,16 @@ public:
         label->setMaximumSize(QSize(60, 50));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(150, 160, 291, 221));
+        layoutWidget->setGeometry(QRect(170, 160, 261, 221));
         verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
         label_2->setEnabled(true);
@@ -91,19 +102,28 @@ public:
         lineEdit->setObjectName("lineEdit");
         lineEdit->setMaximumSize(QSize(113, 20));
 
-        horizontalLayout->addWidget(lineEdit, 0, Qt::AlignmentFlag::AlignHCenter);
+        horizontalLayout->addWidget(lineEdit, 0, Qt::AlignmentFlag::AlignRight);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer_2);
 
 
         verticalLayout_2->addLayout(horizontalLayout);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_4);
+
         label_3 = new QLabel(layoutWidget);
         label_3->setObjectName("label_3");
         label_3->setMinimumSize(QSize(40, 30));
         label_3->setMaximumSize(QSize(40, 30));
+        label_3->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        horizontalLayout_2->addWidget(label_3);
+        horizontalLayout_2->addWidget(label_3, 0, Qt::AlignmentFlag::AlignLeft);
 
         lineEdit_2 = new QLineEdit(layoutWidget);
         lineEdit_2->setObjectName("lineEdit_2");
@@ -112,15 +132,26 @@ public:
 
         horizontalLayout_2->addWidget(lineEdit_2, 0, Qt::AlignmentFlag::AlignVCenter);
 
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_3);
+
 
         verticalLayout_2->addLayout(horizontalLayout_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_5);
+
         pushButton = new QPushButton(layoutWidget);
         pushButton->setObjectName("pushButton");
         pushButton->setMinimumSize(QSize(100, 30));
         pushButton->setMaximumSize(QSize(100, 30));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("\345\215\216\346\226\207\347\273\206\351\273\221")});
+        pushButton->setFont(font);
 
         horizontalLayout_3->addWidget(pushButton, 0, Qt::AlignmentFlag::AlignLeft);
 
@@ -128,15 +159,20 @@ public:
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setMinimumSize(QSize(100, 30));
         pushButton_2->setMaximumSize(QSize(100, 30));
+        pushButton_2->setFont(font);
 
         horizontalLayout_3->addWidget(pushButton_2);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_6);
 
 
         verticalLayout_2->addLayout(horizontalLayout_3);
 
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(50, 400, 502, 141));
+        layoutWidget1->setGeometry(QRect(50, 430, 502, 61));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -151,24 +187,28 @@ public:
         pushButton_3 = new QPushButton(layoutWidget1);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setMinimumSize(QSize(100, 30));
+        pushButton_3->setFont(font);
 
         horizontalLayout_4->addWidget(pushButton_3);
 
         pushButton_5 = new QPushButton(layoutWidget1);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setMinimumSize(QSize(100, 30));
+        pushButton_5->setFont(font);
 
         horizontalLayout_4->addWidget(pushButton_5);
 
         pushButton_4 = new QPushButton(layoutWidget1);
         pushButton_4->setObjectName("pushButton_4");
         pushButton_4->setMinimumSize(QSize(100, 30));
+        pushButton_4->setFont(font);
 
         horizontalLayout_4->addWidget(pushButton_4);
 
         pushButton_6 = new QPushButton(layoutWidget1);
         pushButton_6->setObjectName("pushButton_6");
         pushButton_6->setMinimumSize(QSize(100, 30));
+        pushButton_6->setFont(font);
 
         horizontalLayout_4->addWidget(pushButton_6);
 

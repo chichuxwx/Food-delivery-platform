@@ -92,6 +92,13 @@ void Consumer_Information::on_pushButton_information_clicked()
 void Consumer_Information::on_pushButton_2_clicked()
 {
     Consumer_interface *ConsumerInterface=new Consumer_interface();
+
+    QJsonObject storeCommand;
+    storeCommand["command"] = "read_business";
+    QJsonDocument loginDoc(storeCommand);
+    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(Data);
+
     ConsumerInterface->show();
     this->close();
 }
@@ -100,6 +107,19 @@ void Consumer_Information::on_pushButton_2_clicked()
 void Consumer_Information::on_pushButton_3_clicked()
 {
     OrderStatus *order=new OrderStatus();
+
+    QJsonObject storeCommand;
+    storeCommand["command"] = "read_consumer";
+    QJsonDocument loginDoc(storeCommand);
+    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(Data);
+    // 发送账号查询
+    QJsonObject credentials;
+    //credentials["类型"] = account; //之后删
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+
     order->show();
     this->close();
 }

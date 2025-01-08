@@ -54,4 +54,26 @@ void login::on_pushButton_6_clicked()
     admini_main *adminMain = new admini_main();
     adminMain->show();
     this->close();
+
+
 }
+
+void login::on_pushButton_clicked()
+{
+    QJsonObject loginCommand;
+    loginCommand["command"] = "login";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+    // 发送账号和密码
+    QString account = ui->lineEdit->text();
+    QString password = ui->lineEdit_2->text();
+    QJsonObject credentials;
+    credentials["账号"] = account;
+    credentials["密码"] = password;
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+}
+

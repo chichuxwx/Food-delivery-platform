@@ -1,4 +1,8 @@
 E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQVI/moc_rider_main.cpp: E:/Qtwork/1229/rider/rider_main.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QDateTime \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QObject \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QThread \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QTimer \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20functional.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20memory.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -12,11 +16,13 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qatomic.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qatomic_cxx11.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbasicatomic.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbasictimer.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbindingstorage.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearray.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearraylist.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearrayview.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcalendar.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qchar.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcompare.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcompare_impl.h \
@@ -30,7 +36,10 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcontiguouscache.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdarwinhelpers.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatastream.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatetime.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdeadlinetimer.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdebug.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qelapsedtimer.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qendian.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qexceptionhandling.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qflags.h \
@@ -49,6 +58,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qlatin1stringview.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qline.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qlist.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qlocale.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qlogging.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qmalloc.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qmap.h \
@@ -100,6 +110,8 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtdeprecationmarkers.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtenvironmentvariables.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtextstream.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qthread.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtimer.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtmetamacros.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtnoop.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtpreprocessorsupport.h \
@@ -146,4 +158,5 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
-  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h
+  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  E:/Qtwork/1229/rider/timeworker.h

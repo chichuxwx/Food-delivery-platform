@@ -26,6 +26,14 @@ void admini_check::on_pushButton_3_clicked()
 void admini_check::on_pushButton_clicked()
 {
     admini_main *ConsumerInterface=new admini_main();
+
+    QJsonObject loginCommand;
+    loginCommand["command"] = "read_admin";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+
     ConsumerInterface->show();
     this->close();
 }

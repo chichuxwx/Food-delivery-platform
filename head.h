@@ -2,6 +2,10 @@
 #define HEAD_H
 
 #include <QMessageBox>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QTcpSocket>
+#include "ServerConnectionManager.h"
 #include "admin/admini_check.h"
 #include "admin/admini_info.h"
 #include "admin/admini_info_done.h"
@@ -41,4 +45,5 @@
 #include "rider/ui_task_completed.h"
 #include "rider/ui_task_inform.h"
 #include "map.h"
+
 #endif // HEAD_H

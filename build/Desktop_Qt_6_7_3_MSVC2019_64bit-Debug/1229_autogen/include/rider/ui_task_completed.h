@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
@@ -22,9 +23,6 @@ QT_BEGIN_NAMESPACE
 class Ui_task_completed
 {
 public:
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
     QLabel *label_7;
     QLabel *label_8;
     QGroupBox *groupBox;
@@ -36,6 +34,11 @@ public:
     QLabel *label_5;
     QLabel *label_6;
     QPushButton *pushButton_5;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
 
     void setupUi(QWidget *task_completed)
     {
@@ -43,21 +46,16 @@ public:
             task_completed->setObjectName("task_completed");
         task_completed->resize(600, 800);
         task_completed->setMinimumSize(QSize(600, 800));
-        pushButton_2 = new QPushButton(task_completed);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(50, 620, 151, 71));
-        pushButton_4 = new QPushButton(task_completed);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(400, 620, 151, 71));
-        pushButton_3 = new QPushButton(task_completed);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(230, 620, 141, 71));
         label_7 = new QLabel(task_completed);
         label_7->setObjectName("label_7");
         label_7->setGeometry(QRect(180, 50, 141, 51));
+        QFont font;
+        font.setPointSize(14);
+        label_7->setFont(font);
         label_8 = new QLabel(task_completed);
         label_8->setObjectName("label_8");
         label_8->setGeometry(QRect(320, 50, 121, 51));
+        label_8->setFont(font);
         groupBox = new QGroupBox(task_completed);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(50, 130, 501, 191));
@@ -84,7 +82,45 @@ public:
         label_6->setGeometry(QRect(350, 110, 91, 41));
         pushButton_5 = new QPushButton(task_completed);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(50, 360, 501, 91));
+        pushButton_5->setGeometry(QRect(100, 360, 400, 40));
+        pushButton_5->setMinimumSize(QSize(400, 40));
+        pushButton_5->setMaximumSize(QSize(400, 40));
+        widget = new QWidget(task_completed);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(0, 760, 601, 42));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName("pushButton_2");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy);
+        pushButton_2->setMinimumSize(QSize(175, 40));
+        pushButton_2->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_2);
+
+        pushButton_3 = new QPushButton(widget);
+        pushButton_3->setObjectName("pushButton_3");
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
+        pushButton_3->setMinimumSize(QSize(175, 40));
+        pushButton_3->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_3);
+
+        pushButton_4 = new QPushButton(widget);
+        pushButton_4->setObjectName("pushButton_4");
+        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy);
+        pushButton_4->setMinimumSize(QSize(175, 40));
+        pushButton_4->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_4);
+
 
         retranslateUi(task_completed);
 
@@ -94,11 +130,8 @@ public:
     void retranslateUi(QWidget *task_completed)
     {
         task_completed->setWindowTitle(QCoreApplication::translate("task_completed", "Form", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("task_completed", "\346\216\245\345\215\225", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("task_completed", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("task_completed", "\344\273\273\345\212\241\344\277\241\346\201\257", nullptr));
-        label_7->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">\350\256\242\345\215\225\347\212\266\346\200\201\357\274\232</span></p></body></html>", nullptr));
-        label_8->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">\345\267\262\347\273\217\351\200\201\350\276\276</span></p></body></html>", nullptr));
+        label_7->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-weight:700;\">\350\256\242\345\215\225\347\212\266\346\200\201\357\274\232</span></p></body></html>", nullptr));
+        label_8->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-weight:700;\">\345\267\262\347\273\217\351\200\201\350\276\276</span></p></body></html>", nullptr));
         groupBox->setTitle(QCoreApplication::translate("task_completed", "\350\256\242\345\215\225\344\277\241\346\201\257", nullptr));
         label->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">\350\256\242\345\215\225\345\217\267\357\274\232</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">xxx</span></p></body></html>", nullptr));
@@ -115,6 +148,9 @@ public:
         label_5->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">\345\234\260\345\235\200\345\217\212\345\244\207\346\263\250\357\274\232</span></p></body></html>", nullptr));
         label_6->setText(QCoreApplication::translate("task_completed", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">xxx</span></p></body></html>", nullptr));
         pushButton_5->setText(QCoreApplication::translate("task_completed", "\346\237\245\347\234\213\350\256\242\345\215\225\350\257\204\344\273\267", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("task_completed", "\346\216\245\345\215\225", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("task_completed", "\344\273\273\345\212\241\344\277\241\346\201\257", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("task_completed", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
     } // retranslateUi
 
 };

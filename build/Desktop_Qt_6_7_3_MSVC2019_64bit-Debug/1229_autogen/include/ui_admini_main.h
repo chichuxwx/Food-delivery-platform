@@ -11,7 +11,8 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -22,15 +23,18 @@ class Ui_admini_main
 {
 public:
     QLabel *label;
-    QGroupBox *groupBox;
+    QWidget *widget;
+    QGridLayout *gridLayout;
     QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_4;
     QLabel *label_6;
+    QLabel *label_3;
     QLabel *label_7;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
@@ -43,44 +47,90 @@ public:
         admini_main->setMinimumSize(QSize(600, 800));
         label = new QLabel(admini_main);
         label->setObjectName("label");
-        label->setGeometry(QRect(250, 130, 200, 41));
+        label->setGeometry(QRect(200, 130, 200, 41));
         label->setMinimumSize(QSize(200, 0));
-        groupBox = new QGroupBox(admini_main);
-        groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(210, 260, 181, 121));
-        label_2 = new QLabel(groupBox);
+        widget = new QWidget(admini_main);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(170, 210, 251, 151));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(10, 22, 40, 20));
-        label_3 = new QLabel(groupBox);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(10, 70, 51, 21));
-        label_4 = new QLabel(groupBox);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(10, 50, 40, 12));
-        label_5 = new QLabel(groupBox);
+
+        gridLayout->addWidget(label_2, 0, 0, 1, 1);
+
+        label_5 = new QLabel(widget);
         label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(100, 20, 40, 21));
-        label_6 = new QLabel(groupBox);
+
+        gridLayout->addWidget(label_5, 0, 1, 1, 1);
+
+        label_4 = new QLabel(widget);
+        label_4->setObjectName("label_4");
+
+        gridLayout->addWidget(label_4, 1, 0, 1, 1);
+
+        label_6 = new QLabel(widget);
         label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(100, 50, 40, 12));
-        label_7 = new QLabel(groupBox);
+
+        gridLayout->addWidget(label_6, 1, 1, 1, 1);
+
+        label_3 = new QLabel(widget);
+        label_3->setObjectName("label_3");
+
+        gridLayout->addWidget(label_3, 2, 0, 1, 1);
+
+        label_7 = new QLabel(widget);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(100, 70, 41, 21));
-        pushButton = new QPushButton(groupBox);
+
+        gridLayout->addWidget(label_7, 2, 1, 1, 1);
+
+        pushButton = new QPushButton(widget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(20, 100, 56, 18));
-        pushButton_2 = new QPushButton(groupBox);
+
+        gridLayout->addWidget(pushButton, 3, 0, 1, 1);
+
+        pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(100, 100, 56, 18));
-        pushButton_3 = new QPushButton(admini_main);
+
+        gridLayout->addWidget(pushButton_2, 3, 1, 1, 1);
+
+        widget1 = new QWidget(admini_main);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(0, 760, 601, 42));
+        horizontalLayout = new QHBoxLayout(widget1);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        pushButton_3 = new QPushButton(widget1);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(50, 750, 56, 18));
-        pushButton_4 = new QPushButton(admini_main);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy);
+        pushButton_3->setMinimumSize(QSize(175, 40));
+        pushButton_3->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_3);
+
+        pushButton_4 = new QPushButton(widget1);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(270, 750, 56, 18));
-        pushButton_5 = new QPushButton(admini_main);
+        sizePolicy.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy);
+        pushButton_4->setMinimumSize(QSize(175, 40));
+        pushButton_4->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_4);
+
+        pushButton_5 = new QPushButton(widget1);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(490, 750, 56, 18));
+        sizePolicy.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
+        pushButton_5->setSizePolicy(sizePolicy);
+        pushButton_5->setMinimumSize(QSize(175, 40));
+        pushButton_5->setMaximumSize(QSize(175, 40));
+
+        horizontalLayout->addWidget(pushButton_5);
+
 
         retranslateUi(admini_main);
 
@@ -90,13 +140,12 @@ public:
     void retranslateUi(QWidget *admini_main)
     {
         admini_main->setWindowTitle(QCoreApplication::translate("admini_main", "Form", nullptr));
-        label->setText(QCoreApplication::translate("admini_main", "<html><head/><body><p><span style=\" font-size:20pt; font-weight:700;\">\345\276\205\345\244\204\347\220\206\346\212\225\350\257\211</span></p></body></html>", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("admini_main", "\346\212\225\350\257\211\344\277\241\346\201\257", nullptr));
+        label->setText(QCoreApplication::translate("admini_main", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; font-weight:700;\">\345\276\205\345\244\204\347\220\206\346\212\225\350\257\211</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("admini_main", "\347\224\250\346\210\267\357\274\232", nullptr));
-        label_3->setText(QCoreApplication::translate("admini_main", "\346\212\225\350\257\211\347\220\206\347\224\261\357\274\232", nullptr));
-        label_4->setText(QCoreApplication::translate("admini_main", "\345\225\206\345\256\266\357\274\232", nullptr));
         label_5->setText(QCoreApplication::translate("admini_main", "acc", nullptr));
+        label_4->setText(QCoreApplication::translate("admini_main", "\345\225\206\345\256\266\357\274\232", nullptr));
         label_6->setText(QCoreApplication::translate("admini_main", "XX", nullptr));
+        label_3->setText(QCoreApplication::translate("admini_main", "\346\212\225\350\257\211\347\220\206\347\224\261\357\274\232", nullptr));
         label_7->setText(QCoreApplication::translate("admini_main", "XX", nullptr));
         pushButton->setText(QCoreApplication::translate("admini_main", "\346\216\245\345\217\227\346\212\225\350\257\211", nullptr));
         pushButton_2->setText(QCoreApplication::translate("admini_main", "\346\212\225\350\257\211\351\251\263\345\233\236", nullptr));

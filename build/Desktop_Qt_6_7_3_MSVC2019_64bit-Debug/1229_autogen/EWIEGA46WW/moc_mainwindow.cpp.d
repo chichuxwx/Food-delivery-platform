@@ -43,6 +43,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/EWIEGA46
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qglobalstatic.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qhash.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qhashfunctions.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qiodevice.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qiodevicebase.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qiterable.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qiterator.h \
@@ -141,6 +142,13 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/EWIEGA46
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qtransform.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/QTcpSocket \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qabstractsocket.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qhostaddress.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtcpsocket.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetwork-config.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetworkexports.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetworkglobal.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QMainWindow \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qmainwindow.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qsizepolicy.h \

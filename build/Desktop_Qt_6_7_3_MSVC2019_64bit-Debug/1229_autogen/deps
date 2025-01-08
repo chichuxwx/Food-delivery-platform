@@ -1,9 +1,12 @@
 1229_autogen/timestamp: \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QDateTime \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QList \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QObject \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QRect \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QSize \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QSizeF \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QThread \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/QTimer \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20functional.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20memory.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -17,11 +20,13 @@
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qatomic.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qatomic_cxx11.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbasicatomic.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbasictimer.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbindingstorage.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearray.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearraylist.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qbytearrayview.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcalendar.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qchar.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcompare.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcompare_impl.h \
@@ -38,6 +43,7 @@
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcoreevent.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdarwinhelpers.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatastream.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatetime.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdeadlinetimer.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdebug.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qelapsedtimer.h \
@@ -114,6 +120,8 @@
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtdeprecationmarkers.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtenvironmentvariables.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtextstream.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qthread.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtimer.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtmetamacros.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtnoop.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtpreprocessorsupport.h \
@@ -174,6 +182,13 @@
 	E:/Qt/6.7.3/msvc2019_64/include/QtGui/qvectornd.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/QTcpSocket \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qabstractsocket.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qhostaddress.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtcpsocket.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetwork-config.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetworkexports.h \
+	E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetworkglobal.h \
 	E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QMainWindow \
 	E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QWidget \
 	E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qmainwindow.h \
@@ -746,6 +761,36 @@
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets-relwithdebinfo.cmake \
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsTargets.cmake \
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-debug.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-debug.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-debug.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-debug.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets-debug.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake \
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebChannel/Qt6WebChannelAdditionalTargetInfo.cmake \
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebChannel/Qt6WebChannelConfig.cmake \
 	E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersion.cmake \
@@ -845,6 +890,7 @@
 	E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows.cmake \
 	E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake \
 	E:/Qtwork/1229/CMakeLists.txt \
+	E:/Qtwork/1229/ServerConnectionManager.h \
 	E:/Qtwork/1229/StarRatingWidget.h \
 	E:/Qtwork/1229/admin/admini_check.cpp \
 	E:/Qtwork/1229/admin/admini_check.h \
@@ -923,6 +969,8 @@
 	E:/Qtwork/1229/rider/task_completed.h \
 	E:/Qtwork/1229/rider/task_inform.cpp \
 	E:/Qtwork/1229/rider/task_inform.h \
+	E:/Qtwork/1229/rider/timeworker.cpp \
+	E:/Qtwork/1229/rider/timeworker.h \
 	E:/Qtwork/1229/admin/admini_check.ui \
 	E:/Qtwork/1229/admin/admini_info.ui \
 	E:/Qtwork/1229/admin/admini_info_done.ui \

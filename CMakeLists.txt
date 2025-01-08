@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 查找 Qt6 或 Qt5 库和 WebEngineWidgets 模块
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets WebEngineWidgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets Sql)
 
 # 设置源文件
 set(PROJECT_SOURCES
@@ -33,6 +33,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         consumer/address.cpp consumer/address.h consumer/address.ui consumer/change_inform.cpp consumer/change_inform.h consumer/change_inform.ui consumer/histroy_record.cpp consumer/histroy_record.h consumer/histroy_record.ui
         consumer/complaints.h consumer/complaints.cpp consumer/complaints.ui
         map.h map.cpp map.ui
+        ServerConnectionManager.h
+        rider/timeworker.h rider/timeworker.cpp
+
     )
 else()
     if(ANDROID)
