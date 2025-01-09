@@ -12,7 +12,7 @@ class page_workbench : public QWidget
     Q_OBJECT
 
 public:
-    explicit page_workbench(QWidget *parent = nullptr);
+    explicit page_workbench(QString account,QWidget *parent = nullptr);
     ~page_workbench();
 
 private slots:
@@ -36,6 +36,7 @@ private slots:
 
 private:
     Ui::page_workbench *ui;
+    QString account;
 };
 
 #endif // WORKBENCH_H

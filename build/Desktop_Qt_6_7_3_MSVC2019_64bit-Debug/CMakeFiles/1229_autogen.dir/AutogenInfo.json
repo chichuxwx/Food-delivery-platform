@@ -924,7 +924,8 @@
 		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
 		"E:/Qt/6.7.3/msvc2019_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
 		"E:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/.qt/qml_imports/1229_conf.cmake"
+		"E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/.qt/qml_imports/1229_conf.cmake",
+		"E:/Qtwork/1229/Image.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "E:/Qtwork/1229",
 	"CROSS_CONFIG" : false,
@@ -932,6 +933,7 @@
 	"DEP_FILE_RULE_NAME" : "1229_autogen/timestamp",
 	"HEADERS" : 
 	[
+		[ "E:/Qtwork/1229/Seller.h", "MU", "EWIEGA46WW/moc_Seller.cpp", null ],
 		[
 			"E:/Qtwork/1229/ServerConnectionManager.h",
 			"MU",
@@ -974,6 +976,7 @@
 			"6AXHBYGC25/moc_adminiwindow.cpp",
 			null
 		],
+		[ "E:/Qtwork/1229/all.h", "MU", "EWIEGA46WW/moc_all.cpp", null ],
 		[
 			"E:/Qtwork/1229/business/dishchange.h",
 			"MU",
@@ -1089,6 +1092,12 @@
 			null
 		],
 		[
+			"E:/Qtwork/1229/consumer/sellerwidget.h",
+			"MU",
+			"VNFHWQKLGQ/moc_sellerwidget.cpp",
+			null
+		],
+		[
 			"E:/Qtwork/1229/consumer/shoppingcart.h",
 			"MU",
 			"VNFHWQKLGQ/moc_shoppingcart.cpp",
@@ -1098,6 +1107,18 @@
 			"E:/Qtwork/1229/consumer/storepage.h",
 			"MU",
 			"VNFHWQKLGQ/moc_storepage.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/customer.h",
+			"MU",
+			"EWIEGA46WW/moc_customer.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/database/database.h",
+			"MU",
+			"BL3K65LMA5/moc_database.cpp",
 			null
 		],
 		[ "E:/Qtwork/1229/head.h", "MU", "EWIEGA46WW/moc_head.cpp", null ],
@@ -1110,6 +1131,7 @@
 			null
 		],
 		[ "E:/Qtwork/1229/map.h", "MU", "EWIEGA46WW/moc_map.cpp", null ],
+		[ "E:/Qtwork/1229/rider.h", "MU", "EWIEGA46WW/moc_rider.cpp", null ],
 		[
 			"E:/Qtwork/1229/rider/order_review.h",
 			"MU",
@@ -1163,6 +1185,7 @@
 		"QT_QMLMODELS_LIB",
 		"QT_QML_LIB",
 		"QT_QUICK_LIB",
+		"QT_SQL_LIB",
 		"QT_WEBCHANNEL_LIB",
 		"QT_WEBENGINECORE_LIB",
 		"QT_WEBENGINEWIDGETS_LIB",
@@ -1186,9 +1209,9 @@
 		"E:/Qt/6.7.3/msvc2019_64/include/QtCore",
 		"E:/Qt/6.7.3/msvc2019_64/include",
 		"E:/Qt/6.7.3/msvc2019_64/mkspecs/win32-msvc",
-		"E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineWidgets",
-		"E:/Qt/6.7.3/msvc2019_64/include/QtGui",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtWidgets",
+		"E:/Qt/6.7.3/msvc2019_64/include/QtGui",
+		"E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineWidgets",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtNetwork",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtQuick",
@@ -1199,7 +1222,8 @@
 		"E:/Qt/6.7.3/msvc2019_64/include/QtOpenGL",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtWebChannel",
 		"E:/Qt/6.7.3/msvc2019_64/include/QtPositioning",
-		"E:/Qt/6.7.3/msvc2019_64/include/QtPrintSupport"
+		"E:/Qt/6.7.3/msvc2019_64/include/QtPrintSupport",
+		"E:/Qt/6.7.3/msvc2019_64/include/QtSql"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
@@ -1226,11 +1250,13 @@
 	"SETTINGS_FILE" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "E:/Qtwork/1229/Seller.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_check.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_info.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_info_done.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/adminiwindow.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/all.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/dishchange.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/evalute.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/good_act.cpp", "MU", null ],
@@ -1250,13 +1276,17 @@
 		[ "E:/Qtwork/1229/consumer/detailedmenu.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/histroy_record.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/orderstatus.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/sellerwidget.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/shoppingcart.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/storepage.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/customer.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/database/database.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/logic.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/login.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/mainwindow.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/map.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/order_review.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_inform.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_main.cpp", "MU", null ],

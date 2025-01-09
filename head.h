@@ -5,6 +5,13 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QTcpSocket>
+#include <QVBoxLayout>
+#include <QSqlDatabase>
+#include <QLabel>
+#include <QPixmap>
+#include <QByteArray>
+#include "database/database.h"
+#include <QDebug>
 #include "ServerConnectionManager.h"
 #include "admin/admini_check.h"
 #include "admin/admini_info.h"
@@ -45,5 +52,9 @@
 #include "rider/ui_task_completed.h"
 #include "rider/ui_task_inform.h"
 #include "map.h"
+#include "all.h"
+#include "Seller.h"
+#include "rider.h"
+#include "customer.h"
 
 #endif // HEAD_H

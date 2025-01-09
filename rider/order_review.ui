@@ -19,6 +19,22 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -40,6 +56,27 @@
      <height>20</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，使用 #fad37f */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 9px; /* 圆角 */
+    color: #000000; /* 文本颜色，黑色 */
+    font-size: 9px;
+}
+
+QPushButton:hover {
+    background-color: rgba(99, 132, 233, 0.8); /* 悬浮时背景颜色 */
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+   </property>
    <property name="text">
     <string>退出</string>
    </property>
@@ -48,21 +85,21 @@
    <property name="geometry">
     <rect>
      <x>245</x>
-     <y>100</y>
+     <y>60</y>
      <width>110</width>
-     <height>60</height>
+     <height>50</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>110</width>
-     <height>60</height>
+     <height>50</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>110</width>
-     <height>60</height>
+     <height>50</height>
     </size>
    </property>
    <property name="font">
@@ -72,14 +109,14 @@
     </font>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;评价查看&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;评价查看&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>150</y>
+     <y>130</y>
      <width>551</width>
      <height>591</height>
     </rect>

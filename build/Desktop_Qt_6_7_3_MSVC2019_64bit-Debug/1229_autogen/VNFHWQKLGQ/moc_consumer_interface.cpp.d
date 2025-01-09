@@ -1,4 +1,8 @@
 E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/VNFHWQKLGQ/moc_consumer_interface.cpp: E:/Qtwork/1229/consumer/consumer_interface.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QMap \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QString \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QVariant \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QVariantMap \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20functional.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20memory.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -112,6 +116,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/VNFHWQKL
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qtypes.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qutf8stringview.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qvariant.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qvariantmap.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qvarlengtharray.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qversiontagging.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qxptype_traits.h \
@@ -146,4 +151,5 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/VNFHWQKL
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
-  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h
+  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  E:/Qtwork/1229/consumer/storepage.h

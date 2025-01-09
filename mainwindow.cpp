@@ -5,8 +5,8 @@
 #include <iostream>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent),
-     ui(new Ui::MainWindow)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     ServerConnectionManager::instance().connectToServer("127.0.0.1", 5556);
@@ -115,7 +115,7 @@ void MainWindow::changebuttonstatues()
 void MainWindow::on_checkBox_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
-        userType=1;
+        userType = 1;
         ui->checkBox_2->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -126,7 +126,7 @@ void MainWindow::on_checkBox_stateChanged(int arg1)
 void MainWindow::on_checkBox_2_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
-        userType=2;
+        userType = 2;
         ui->checkBox->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -137,7 +137,7 @@ void MainWindow::on_checkBox_2_stateChanged(int arg1)
 void MainWindow::on_checkBox_3_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
-        userType=3;
+        userType = 3;
         ui->checkBox_2->setChecked(false);
         ui->checkBox->setChecked(false);
         ui->checkBox_4->setChecked(false);
@@ -148,7 +148,7 @@ void MainWindow::on_checkBox_3_stateChanged(int arg1)
 void MainWindow::on_checkBox_4_stateChanged(int arg1)
 {
     if (arg1 == Qt::Checked) {
-        userType=4;
+        userType = 4;
         ui->checkBox_2->setChecked(false);
         ui->checkBox_3->setChecked(false);
         ui->checkBox->setChecked(false);
@@ -165,19 +165,9 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    Map *map=new Map();
+    Map *map = new Map();
     map->show();
     this->close();
 }
 
-
-void MainWindow::on_pushButton_4_clicked()
-{
-        socket->connectToHost("127.0.0.1", 5556);  // 连接到本地服务端
-        if (socket->waitForConnected(1000000)) {
-            cout<<"连接到服务端成功!\n";
-        } else {
-            cout<<"连接失败!\n";
-        }
-}
 

@@ -1,6 +1,7 @@
 #ifndef SHOPPINGCART_H
 #define SHOPPINGCART_H
-
+#include"../all.h"
+#include"../customer.h"
 #include <QWidget>
 
 namespace Ui {
@@ -12,7 +13,7 @@ class Shoppingcart : public QWidget
     Q_OBJECT
 
 public:
-    explicit Shoppingcart(QWidget *parent = nullptr);
+    explicit Shoppingcart(QString account,QWidget *parent = nullptr);
     ~Shoppingcart();
 
 private slots:
@@ -22,6 +23,10 @@ private slots:
 
 private:
     Ui::Shoppingcart *ui;
+    QString account;//修改
+    all al;
+    customer Cus;
+
 };
 
 #endif // SHOPPINGCART_H

@@ -38,10 +38,11 @@ constexpr auto qt_meta_stringdata_CLASSConsumer_interfaceENDCLASS = QtMocHelpers
     "Consumer_interface",
     "on_pushButton_clicked",
     "",
-    "on_pushButton_6_clicked",
-    "on_pushButton_5_clicked",
     "on_pushButton_3_clicked",
-    "on_pushButton_4_clicked"
+    "on_pushButton_4_clicked",
+    "displaySellers",
+    "onSellerClicked",
+    "sellerInfo"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -66,14 +67,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSConsumer_interfaceENDCLASS[] = {
        3,    0,   45,    2, 0x08,    2 /* Private */,
        4,    0,   46,    2, 0x08,    3 /* Private */,
        5,    0,   47,    2, 0x08,    4 /* Private */,
-       6,    0,   48,    2, 0x08,    5 /* Private */,
+       6,    1,   48,    2, 0x08,    5 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QVariantMap,    7,
 
        0        // eod
 };
@@ -89,14 +90,15 @@ Q_CONSTINIT const QMetaObject Consumer_interface::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<Consumer_interface, std::true_type>,
         // method 'on_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_6_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_5_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_3_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_4_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'displaySellers'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onSellerClicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QVariantMap &, std::false_type>
     >,
     nullptr
 } };
@@ -108,14 +110,13 @@ void Consumer_interface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         (void)_t;
         switch (_id) {
         case 0: _t->on_pushButton_clicked(); break;
-        case 1: _t->on_pushButton_6_clicked(); break;
-        case 2: _t->on_pushButton_5_clicked(); break;
-        case 3: _t->on_pushButton_3_clicked(); break;
-        case 4: _t->on_pushButton_4_clicked(); break;
+        case 1: _t->on_pushButton_3_clicked(); break;
+        case 2: _t->on_pushButton_4_clicked(); break;
+        case 3: _t->displaySellers(); break;
+        case 4: _t->onSellerClicked((*reinterpret_cast< std::add_pointer_t<QVariantMap>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *Consumer_interface::metaObject() const

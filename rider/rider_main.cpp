@@ -4,8 +4,8 @@
 #include "task_inform.h"
 #include "../head.h"
 
-Rider_main::Rider_main(QWidget *parent)
-    : QWidget(parent)
+Rider_main::Rider_main(QString account,QWidget *parent)
+    : QWidget(parent),account(account)
     , ui(new Ui::Rider_main)
     , timeThread(new QThread(this))          // 初始化线程
     , timeWorker(new TimeWorker())           // 初始化工作对象
@@ -26,6 +26,40 @@ Rider_main::Rider_main(QWidget *parent)
 
     // 启动线程
     timeThread->start();
+        // 获取订单信息
+    QList<QVariantMap> orders = db.select_orders_information_rider(account, 1);
+
+
+    // 从第一个订单中获取用户 ID
+    QVariantMap firstOrder = orders[0];
+    QString customerId = firstOrder["customer_id"].toString();
+
+    // 设置用户 ID 到 label28
+    ui->label_28->setText(customerId);
+
+    QVariantMap customermap=cu.get_customer_infor(customerId);
+    QString customerPhone = customermap["phone"].toString();
+
+    // 设置联系电话到 label30
+    ui->label_30->setText(customerPhone);
+    ui->label_32->setText("10公里");
+
+    //订单2
+    QVariantMap secondOrder = orders[1];
+    customerId = secondOrder["customer_id"].toString();
+
+    // 设置用户 ID 到 label20
+    ui->label_20->setText(customerId);
+
+    // 获取用户信息
+    customermap = cu.get_customer_infor(customerId);
+    customerPhone = customermap["phone"].toString();
+
+    // 设置联系电话到 label22
+    ui->label_22->setText(customerPhone);
+
+    // 设置公里数到 label24
+    ui->label_24->setText("10公里"); // 示例公里数
 }
 
 Rider_main::~Rider_main()
@@ -41,21 +75,21 @@ Rider_main::~Rider_main()
 void Rider_main::on_pushButton_4_clicked()
 {
     this->hide();
-    rider_inform* riderinform = new rider_inform;
+    rider_inform* riderinform = new rider_inform(account);
     riderinform->show();
 }
 
 void Rider_main::on_pushButton_3_clicked()
 {
     this->hide();
-    task_inform* taskinform = new task_inform;
+    task_inform* taskinform = new task_inform(account);
     taskinform->show();
 }
 
 void Rider_main::on_pushButton_clicked()
 {
     this->hide();
-    task_inform* taskinform = new task_inform;
+    task_inform* taskinform = new task_inform(account);
 
     QJsonObject loginCommand;
     loginCommand["command"] = "change";

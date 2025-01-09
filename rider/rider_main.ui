@@ -110,31 +110,6 @@
     </property>
    </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>480</y>
-     <width>400</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>400</width>
-     <height>40</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>400</width>
-     <height>40</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>立即抢单</string>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
@@ -229,6 +204,97 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
+     <x>130</x>
+     <y>80</y>
+     <width>341</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;本单截止时间：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="timelabel">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>480</y>
+     <width>400</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>400</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #6384e9; /* 默认背景色，蓝色 */
+    border: 2px solid #6384e9; /* 边框颜色与背景色相同 */
+    border-radius: 6px; /* 圆角 */
+    color: #ffffff; /* 文本颜色，白色 */
+    font-size: 12px;
+}
+
+QPushButton:hover {
+    background-color: #5076c6; /* 悬浮时背景色变深 */
+    border: 2px solid #5076c6; /* 悬浮时边框颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #3a5d8f; /* 按下时背景色变得更深 */
+    border-color: #3a5d8f; /* 按下时边框颜色变得更深 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>立即抢单</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
      <x>0</x>
      <y>760</y>
      <width>601</width>
@@ -256,6 +322,27 @@
         <height>40</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #6384e9; /* 默认背景色，蓝色 */
+    border: 2px solid #6384e9; /* 边框颜色与背景色相同 */
+    border-radius: 20px; /* 圆角 */
+    color: #ffffff; /* 文本颜色，白色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: #5076c6; /* 悬浮时背景色变深 */
+    border: 2px solid #5076c6; /* 悬浮时边框颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #3a5d8f; /* 按下时背景色变得更深 */
+    border-color: #3a5d8f; /* 按下时边框颜色变得更深 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
        <string>接单</string>
       </property>
@@ -280,6 +367,27 @@
         <width>175</width>
         <height>40</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
       </property>
       <property name="text">
        <string>任务信息</string>
@@ -306,6 +414,27 @@
         <height>40</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
        <string>个人信息</string>
       </property>
@@ -313,35 +442,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>80</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="label">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;本单截止时间：&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="timelabel">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <zorder>label_2</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>layoutWidget_2</zorder>
  </widget>
  <resources/>
  <connections/>

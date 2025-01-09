@@ -12,7 +12,7 @@ class evalute : public QWidget
     Q_OBJECT
 
 public:
-    explicit evalute(QWidget *parent = nullptr);
+    explicit evalute(QString account,QWidget *parent = nullptr);
     ~evalute();
 
 private slots:
@@ -20,6 +20,7 @@ private slots:
 
 private:
     Ui::evalute *ui;
+    QString account;
 };
 
 #endif // EVALUTE_H

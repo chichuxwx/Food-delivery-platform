@@ -12,7 +12,7 @@ class good_mange : public QWidget
     Q_OBJECT
 
 public:
-    explicit good_mange(QWidget *parent = nullptr);
+    explicit good_mange(QString account,QWidget *parent = nullptr);
     ~good_mange();
 
 private slots:
@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::good_mange *ui;
+    QString account;
 };
 
 #endif // GOOD_MANGE_H

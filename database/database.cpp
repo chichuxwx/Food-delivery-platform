@@ -1,15 +1,19 @@
 #include "database.h"
-#include <QSqlRecord>
+// #include <QSqlRecord>
 #include <QVariantMap>
 #include <QList>
 #include<QFile>
-Database::Database(const QString &hostName, const QString &databaseName, const QString &userName, const QString &password)
-    : m_hostName(hostName), m_databaseName(databaseName), m_userName(userName), m_password(password), m_db(nullptr)
+// Database::Database(const QString &hostName, const QString &databaseName, const QString &userName, const QString &password)
+//     : m_hostName(hostName), m_databaseName(databaseName), m_userName(userName), m_password(password), m_db(nullptr)
+// {
+//     // 初始化数据库连接
+//     connectToDatabase();
+// }
+Database::Database()
 {
-    // 初始化数据库连接
+    //初始化数据库连接
     connectToDatabase();
 }
-
 Database::~Database()
 {
     // 关闭数据库连接
@@ -21,13 +25,14 @@ Database::~Database()
 bool Database::connectToDatabase()
 {
     if (!m_db) {
-        m_db = new QSqlDatabase(QSqlDatabase::addDatabase("QMYSQL")); // 或者使用 "QMYSQL8" 根据您的 MySQL 版本
+        m_db = new QSqlDatabase(QSqlDatabase::addDatabase("ODBC")); // 或者使用 "QMYSQL8" 根据您的 MySQL 版本
     }
 
     m_db->setHostName(m_hostName);
     m_db->setDatabaseName(m_databaseName);
     m_db->setUserName(m_userName);
     m_db->setPassword(m_password);
+    m_db->setPort(3307);
 
     if (!m_db->open()) {
         qDebug() << "Error: Unable to connect to database.";
@@ -71,22 +76,22 @@ QVariant Database::executeScalarQuery(const QString &queryStr)
     return QVariant();
 }
 
-QSqlRecord Database::executeSingleRecordQuery(const QString &queryStr)
-{
-    QSqlQuery query(*m_db);
+// QSqlRecord Database::executeSingleRecordQuery(const QString &queryStr)
+// {
+//     QSqlQuery query(*m_db);
 
-    if (!query.exec(queryStr)) {
-        qDebug() << "Error: Failed to execute single record query.";
-        qDebug() << query.lastError().text();
-        return QSqlRecord();
-    }
+//     if (!query.exec(queryStr)) {
+//         qDebug() << "Error: Failed to execute single record query.";
+//         qDebug() << query.lastError().text();
+//         return QSqlRecord();
+//     }
 
-    if (query.next()) {
-        return query.record(); // 假设查询只返回一行
-    }
+//     if (query.next()) {
+//         return query.record(); // 假设查询只返回一行
+//     }
 
-    return QSqlRecord();
-}
+//     return QSqlRecord();
+// }
 
 // QSqlResultSet Database::executeResultSetQuery(const QString &queryStr)
 // {
@@ -129,7 +134,7 @@ void Database::addRider(const QString &account, const QString &password)
     return ;
 }
 
-void Database::update_rider_phone(const QString &account,const QString &phone_number)
+bool Database::update_rider_phone(const QString &account,const QString &phone_number)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE rider SET phone =:phone WHERE account = :account ");
@@ -139,36 +144,36 @@ void Database::update_rider_phone(const QString &account,const QString &phone_nu
 
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:phone"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"Rider:phone change successfully!";
-    return ;
+    return true;
 }
-void Database::update_rider_level(const QString &account,const QString &newlevel)
+bool Database::update_rider_level(const QString &account,const QString &newlevel)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE rider SET level=:level WHERE account = :account ");
 
     query.bindValue(":account",account);
-    query.bindValue(":phone",newlevel);
+    query.bindValue(":level",newlevel);
 
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:level"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"Rider:level change successfully!";
-    return ;
+    return true;
 }
-void Database::update_rider_image(const QString &account,const QString &imagepath)
+bool Database::update_rider_image(const QString &account,const QString &imagepath)
 {
 
     QFile imagefile(imagepath);
 
     if (!imagefile.open(QIODevice::ReadOnly)) {
         qDebug() << "Failed to open image file!";
-        return;
+        return false;
     }
     QByteArray imagedata = imagefile.readAll();
     imagefile.close();
@@ -181,11 +186,11 @@ void Database::update_rider_image(const QString &account,const QString &imagepat
 
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:image"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"Rider:image change successfully!";
-    return ;
+    return true;
 }
 QVariantMap Database::select_rider_information(const QString &account) {
     QVariantMap riderInfo;
@@ -241,7 +246,7 @@ void Database::addOrders(const QString &seller_id,const QString &customer_id,con
     QSqlQuery query(*m_db);
     query.prepare("INSERT INTO orders (seller_id,customer_id,dish_name,consumption_amount,status,"
                   "remark,dish_amount,order_id)"
-                  "VALUES (:seller_id,:customer_id,:dish_name,:consumption_amount,:status,:remark,:amount,:order_id");
+                  "VALUES (:seller_id,:customer_id,:dish_name,:consumption_amount,:status,:remark,:amount,:order_id)");
     query.bindValue(":seller_id",seller_id);
     query.bindValue(":customer_id",customer_id);
     query.bindValue(":dish_name",dish_name);
@@ -319,6 +324,7 @@ QList<QVariantMap>Database::select_orders_information_customer(const QString &cu
         order_infor["remark"] = query.value("remark").toString();
         order_infor["dish_amount"] = query.value("dish_amount").toInt();
         order_infor["rider_id"] = query.value("rider_id").toString();
+        order_infor["status"]=statu;
         orders_infor.append(order_infor);
 
     }
@@ -361,7 +367,7 @@ QList<QVariantMap>Database::select_orders_information_rider(const QString &rider
 void Database::update_order_statu(const int &order_id,const int &statu)
 {
     QSqlQuery query(*m_db);
-    query.prepare("UPDATE orders SET status=:status WHERE order_id=order_id");
+    query.prepare("UPDATE orders SET status=:status WHERE order_id=:order_id");
     query.bindValue(":order_id",order_id);
     query.bindValue(":status",statu);
     if(!query.exec()){
@@ -372,19 +378,46 @@ void Database::update_order_statu(const int &order_id,const int &statu)
     qDebug()<<"Rider:image change successfully!";
     return ;
 }
-void Database::addDish(const QString& name,const QString &imagepath,const QString &description,
+QList<QVariantMap>Database::select_orders_information_all(void) {
+    QList<QVariantMap> orders_infor;
+    // 创建SQL查询
+    QSqlQuery query(*m_db);
+
+    // 准备查询语句
+    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,rider_id "
+                  "FROM orders ");
+    // 执行查询
+    if (!query.exec()) {
+        qDebug() << "Error querying order information:" << query.lastError();
+        return orders_infor;
+    }
+    // 检查是否有结果
+    while(query.next()) {
+        // 填充 QVariantMap
+        QVariantMap order_infor;
+        order_infor["customer_id"] = query.value("customer_id").toString();
+        order_infor["dish_name"] = query.value("dish_name").toString();
+        order_infor["consumption_amount"] = query.value("consumption_amount").toDouble();
+        order_infor["remark"] = query.value("remark").toString();
+        order_infor["dish_amount"] = query.value("dish_amount").toInt();
+        order_infor["rider_id"] = query.value("rider_id").toString();
+        orders_infor.append(order_infor);
+    }
+    return orders_infor;
+}
+bool Database::addDish(const QString& name,const QString &imagepath,const QString &description,
              const QString &seller_id,const double& price,const int& sales_number,const int &status)
 {
     QFile imagefile(imagepath);
     if (!imagefile.open(QIODevice::ReadOnly)) {
         qDebug() << "Failed to open image file!";
-        return;
+        return false;
     }
     QByteArray image = imagefile.readAll();
     imagefile.close();
     QSqlQuery query(*m_db);
     query.prepare("INSERT INTO dish (seller_id,name,image,description,status,sales_number,price"
-                  "VALUES (:seller_id,:name,:image,:description,:status,:sales_number,:price");
+                  "VALUES (:seller_id,:name,:image,:description,:status,:sales_number,:price)");
     query.bindValue(":seller_id",seller_id);
     query.bindValue(":name",name);
     query.bindValue(":image",image);
@@ -395,11 +428,11 @@ void Database::addDish(const QString& name,const QString &imagepath,const QStrin
     // 执行查询
     if (!query.exec()) {
         qDebug() << "Error inserting data into dish table:" << query.lastError();
-        return;
+        return false;
     }
     // 如果插入成功
     qDebug() << "dish added successfully!";
-    return ;
+    return true ;
 }
 QList<QVariantMap>Database::select_dish_information(const QString &seller_id)
 {
@@ -436,7 +469,7 @@ QList<QVariantMap>Database::select_dish_information(const QString &seller_id)
     return dishes_infor;
 }
 
-void Database::update_dish(const QString & seller_id,const QString &name,const double&price,const int &sales_number)
+bool Database::update_dish(const QString & seller_id,const QString &name,const double&price,const int &sales_number)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE orders SET price=:price,sales_number=:sales_number WHERE seller_id=:seller_id AND name=:name");
@@ -446,13 +479,13 @@ void Database::update_dish(const QString & seller_id,const QString &name,const d
     query.bindValue(":sales_number",sales_number);
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:image"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"Rider:image change successfully!";
-    return ;
+    return true;
 }
-void Database::add_cart(const QString &seller_id,const QString &customer_id,
+bool Database::add_cart(const QString &seller_id,const QString &customer_id,
                         const QString &dish_name,const double price,const int quantity,const QString &note)
 {
     QSqlQuery query(*m_db);
@@ -471,11 +504,11 @@ void Database::add_cart(const QString &seller_id,const QString &customer_id,
     // 执行
     if (!query.exec()) {
         qDebug() << "Error inserting data into cart table:" << query.lastError();
-        return;
+        return false;
     }
     // 如果插入成功
     qDebug() << "cart added successfully!";
-    return;
+    return true;
 }
 
 QList<QVariantMap> Database::select_cart_information(const QString &customer_id) {
@@ -505,7 +538,7 @@ QList<QVariantMap> Database::select_cart_information(const QString &customer_id)
     }
     return cart_infor;
 }
-void Database::delete_cart(const QString &customer_id) {
+bool Database::delete_cart(const QString &customer_id) {
     // 创建SQL查询
     QSqlQuery query(*m_db);
 
@@ -516,15 +549,15 @@ void Database::delete_cart(const QString &customer_id) {
     // 执行查询
     if (!query.exec()) {
         qDebug() << "Error querying cart information:" << query.lastError();
-        return ;
+        return false ;
     }
-    return ;
+    return true;
 }
 
 int Database::select_general_table(const QString &account,const QString &password)
 {
     QSqlQuery query(*m_db);
-    query.prepare("SELECT * FROM general_table WHERE account=':account' AND passward=':passward' ");
+    query.prepare("SELECT * FROM general_table WHERE account=:account AND password=:password ");
     query.bindValue(":account", account);
     query.bindValue(":password", password);
     if (!query.exec()) {
@@ -577,7 +610,22 @@ bool Database::add_general_table(const QString &account,const QString &password,
         return 1;
     }
 }
-
+int Database::select_general_table(const QString &account)//账号存在返回标识符，账号不存在返回-1
+{
+    QSqlQuery query2(*m_db);
+    query2.prepare("SELECT * FROM general_table WHERE account=':account' ");
+    query2.bindValue(":account", account);
+    if (!query2.exec())
+    {
+        qDebug() << "Error inserting data into general_table:" << query2.lastError();
+        return 0;
+    }
+    else if(query2.next())//账号存在
+    {
+        return query2.value("identifier").toInt();//返回标识符
+    }
+    else return -1;//账号不存在返回-1
+}
 void Database::add_customer(const QString &account,const QString &password)
 {
     QSqlQuery query(*m_db);
@@ -629,14 +677,14 @@ QVariantMap Database::select_customer_information(const QString &account) {
     }
     return customerInfo;
 }
-void Database::update_customer_img(const QString &account,const QString &imagepath)
+bool  Database::update_customer_img(const QString &account,const QString &imagepath)
 {
 
     QFile imagefile(imagepath);
 
     if (!imagefile.open(QIODevice::ReadOnly)) {
         qDebug() << "Failed to open image file!";
-        return;
+        return false;
     }
     QByteArray imagedata = imagefile.readAll();
     imagefile.close();
@@ -649,13 +697,13 @@ void Database::update_customer_img(const QString &account,const QString &imagepa
 
     if(!query.exec()){
         qDebug()<<"Error updating data of customer:image"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"customer:image change successfully!";
-    return;
+    return true;
 }
-void Database::update_customer_address(const QString &account,const QString &address)
+bool Database::update_customer_address(const QString &account,const QString &address)
 {
 
     QSqlQuery query(*m_db);
@@ -665,11 +713,11 @@ void Database::update_customer_address(const QString &account,const QString &add
 
     if(!query.exec()){
         qDebug()<<"Error updating data of customer:address"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"customer:address change successfully!";
-    return;
+    return true;
 }
 QString Database::select_customer_address(const QString &account) {
     QString s;
@@ -693,6 +741,21 @@ QString Database::select_customer_address(const QString &account) {
         qDebug() << "No customer found with account:" << account;
     }
     return s;
+}
+bool  Database::update_customer_phone(const QString &account,const QString &phone)
+{
+    QSqlQuery query(*m_db);
+    query.prepare("UPDATE customer SET phone=:phone WHERE account = :account ");
+    query.bindValue(":account",account);
+    query.bindValue(":phone",phone);
+
+    if(!query.exec()){
+        qDebug()<<"Error updating data of customer:phone"<<query.lastError();
+        return false;
+    }
+
+    qDebug()<<"customer:phone change successfully!";
+    return true;
 }
 
 void Database::add_seller(const QString &account,const QString &password)
@@ -816,7 +879,30 @@ QByteArray Database::select_seller_img(const QString &account)
     return imagedata;
 
 }
-void Database::update_seller_shop_name(const QString &account,const QString &shop_name)
+QString Database::get_account_byshop(const QString &shop_name)
+{
+    QString account;
+    // 创建SQL查询
+    QSqlQuery query(*m_db);
+
+    // 准备查询语句
+    query.prepare("SELECT account FROM seller WHERE shop_name = :shop_name");
+    query.bindValue(":shop_name",shop_name);
+    // 执行查询
+    if (!query.exec()) {
+        qDebug() << "Error querying seller information:" << query.lastError();
+        return account;
+    }
+    // 检查是否有结果
+    if (query.next()) {
+        account=query.value("account").toString();
+        return account;
+    } else {
+        qDebug() << "No seller found with shop_name:" << shop_name;
+    }
+    return account;
+}
+bool Database::update_seller_shop_name(const QString &account,const QString &shop_name)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE seller SET shop_name=:shop_name WHERE account = :account ");
@@ -825,13 +911,13 @@ void Database::update_seller_shop_name(const QString &account,const QString &sho
 
     if(!query.exec()){
         qDebug()<<"Error updating data of seller:shop_name"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"seller:shop_name change successfully!";
-    return;
+    return true;
 }
-void Database::update_seller_phone(const QString &account,const QString &phone)
+bool Database::update_seller_phone(const QString &account,const QString &phone)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE seller SET phone=:phone WHERE account = :account ");
@@ -840,20 +926,20 @@ void Database::update_seller_phone(const QString &account,const QString &phone)
 
     if(!query.exec()){
         qDebug()<<"Error updating data of seller:phone"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"seller:phone change successfully!";
-    return;
+    return true;
 }
-void Database::update_seller_img(const QString &account,const QString &imagepath)
+bool Database::update_seller_img(const QString &account,const QString &imagepath)
 {
 
     QFile imagefile(imagepath);
 
     if (!imagefile.open(QIODevice::ReadOnly)) {
         qDebug() << "Failed to open image file!";
-        return;
+        return false;
     }
     QByteArray imagedata = imagefile.readAll();
     imagefile.close();
@@ -866,9 +952,9 @@ void Database::update_seller_img(const QString &account,const QString &imagepath
 
     if(!query.exec()){
         qDebug()<<"Error updating data of seller:image"<<query.lastError();
-        return ;
+        return false;
     }
 
     qDebug()<<"seller:image change successfully!";
-    return ;
+    return true;
 }

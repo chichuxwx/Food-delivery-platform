@@ -1,8 +1,8 @@
 #include "good_mange.h"
 #include "ui_good_mange.h"
 #include "../head.h"
-good_mange::good_mange(QWidget *parent)
-    : QWidget(parent)
+good_mange::good_mange(QString account,QWidget *parent)
+    : account(account),QWidget(parent)
     , ui(new Ui::good_mange)
 {
     ui->setupUi(this);
@@ -16,7 +16,7 @@ good_mange::~good_mange()
 
 void good_mange::on_pushButton_back_clicked()
 {
-    page_workbench *page_WorkBench=new page_workbench;
+    page_workbench *page_WorkBench=new page_workbench(account);
     page_WorkBench->show();
     this->close();
 
@@ -26,7 +26,7 @@ void good_mange::on_pushButton_back_clicked()
 
 void good_mange::on_pushButton_add_good_clicked()
 {
-    dishchange *dishChange=new dishchange;
+    dishchange *dishChange=new dishchange(account);
     dishChange->show();
     this->close();
 }

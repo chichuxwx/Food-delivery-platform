@@ -2,6 +2,8 @@
 #define STOREPAGE_H
 
 #include <QWidget>
+#include <QVariantMap>
+
 
 namespace Ui {
 class Storepage;
@@ -12,8 +14,9 @@ class Storepage : public QWidget
     Q_OBJECT
 
 public:
-    explicit Storepage(QWidget *parent = nullptr);
+    explicit Storepage(QString account,QString shop_name = nullptr,QWidget *parent = nullptr);
     ~Storepage();
+    void setSellerInfo(const QVariantMap &sellerInfo);
 
 private slots:
     void on_pushButton_2_clicked();
@@ -28,6 +31,10 @@ private slots:
 
 private:
     Ui::Storepage *ui;
+    QVariantMap m_sellerInfo;
+    void displaySellerInfo();
+    QString account;//修改
+    QString shop_name;//修改
 };
 
 #endif // STOREPAGE_H

@@ -13,7 +13,7 @@ class Con_reviews : public QWidget
     Q_OBJECT
 
 public:
-    explicit Con_reviews(QWidget *parent = nullptr);
+    explicit Con_reviews(QString account,QWidget *parent = nullptr);
     ~Con_reviews();
 
 private slots:
@@ -23,6 +23,7 @@ private slots:
 
 private:
     Ui::Con_reviews *ui;
+    QString account;
     StarRatingWidget *starWidgetTop;  // 上排星级控件
     StarRatingWidget *starWidgetBottom;  // 下排星级控件
 };

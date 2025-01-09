@@ -2,7 +2,7 @@
 #define SHANGJIA3_H
 
 #include <QWidget>
-
+#include "../all.h"
 namespace Ui {
 class shangjia3;
 }
@@ -12,7 +12,7 @@ class shangjia3 : public QWidget
     Q_OBJECT
 
 public:
-    explicit shangjia3(QWidget *parent = nullptr);
+    explicit shangjia3(QString account,QWidget *parent = nullptr);
     ~shangjia3();
 
 private slots:
@@ -30,6 +30,8 @@ private slots:
 
 private:
     Ui::shangjia3 *ui;
+    QString account;
+    all al;
 };
 
 #endif // SHANGJIA3_H

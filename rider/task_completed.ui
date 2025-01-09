@@ -166,6 +166,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
@@ -187,11 +203,32 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>40</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #6384e9; /* 默认背景色，蓝色 */
+    border: 2px solid #6384e9; /* 边框颜色与背景色相同 */
+    border-radius: 6px; /* 圆角 */
+    color: #ffffff; /* 文本颜色，白色 */
+    font-size: 12px;
+}
+
+QPushButton:hover {
+    background-color: #5076c6; /* 悬浮时背景色变深 */
+    border: 2px solid #5076c6; /* 悬浮时边框颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #3a5d8f; /* 按下时背景色变得更深 */
+    border-color: #3a5d8f; /* 按下时边框颜色变得更深 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+   </property>
    <property name="text">
     <string>查看订单评价</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -221,6 +258,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>40</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
        <string>接单</string>
       </property>
@@ -245,6 +303,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <width>175</width>
         <height>40</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #6384e9; /* 默认背景色，蓝色 */
+    border: 2px solid #6384e9; /* 边框颜色与背景色相同 */
+    border-radius: 20px; /* 圆角 */
+    color: #ffffff; /* 文本颜色，白色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: #5076c6; /* 悬浮时背景色变深 */
+    border: 2px solid #5076c6; /* 悬浮时边框颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #3a5d8f; /* 按下时背景色变得更深 */
+    border-color: #3a5d8f; /* 按下时边框颜色变得更深 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
       </property>
       <property name="text">
        <string>任务信息</string>
@@ -271,6 +350,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <height>40</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
        <string>个人信息</string>
       </property>
@@ -278,6 +378,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </item>
    </layout>
   </widget>
+  <zorder>label_9</zorder>
+  <zorder>label_7</zorder>
+  <zorder>label_8</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>pushButton_5</zorder>
+  <zorder>layoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>

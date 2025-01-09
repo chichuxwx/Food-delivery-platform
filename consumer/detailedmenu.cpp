@@ -1,9 +1,10 @@
 #include "detailedmenu.h"
 #include "ui_detailedmenu.h"
 #include"../head.h"
+#include<QVariantMap>
 
-DetailedMenu::DetailedMenu(QWidget *parent)
-    : QWidget(parent)
+DetailedMenu::DetailedMenu(QString account,QString shop_name,QString dish_name,QWidget *parent)
+    : account(account),shop_name(shop_name),dish_name(dish_name),QWidget(parent)
     , ui(new Ui::DetailedMenu)
 {
     ui->setupUi(this);
@@ -17,14 +18,14 @@ DetailedMenu::~DetailedMenu()
 
 void DetailedMenu::on_pushButton_2_clicked()
 {
-    Storepage *store=new Storepage();
+    Storepage *store=new Storepage(account,shop_name);
     store->show();
     this->close();
 }
 
 void DetailedMenu::changebuttonstatues(){
-    bool checkBoxReady=(ui->checkBox->isChecked()||ui->checkBox_2->isChecked()) &&
-                  (ui->checkBox_3->isChecked()||ui->checkBox_4->isChecked()||ui->checkBox_5->isChecked());
+    bool checkBoxReady=ui->checkBox->isChecked()||ui->checkBox_2->isChecked() &&
+                  ui->checkBox_3->isChecked()||ui->checkBox_4->isChecked()||ui->checkBox_5->isChecked();
     ui->pushButton->setEnabled(checkBoxReady);
 }
 
@@ -76,17 +77,50 @@ void DetailedMenu::on_checkBox_5_stateChanged(int arg1)
 }
 
 
-void DetailedMenu::on_pushButton_clicked()
+void DetailedMenu::on_pushButton_clicked()//修改
 {
-    Storepage *store=new Storepage();
+    QVariantMap order_infor;
+    QString account_2=database.get_account_byshop(shop_name);
+    order_infor["seller_id"]=account_2;
+    order_infor["customer_id"]=account;
+    order_infor["dish_name"]=dish_name;
+    QList<QVariantMap> list=sl.search_selller_dish_information(account_2);
+    QVariantMap map;
+    for(auto dish:list)
+    {
+        if(dish["dish_name"]==dish_name)
+        {
+            map=dish;
+        }
+    }
 
-    QJsonObject storeCommand;
-    storeCommand["command"] = "store";
-    QJsonDocument loginDoc(storeCommand);
-    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(Data);
+    order_infor["price"]=map["price"].toDouble();
+    if(ui->checkBox->isChecked())
+    {
+        order_infor["quantity"]=1;
+        QString total=QString("总计价格:%1").arg(map["price"].toInt());
+        ui->label_8->setText(total);
+    }
 
-    store->show();
-    this->close();
+    else
+        {
+        order_infor["quantity"]=2;
+        QString total=QString("总计价格:%1").arg(2*map["price"].toInt());
+        ui->label_8->setText(total);
+    }
+
+    if(ui->checkBox_4->isChecked())
+        order_infor["note"]="微辣";
+    else if(ui->checkBox_3->isChecked())
+        order_infor["note"]="免辣";
+    else
+        order_infor["note"]="特辣";
+    Cus.add_cart(order_infor);
+
+
+
+    return ;
+
+
 }
 

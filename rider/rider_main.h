@@ -4,7 +4,7 @@
 #include <QWidget>
 #include "timeworker.h"
 #include <QThread>
-
+#include "../head.h"
 namespace Ui {
 class Rider_main;
 }
@@ -14,7 +14,7 @@ class Rider_main : public QWidget
     Q_OBJECT
 
 public:
-    explicit Rider_main(QWidget *parent = nullptr);
+    explicit Rider_main(QString account,QWidget *parent = nullptr);
     ~Rider_main();
 
 private slots:
@@ -28,7 +28,9 @@ private:
     // 时间线程相关
     QThread *timeThread;
     TimeWorker *timeWorker;
-
+    QString account ;//修改
+    Database db;
+    customer cu;
     // 计算时间差的函数
     QString leftTime(const QString &currentTime, const QString &targetTime = "15:00:00");
 

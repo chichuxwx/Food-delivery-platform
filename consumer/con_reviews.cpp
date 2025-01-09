@@ -3,9 +3,10 @@
 #include "../StarRatingWidget.h"
 #include <QVBoxLayout>
 #include"../head.h"
+#include<QMessageBox>
 
-Con_reviews::Con_reviews(QWidget *parent)
-    : QWidget(parent)
+Con_reviews::Con_reviews(QString account,QWidget *parent)
+    :account(account), QWidget(parent)
     , ui(new Ui::Con_reviews)
 {
     ui->setupUi(this);
@@ -46,32 +47,15 @@ Con_reviews::~Con_reviews()
 
 void Con_reviews::on_pushButton_2_clicked()
 {
-    OrderStatus *order = new OrderStatus();
+    OrderStatus *order = new OrderStatus(account);
     order->show();
     this->close();
 }
 
 void Con_reviews::on_pushButton_8_clicked()
 {
-    OrderStatus *order=new OrderStatus();
-
-    QJsonObject storeCommand;
-    storeCommand["command"] = "store";
-    QJsonDocument loginDoc(storeCommand);
-    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(Data);
-
-    int star_rider=starWidgetTop->getRating();
-    int star_business=starWidgetBottom->getRating();
-    QString comment = ui->textEdit->toPlainText();
-    QJsonObject credentials;
-    credentials["骑手评分"]=star_rider;
-    credentials["商家评分"]=star_business;
-    credentials["评价"] = comment;
-    QJsonDocument credentialsDoc(credentials);
-    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(credentialsData);
-
+    QMessageBox::information(this,"成功","提交成功");//修改
+    OrderStatus *order=new OrderStatus(account);
     order->show();
     this->close();
 }

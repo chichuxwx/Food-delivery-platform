@@ -1,0 +1,29 @@
+{
+	"BUILD_DIR" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Qtwork/1229",
+	"CMAKE_SOURCE_DIR" : "E:/Qtwork/1229",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/include",
+	"INPUTS" : 
+	[
+		"E:/Qtwork/1229/image/bg_2.png",
+		"E:/Qtwork/1229/image/lt_bzbj.jpg",
+		"E:/Qtwork/1229/image/lt_cml.jpg",
+		"E:/Qtwork/1229/image/chick.gif",
+		"E:/Qtwork/1229/image/bg.png"
+	],
+	"LOCK_FILE" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_autogen.dir/AutoRcc_Image_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "Image" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_Image.cpp",
+	"RCC_EXECUTABLE" : "E:/Qt/6.7.3/msvc2019_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/CMakeFiles/1229_autogen.dir/AutoRcc_Image_EWIEGA46WW_Used.txt",
+	"SOURCE" : "E:/Qtwork/1229/Image.qrc",
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

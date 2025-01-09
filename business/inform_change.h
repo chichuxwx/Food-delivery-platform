@@ -12,7 +12,7 @@ class inform_change : public QWidget
     Q_OBJECT
 
 public:
-    explicit inform_change(QWidget *parent = nullptr);
+    explicit inform_change(QString account,QWidget *parent = nullptr);
     ~inform_change();
 
 private slots:
@@ -24,6 +24,7 @@ private slots:
 
 private:
     Ui::inform_change *ui;
+    QString account;
 };
 
 #endif // INFORM_CHANGE_H

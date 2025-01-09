@@ -12,7 +12,7 @@ class task_completed : public QWidget
     Q_OBJECT
 
 public:
-    explicit task_completed(QWidget *parent = nullptr);
+    explicit task_completed(QString account,QWidget *parent = nullptr);//修改
     ~task_completed();
 
 private slots:
@@ -26,6 +26,7 @@ private slots:
 
 private:
     Ui::task_completed *ui;
+    QString account ;//修改
 };
 
 #endif // TASK_COMPLETED_H

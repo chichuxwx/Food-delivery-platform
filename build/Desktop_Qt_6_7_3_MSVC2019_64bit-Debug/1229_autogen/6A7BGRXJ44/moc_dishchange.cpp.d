@@ -1,4 +1,6 @@
 E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/6A7BGRXJ44/moc_dishchange.cpp: E:/Qtwork/1229/business/dishchange.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QDebug \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QString \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20functional.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20memory.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/q20type_traits.h \
@@ -141,9 +143,20 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/6A7BGRXJ
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qtransform.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/QSqlDatabase \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/QSqlError \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/QSqlQuery \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qsqldatabase.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qsqlerror.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qsqlquery.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsql-config.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsqlexports.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsqlglobal.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QWidget \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qsizepolicy.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
-  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h
+  E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/qwidget.h \
+  E:/Qtwork/1229/Seller.h \
+  E:/Qtwork/1229/database/database.h

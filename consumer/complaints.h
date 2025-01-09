@@ -12,7 +12,7 @@ class complaints : public QWidget
     Q_OBJECT
 
 public:
-    explicit complaints(QWidget *parent = nullptr);
+    explicit complaints(QString account,QWidget *parent = nullptr);
     ~complaints();
 
 private slots:
@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::complaints *ui;
+    QString account;
 };
 
 #endif // COMPLAINTS_H

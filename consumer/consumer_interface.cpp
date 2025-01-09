@@ -1,11 +1,14 @@
 #include "consumer_interface.h"
 #include "ui_consumer_interface.h"
 #include"../head.h"
-Consumer_interface::Consumer_interface(QWidget *parent) :
-    QWidget(parent),
+#include "sellerwidget.h"
+
+Consumer_interface::Consumer_interface(QString account,QWidget *parent) :
+    account(account),QWidget(parent),
     ui(new Ui::Consumer_interface)
 {
     ui->setupUi(this);
+    displaySellers();
     this->setFixedSize(600, 800);
 }
 
@@ -21,49 +24,81 @@ void Consumer_interface::on_pushButton_clicked()
     this->close();
 }
 
-
-void Consumer_interface::on_pushButton_6_clicked()
+void Consumer_interface::displaySellers()
 {
-    Storepage *store=new Storepage();
-    //这里逻辑待定 商家编号怎么获取
-    QJsonObject storeCommand;
-    storeCommand["command"] = "read_store";
-    QJsonDocument loginDoc(storeCommand);
-    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(Data);
-    QJsonObject credentials;
-    //credentials["商家编号"] = code; //之后删
-    QJsonDocument credentialsDoc(credentials);
-    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(credentialsData);
-    store->show();
-    this->close();
+    Database db;
+    QList<QVariantMap> sellers = db.select_seller_information();
+
+    QWidget *container = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout(container);
+    layout->setAlignment(Qt::AlignTop);
+
+    for (const QVariantMap &seller : sellers) {
+        SellerWidget *sellerWidget = new SellerWidget(seller, container);
+        layout->addWidget(sellerWidget);
+
+        // 连接 SellerWidget 的 clicked 信号到 Consumer_interface 的槽函数
+        connect(sellerWidget, &SellerWidget::clicked, this, &Consumer_interface::onSellerClicked);
+    }
+
+    layout->addStretch(); // 填充剩余空间
+
+    // 先设置可调整大小，然后设置内容部件
+    ui->scrollArea->setWidgetResizable(true);
+    ui->scrollArea->setWidget(container);
+    ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 }
 
 
-void Consumer_interface::on_pushButton_5_clicked()
+void Consumer_interface::onSellerClicked(const QVariantMap &sellerInfo)
 {
-    Storepage *store=new Storepage();
-    //这里逻辑待定 商家编号怎么获取
-    QJsonObject storeCommand;
-    storeCommand["command"] = "read_store";
-    QJsonDocument loginDoc(storeCommand);
-    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(Data);
-    QJsonObject credentials;
-    //credentials["商家编号"] = code; //之后删
-    QJsonDocument credentialsDoc(credentials);
-    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
-    ServerConnectionManager::instance().sendData(credentialsData);
-
+    Storepage *store=new Storepage(account);
+    // 传递商家信息并显示 StorePage
+    store->setSellerInfo(sellerInfo);
     store->show();
-    this->close();
 }
+// void Consumer_interface::on_pushButton_6_clicked()
+// {
+//     Storepage *store=new Storepage();
+//     //这里逻辑待定 商家编号怎么获取
+//     QJsonObject storeCommand;
+//     storeCommand["command"] = "read_store";
+//     QJsonDocument loginDoc(storeCommand);
+//     QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+//     ServerConnectionManager::instance().sendData(Data);
+//     QJsonObject credentials;
+//     //credentials["商家编号"] = code; //之后删
+//     QJsonDocument credentialsDoc(credentials);
+//     QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+//     ServerConnectionManager::instance().sendData(credentialsData);
+//     store->show();
+//     this->close();
+// }
+
+
+// void Consumer_interface::on_pushButton_5_clicked()
+// {
+//     Storepage *store=new Storepage();
+//     //这里逻辑待定 商家编号怎么获取
+//     QJsonObject storeCommand;
+//     storeCommand["command"] = "read_store";
+//     QJsonDocument loginDoc(storeCommand);
+//     QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+//     ServerConnectionManager::instance().sendData(Data);
+//     QJsonObject credentials;
+//     //credentials["商家编号"] = code; //之后删
+//     QJsonDocument credentialsDoc(credentials);
+//     QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+//     ServerConnectionManager::instance().sendData(credentialsData);
+
+//     store->show();
+//     this->close();
+// }
 
 
 void Consumer_interface::on_pushButton_3_clicked()
 {
-    OrderStatus *orderstatus=new OrderStatus();
+    OrderStatus *orderstatus=new OrderStatus(account);
 
     QJsonObject storeCommand;
     storeCommand["command"] = "read_consumer";
@@ -84,7 +119,7 @@ void Consumer_interface::on_pushButton_3_clicked()
 
 void Consumer_interface::on_pushButton_4_clicked()
 {
-    Consumer_Information *coninfo=new Consumer_Information();
+    Consumer_Information *coninfo=new Consumer_Information(account);
 
     QJsonObject storeCommand;
     storeCommand["command"] = "read_consumer";

@@ -28,28 +28,27 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>60</width>
-     <height>20</height>
+     <x>0</x>
+     <y>0</y>
+     <width>100</width>
+     <height>80</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>60</width>
-     <height>20</height>
+     <width>100</width>
+     <height>80</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>60</width>
-     <height>20</height>
+     <width>100</width>
+     <height>80</height>
     </size>
    </property>
    <property name="font">
     <font>
-     <family>Microsoft YaHei</family>
-     <pointsize>9</pointsize>
+     <pointsize>20</pointsize>
     </font>
    </property>
    <property name="text">
@@ -59,22 +58,22 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>225</x>
+     <x>0</x>
      <y>100</y>
-     <width>150</width>
-     <height>40</height>
+     <width>600</width>
+     <height>100</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>150</width>
-     <height>40</height>
+     <width>600</width>
+     <height>100</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>150</width>
-     <height>40</height>
+     <width>600</width>
+     <height>100</height>
     </size>
    </property>
    <property name="font">

@@ -2,6 +2,7 @@
 #define INFORM_H
 
 #include <QWidget>
+#include "../Seller.h"
 
 namespace Ui {
 class inform;
@@ -12,7 +13,7 @@ class inform : public QWidget
     Q_OBJECT
 
 public:
-    explicit inform(QWidget *parent = nullptr);
+    explicit inform(QString account,QWidget *parent = nullptr);
     ~inform();
 
 private slots:
@@ -26,6 +27,8 @@ private slots:
 
 private:
     Ui::inform *ui;
+    QString account;
+    seller sl;
 };
 
 #endif // INFORM_H

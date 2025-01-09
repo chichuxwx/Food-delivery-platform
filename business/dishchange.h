@@ -2,7 +2,7 @@
 #define DISHCHANGE_H
 
 #include <QWidget>
-
+#include "../Seller.h"
 namespace Ui {
 class dishchange;
 }
@@ -12,7 +12,7 @@ class dishchange : public QWidget
     Q_OBJECT
 
 public:
-    explicit dishchange(QWidget *parent = nullptr);
+    explicit dishchange(QString account,QWidget *parent = nullptr);
     ~dishchange();
 
 private slots:
@@ -28,6 +28,8 @@ private slots:
 
 private:
     Ui::dishchange *ui;
+    QString account;
+    seller sl;
 };
 
 #endif // DISHCHANGE_H

@@ -2,7 +2,6 @@
 #define LOGIN_H
 
 #include <QMainWindow>
-
 namespace Ui {
 class login;
 }
@@ -31,6 +30,7 @@ private slots:
 
 private:
     Ui::login *ui;
+    QString account;
 };
 
 #endif // LOGIN_H

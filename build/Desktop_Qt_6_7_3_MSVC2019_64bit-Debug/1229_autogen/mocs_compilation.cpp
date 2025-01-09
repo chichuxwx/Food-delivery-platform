@@ -25,6 +25,7 @@
 #include "VNFHWQKLGQ/moc_detailedmenu.cpp"
 #include "VNFHWQKLGQ/moc_histroy_record.cpp"
 #include "VNFHWQKLGQ/moc_orderstatus.cpp"
+#include "VNFHWQKLGQ/moc_sellerwidget.cpp"
 #include "VNFHWQKLGQ/moc_shoppingcart.cpp"
 #include "VNFHWQKLGQ/moc_storepage.cpp"
 #include "EWIEGA46WW/moc_login.cpp"

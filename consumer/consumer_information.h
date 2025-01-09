@@ -2,6 +2,7 @@
 #define CONSUMER_INFORMATION_H
 
 #include <QWidget>
+#include "../head.h"
 
 namespace Ui {
 class Consumer_Information;
@@ -12,7 +13,7 @@ class Consumer_Information : public QWidget
     Q_OBJECT
 
 public:
-    explicit Consumer_Information(QWidget *parent = nullptr);
+    explicit Consumer_Information(QString account,QWidget *parent = nullptr);
     ~Consumer_Information();
 
 private slots:
@@ -42,8 +43,10 @@ private slots:
 
     void on_pushButton_3_clicked();
 
-private:
+private://修改
     Ui::Consumer_Information *ui;
+    customer Cus;
+    QString account;
 };
 
 #endif // CONSUMER_INFORMATION_H

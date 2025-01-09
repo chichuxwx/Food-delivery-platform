@@ -12,7 +12,7 @@ class good_act : public QWidget
     Q_OBJECT
 
 public:
-    explicit good_act(QWidget *parent = nullptr);
+    explicit good_act(QString account,QWidget *parent = nullptr);
     ~good_act();
 
 private slots:
@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::good_act *ui;
+    QString account;
 };
 
 #endif // GOOD_ACT_H

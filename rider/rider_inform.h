@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+//修改
+#include "../rider.h"
+
+
 namespace Ui {
 class rider_inform;
 }
@@ -12,7 +16,7 @@ class rider_inform : public QWidget
     Q_OBJECT
 
 public:
-    explicit rider_inform(QWidget *parent = nullptr);
+    explicit rider_inform(QString account,QWidget *parent = nullptr);//修改
     ~rider_inform();
 
 private slots:
@@ -26,6 +30,9 @@ private slots:
 
 private:
     Ui::rider_inform *ui;
+
+    //修改
+    QString account ;
 };
 
 #endif // RIDER_INFORM_H

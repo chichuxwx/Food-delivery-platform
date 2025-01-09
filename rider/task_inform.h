@@ -12,7 +12,7 @@ class task_inform : public QWidget
     Q_OBJECT
 
 public:
-    explicit task_inform(QWidget *parent = nullptr);
+    explicit task_inform(QString account,QWidget *parent = nullptr);//修改
     ~task_inform();
 
 private slots:
@@ -26,6 +26,7 @@ private slots:
 
 private:
     Ui::task_inform *ui;
+    QString account;//修改
 };
 
 #endif // TASK_INFORM_H

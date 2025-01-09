@@ -22,6 +22,7 @@ QT_BEGIN_NAMESPACE
 class Ui_order_review
 {
 public:
+    QLabel *label_6;
     QPushButton *pushButton;
     QLabel *label;
     QGroupBox *groupBox;
@@ -42,23 +43,47 @@ public:
             order_review->setObjectName("order_review");
         order_review->resize(600, 800);
         order_review->setMinimumSize(QSize(600, 800));
+        label_6 = new QLabel(order_review);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(0, 0, 600, 800));
+        label_6->setStyleSheet(QString::fromUtf8("background-image: url(:/image/bg_2.png);"));
         pushButton = new QPushButton(order_review);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(10, 10, 60, 20));
         pushButton->setMinimumSize(QSize(60, 20));
         pushButton->setMaximumSize(QSize(60, 20));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\344\275\277\347\224\250 #fad37f */\n"
+"    border: 2px solid rgba(99, 132, 233, 0.8); /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 9px; /* \345\234\206\350\247\222 */\n"
+"    color: #000000; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\351\273\221\350\211\262 */\n"
+"    font-size: 9px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgba(99, 132, 233, 0.8); /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
+"    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
+"    border-color: #4"
+                        "682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
         label = new QLabel(order_review);
         label->setObjectName("label");
-        label->setGeometry(QRect(245, 100, 110, 60));
-        label->setMinimumSize(QSize(110, 60));
-        label->setMaximumSize(QSize(110, 60));
+        label->setGeometry(QRect(245, 60, 110, 50));
+        label->setMinimumSize(QSize(110, 50));
+        label->setMaximumSize(QSize(110, 50));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);
         label->setFont(font);
         groupBox = new QGroupBox(order_review);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(20, 150, 551, 591));
+        groupBox->setGeometry(QRect(20, 130, 551, 591));
         groupBox_2 = new QGroupBox(groupBox);
         groupBox_2->setObjectName("groupBox_2");
         groupBox_2->setGeometry(QRect(30, 30, 491, 181));
@@ -98,8 +123,9 @@ public:
     void retranslateUi(QWidget *order_review)
     {
         order_review->setWindowTitle(QCoreApplication::translate("order_review", "Form", nullptr));
+        label_6->setText(QString());
         pushButton->setText(QCoreApplication::translate("order_review", "\351\200\200\345\207\272", nullptr));
-        label->setText(QCoreApplication::translate("order_review", "<html><head/><body><p align=\"center\">\350\257\204\344\273\267\346\237\245\347\234\213</p></body></html>", nullptr));
+        label->setText(QCoreApplication::translate("order_review", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">\350\257\204\344\273\267\346\237\245\347\234\213</span></p></body></html>", nullptr));
         groupBox->setTitle(QCoreApplication::translate("order_review", "\350\256\242\345\215\225\350\257\204\344\273\267", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("order_review", "\350\256\242\345\215\2251", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("order_review", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
