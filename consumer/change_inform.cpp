@@ -24,6 +24,11 @@ change_inform::~change_inform()
 void change_inform::on_pushButton_clicked()
 {
     Consumer_Information *ConInfo=new Consumer_Information(account);
+    QJsonObject storeCommand;
+    storeCommand["command"] = "change";
+    QJsonDocument loginDoc(storeCommand);
+    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(Data);
     ConInfo->show();
     this->close();
 }

@@ -1,11 +1,12 @@
 #include "rider_main.h"
 #include "ui_rider_main.h"
 #include "rider_inform.h"       // 确保这些类已定义
-#include "task_inform.h"
 #include "../head.h"
-
+#include "../all.h"
+#include "task_inform.h"
+#include "orderwidget.h"
 Rider_main::Rider_main(QString account,QWidget *parent)
-    : QWidget(parent),account(account)
+    : account(account),QWidget(parent)
     , ui(new Ui::Rider_main)
     , timeThread(new QThread(this))          // 初始化线程
     , timeWorker(new TimeWorker())           // 初始化工作对象
@@ -27,40 +28,70 @@ Rider_main::Rider_main(QString account,QWidget *parent)
     // 启动线程
     timeThread->start();
         // 获取订单信息
-    QList<QVariantMap> orders = db.select_orders_information_rider(account, 1);
+    Database db;
+    QList<QVariantMap> orders = db.select_orders_information_rider(2);
+    QPalette pa = ui->scrollArea->palette();
+    pa.setBrush(QPalette::Window, Qt::transparent);
+    ui->scrollArea->setPalette(pa);
+
+    QWidget *container = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout(container);
+    layout->setAlignment(Qt::AlignTop);
+
+    for (const QVariantMap &order : orders) {
+        OrderWidget *orderWidget = new OrderWidget(order, container);
+        layout->addWidget(orderWidget);
+        connect(orderWidget, &OrderWidget::clicked, this, &Rider_main::onOrderClicked);
+    }
+    layout->addStretch(); // 填充剩余空间
+
+    // 先设置可调整大小，然后设置内容部件
+    ui->scrollArea->setWidgetResizable(true);
+    ui->scrollArea->setWidget(container);
+    ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    // // 从第一个订单中获取用户 ID
+    // QVariantMap firstOrder = orders[0];
+    // QString customerId = firstOrder["customer_id"].toString();
+
+    // // 设置用户 ID 到 label28
+    // ui->label_28->setText(customerId);
+
+    // QVariantMap customermap=cu.get_customer_infor(customerId);
+    // QString customerPhone = customermap["phone"].toString();
+
+    // // 设置联系电话到 label30
+    // ui->label_30->setText(customerPhone);
+    // ui->label_32->setText("10公里");
+
+    // //订单2
+    // QVariantMap secondOrder = orders[1];
+    // customerId = secondOrder["customer_id"].toString();
+
+    // // 设置用户 ID 到 label20
+    // ui->label_20->setText(customerId);
+
+    // // 获取用户信息
+    // customermap = cu.get_customer_infor(customerId);
+    // customerPhone = customermap["phone"].toString();
+
+    // // 设置联系电话到 label22
+    // ui->label_22->setText(customerPhone);
+
+    // // 设置公里数到 label24
+    // ui->label_24->setText("10公里"); // 示例公里数
+    };
 
 
-    // 从第一个订单中获取用户 ID
-    QVariantMap firstOrder = orders[0];
-    QString customerId = firstOrder["customer_id"].toString();
+    void Rider_main::onOrderClicked(const QVariantMap &orderInfo){
+        Database db;
+        int orderId = orderInfo["order_id"].toInt();
+        db.update_order_statu(orderId, 3, account);
+        this->hide();
+        task_inform* taskinform = new task_inform(account);
+        taskinform->show();
+    }
 
-    // 设置用户 ID 到 label28
-    ui->label_28->setText(customerId);
-
-    QVariantMap customermap=cu.get_customer_infor(customerId);
-    QString customerPhone = customermap["phone"].toString();
-
-    // 设置联系电话到 label30
-    ui->label_30->setText(customerPhone);
-    ui->label_32->setText("10公里");
-
-    //订单2
-    QVariantMap secondOrder = orders[1];
-    customerId = secondOrder["customer_id"].toString();
-
-    // 设置用户 ID 到 label20
-    ui->label_20->setText(customerId);
-
-    // 获取用户信息
-    customermap = cu.get_customer_infor(customerId);
-    customerPhone = customermap["phone"].toString();
-
-    // 设置联系电话到 label22
-    ui->label_22->setText(customerPhone);
-
-    // 设置公里数到 label24
-    ui->label_24->setText("10公里"); // 示例公里数
-}
 
 Rider_main::~Rider_main()
 {
@@ -102,7 +133,7 @@ void Rider_main::on_pushButton_clicked()
 
 void Rider_main::updateTimeLabel(const QString &time)
 {
-    QString remainingTime = leftTime(time, "16:00:00"); // 计算剩余时间
+    QString remainingTime = leftTime(time, "10:30:00"); // 计算剩余时间
     ui->timelabel->setText( remainingTime);
 }
 

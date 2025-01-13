@@ -71,10 +71,6 @@ order_review::order_review(QString account,QWidget *parent)//修改
         }
     }
 
-    ui->textBrowser->setText(allOrdersText);
-    ui->textBrowser_2->setText(reviewText);
-    ui->textBrowser_3->setText(secondOrderText);
-    ui->textBrowser_4->setText(secondReviewText);
 }
 
 order_review::~order_review()

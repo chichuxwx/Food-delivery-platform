@@ -10,12 +10,14 @@
 #define UI_DETAILEDMENU_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,26 +31,28 @@ public:
     QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout;
     QLabel *label_8;
-    QLabel *label;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QLabel *label_5;
-    QLabel *label_6;
-    QLabel *label_2;
-    QCheckBox *checkBox;
     QCheckBox *checkBox_2;
+    QLabel *label_5;
     QLabel *label_7;
     QCheckBox *checkBox_4;
+    QCheckBox *checkBox;
+    QLabel *label_6;
     QCheckBox *checkBox_3;
     QCheckBox *checkBox_5;
     QLabel *label_4;
     QLabel *label_9;
+    QSpinBox *spinBox;
 
     void setupUi(QWidget *DetailedMenu)
     {
         if (DetailedMenu->objectName().isEmpty())
             DetailedMenu->setObjectName("DetailedMenu");
         DetailedMenu->resize(600, 800);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/lt_cml.jpg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        DetailedMenu->setWindowIcon(icon);
         label_3 = new QLabel(DetailedMenu);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(200, 60, 200, 50));
@@ -67,14 +71,15 @@ public:
 "}\n"
 "\n"
 "QPushButton:hover {\n"
+"	color: #ffffff;\n"
 "    background-color: rgba(99, 132, 233, 0.8); /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
 "    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
-"    border-color: #4"
-                        "682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+""
+                        "    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
 "    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
 "}\n"
 "\n"
@@ -98,14 +103,15 @@ public:
 "}\n"
 "\n"
 "QPushButton:hover {\n"
+"	color: #ffffff;\n"
 "    background-color: rgba(99, 132, 233, 0.8); \n"
 "    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
-"    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350"
-                        "\211\262 */\n"
+"    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241"
+                        "\206\351\242\234\350\211\262 */\n"
 "    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
 "}\n"
 ""));
@@ -127,17 +133,17 @@ public:
 
         horizontalLayout->addWidget(label_8);
 
-        label = new QLabel(layoutWidget_2);
-        label->setObjectName("label");
-
-        horizontalLayout->addWidget(label);
-
         layoutWidget = new QWidget(DetailedMenu);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(150, 220, 314, 162));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        checkBox_2 = new QCheckBox(layoutWidget);
+        checkBox_2->setObjectName("checkBox_2");
+
+        gridLayout->addWidget(checkBox_2, 3, 2, 1, 1);
+
         label_5 = new QLabel(layoutWidget);
         label_5->setObjectName("label_5");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
@@ -149,28 +155,6 @@ public:
         label_5->setMaximumSize(QSize(16777215, 40));
 
         gridLayout->addWidget(label_5, 0, 0, 2, 3);
-
-        label_6 = new QLabel(layoutWidget);
-        label_6->setObjectName("label_6");
-        label_6->setMinimumSize(QSize(200, 40));
-        label_6->setMaximumSize(QSize(16777215, 40));
-
-        gridLayout->addWidget(label_6, 1, 1, 2, 3);
-
-        label_2 = new QLabel(layoutWidget);
-        label_2->setObjectName("label_2");
-
-        gridLayout->addWidget(label_2, 2, 4, 1, 1);
-
-        checkBox = new QCheckBox(layoutWidget);
-        checkBox->setObjectName("checkBox");
-
-        gridLayout->addWidget(checkBox, 3, 1, 1, 1);
-
-        checkBox_2 = new QCheckBox(layoutWidget);
-        checkBox_2->setObjectName("checkBox_2");
-
-        gridLayout->addWidget(checkBox_2, 3, 2, 1, 1);
 
         label_7 = new QLabel(layoutWidget);
         label_7->setObjectName("label_7");
@@ -184,6 +168,18 @@ public:
 
         gridLayout->addWidget(checkBox_4, 5, 1, 1, 1);
 
+        checkBox = new QCheckBox(layoutWidget);
+        checkBox->setObjectName("checkBox");
+
+        gridLayout->addWidget(checkBox, 3, 1, 1, 1);
+
+        label_6 = new QLabel(layoutWidget);
+        label_6->setObjectName("label_6");
+        label_6->setMinimumSize(QSize(200, 40));
+        label_6->setMaximumSize(QSize(16777215, 40));
+
+        gridLayout->addWidget(label_6, 1, 1, 2, 3);
+
         checkBox_3 = new QCheckBox(layoutWidget);
         checkBox_3->setObjectName("checkBox_3");
 
@@ -196,12 +192,15 @@ public:
 
         label_4 = new QLabel(DetailedMenu);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(130, 160, 200, 60));
+        label_4->setGeometry(QRect(60, 130, 481, 60));
         label_4->setMinimumSize(QSize(200, 60));
         label_9 = new QLabel(DetailedMenu);
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(0, 0, 600, 800));
         label_9->setStyleSheet(QString::fromUtf8("background-image: url(:/image/bg_2.png);"));
+        spinBox = new QSpinBox(DetailedMenu);
+        spinBox->setObjectName("spinBox");
+        spinBox->setGeometry(QRect(510, 670, 42, 22));
         label_9->raise();
         label_3->raise();
         pushButton_2->raise();
@@ -209,6 +208,7 @@ public:
         layoutWidget_2->raise();
         layoutWidget->raise();
         label_4->raise();
+        spinBox->raise();
 
         retranslateUi(DetailedMenu);
 
@@ -217,23 +217,20 @@ public:
 
     void retranslateUi(QWidget *DetailedMenu)
     {
-        DetailedMenu->setWindowTitle(QCoreApplication::translate("DetailedMenu", "Form", nullptr));
+        DetailedMenu->setWindowTitle(QCoreApplication::translate("DetailedMenu", "\346\236\234\347\262\222\346\251\231\345\244\226\345\215\226", nullptr));
         label_3->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:700;\">\350\217\234\345\223\201\345\220\215\347\247\260</span></p></body></html>", nullptr));
         pushButton_2->setText(QCoreApplication::translate("DetailedMenu", "\351\200\200\345\207\272", nullptr));
         pushButton->setText(QCoreApplication::translate("DetailedMenu", "\345\212\240\345\205\245\350\264\255\347\211\251\350\275\246", nullptr));
         label_8->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-weight:700;\">\346\200\273\350\256\241\344\273\267\346\240\274\357\274\232</span></p></body></html>", nullptr));
-        label->setText(QCoreApplication::translate("DetailedMenu", "TextLabel", nullptr));
-        label_5->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">\350\217\234\345\223\201\350\247\204\346\240\274\357\274\232</span></p></body></html>", nullptr));
-        label_6->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:11pt;\">\345\210\206\351\207\217</span></p></body></html>", nullptr));
-        label_2->setText(QCoreApplication::translate("DetailedMenu", "TextLabel", nullptr));
-        checkBox->setText(QCoreApplication::translate("DetailedMenu", "\344\270\200\344\272\272\344\273\275", nullptr));
         checkBox_2->setText(QCoreApplication::translate("DetailedMenu", "\344\270\244\344\272\272\344\273\275", nullptr));
+        label_5->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">\350\217\234\345\223\201\350\247\204\346\240\274\357\274\232</span></p></body></html>", nullptr));
         label_7->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:11pt;\">\345\217\243\345\221\263</span></p></body></html>", nullptr));
         checkBox_4->setText(QCoreApplication::translate("DetailedMenu", "\344\270\215\350\276\243", nullptr));
+        checkBox->setText(QCoreApplication::translate("DetailedMenu", "\344\270\200\344\272\272\344\273\275", nullptr));
+        label_6->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:11pt;\">\345\210\206\351\207\217</span></p></body></html>", nullptr));
         checkBox_3->setText(QCoreApplication::translate("DetailedMenu", "\345\276\256\350\276\243", nullptr));
         checkBox_5->setText(QCoreApplication::translate("DetailedMenu", "\347\211\271\350\276\243", nullptr));
-        label_4->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:14pt;\">\350\217\234\345\223\201\346\217\217\350\277\260\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246\342\200\246"
-                        "\342\200\246</span></p></body></html>", nullptr));
+        label_4->setText(QCoreApplication::translate("DetailedMenu", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:700;\">\350\277\231\351\201\223\350\217\234\350\211\262\346\263\275\351\262\234\350\211\263\357\274\214\351\246\231\346\260\224\346\211\221\351\274\273\357\274\214\345\217\243\346\204\237\347\273\206\350\205\273\357\274\214\344\273\244\344\272\272\345\236\202\346\266\216\346\254\262\346\273\264\357\274\214\345\233\236\345\221\263\346\227\240\347\251\267\343\200\202</span></p></body></html>", nullptr));
         label_9->setText(QString());
     } // retranslateUi
 

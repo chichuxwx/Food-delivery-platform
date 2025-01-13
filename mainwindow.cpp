@@ -3,6 +3,8 @@
 #include "./ui_mainwindow.h"
 #include "head.h"
 #include <iostream>
+#include "all.h"
+#include <QMessageBox>
 using namespace std;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -46,6 +48,10 @@ void MainWindow::on_pushButton_clicked()
     QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
     ServerConnectionManager::instance().sendData(credentialsData);
 
+
+    all al;
+    int ready=al.sign_in(account,password,userType);
+
     // int userType;
 
     /*if (ui->checkBox->isChecked()) {
@@ -57,7 +63,7 @@ void MainWindow::on_pushButton_clicked()
     } else if (ui->checkBox_4->isChecked()) {
         userType = 4;
     }*/
-
+    if(ready){
     if (!validateAccount(account)) {
         QMessageBox::warning(this, "错误", "账号必须是 9~12 位字符！");
         return;
@@ -73,8 +79,10 @@ void MainWindow::on_pushButton_clicked()
         Login->setdetails(account, password);
         this->close();
     }
+    }else{
+        QMessageBox::warning(this, "错误", "此账号已存在");
+    }
 }
-
 void MainWindow::on_lineEdit_textEdited(const QString &arg1)
 {
     changebuttonstatues();
@@ -163,11 +171,5 @@ void MainWindow::on_pushButton_2_clicked()
     this->close();
 }
 
-void MainWindow::on_pushButton_3_clicked()
-{
-    Map *map = new Map();
-    map->show();
-    this->close();
-}
 
 

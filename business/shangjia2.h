@@ -14,6 +14,7 @@ class shangjia2 : public QWidget
 public:
     explicit shangjia2(QString account,QWidget *parent = nullptr);
     ~shangjia2();
+    void displayorders();
 
 private slots:
     void on_pushButton_clicked();

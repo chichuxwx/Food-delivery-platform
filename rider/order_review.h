@@ -3,7 +3,7 @@
 
 #include <QWidget>
 
-#include "all.h"
+#include "../all.h"
 
 namespace Ui {
 class order_review;

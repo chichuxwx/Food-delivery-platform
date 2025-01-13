@@ -9,13 +9,6 @@ class ServerConnectionManager : public QObject
     Q_OBJECT
 
 public:
-    // 获取单例实例
-    static ServerConnectionManager& instance()
-    {
-        static ServerConnectionManager instance;
-        return instance;
-    }
-
     // 连接到服务器
     void connectToServer(const QString& host, quint16 port)
     {
@@ -35,6 +28,12 @@ public:
     // 获取 socket 指针以便连接信号和槽
     QTcpSocket* getSocket() const { return socket; }
 
+    // 获取单例实例
+    static ServerConnectionManager& instance()
+    {
+        static ServerConnectionManager instance;
+        return instance;
+    }
 private:
     // 私有构造函数，防止外部实例化
     ServerConnectionManager(QObject* parent = nullptr)

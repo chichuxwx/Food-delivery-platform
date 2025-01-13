@@ -56,6 +56,22 @@ void Con_reviews::on_pushButton_8_clicked()
 {
     QMessageBox::information(this,"成功","提交成功");//修改
     OrderStatus *order=new OrderStatus(account);
+    QJsonObject storeCommand;
+    storeCommand["command"] = "store";
+    QJsonDocument loginDoc(storeCommand);
+    QByteArray Data = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(Data);
+
+    int star_rider=starWidgetTop->getRating();
+    int star_business=starWidgetBottom->getRating();
+    QString comment = ui->textEdit->toPlainText();
+    QJsonObject credentials;
+    credentials["骑手评分"]=star_rider;
+    credentials["商家评分"]=star_business;
+    credentials["评价"] = comment;
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
     order->show();
     this->close();
 }

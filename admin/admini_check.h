@@ -14,7 +14,7 @@ class admini_check : public QWidget
 public:
     explicit admini_check(QWidget *parent = nullptr);
     ~admini_check();
-
+    void display();
 private slots:
     void on_pushButton_3_clicked();
 

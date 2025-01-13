@@ -2,6 +2,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QByteArray \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QDateTime \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QDebug \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/QFlags \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QJsonDocument \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QJsonObject \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/QList \
@@ -51,6 +52,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcoreapplication.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcoreapplication_platform.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcoreevent.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtCore/qcryptographichash.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdarwinhelpers.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatastream.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qdatetime.h \
@@ -156,6 +158,7 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qxptype_traits.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtCore/qyieldcpu.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/QMouseEvent \
+  E:/Qt/6.7.3/msvc2019_64/include/QtGui/QPageLayout \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/QPaintEvent \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/QPainter \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/QPixmap \
@@ -177,6 +180,9 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qinputdevice.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qinputmethod.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qkeysequence.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpagelayout.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpageranges.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpagesize.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpaintdevice.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpainter.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtGui/qpalette.h \
@@ -204,6 +210,8 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/QTcpSocket \
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qabstractsocket.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qhostaddress.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qssl.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qsslcertificate.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtcpsocket.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetwork-config.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtNetwork/qtnetworkexports.h \
@@ -217,6 +225,15 @@ E:/Qtwork/1229/build/Desktop_Qt_6_7_3_MSVC2019_64bit-Debug/1229_autogen/PRPB7REQ
   E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsql-config.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsqlexports.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtSql/qtsqlglobal.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qtwebenginecore-config.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qtwebenginecoreglobal.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qwebengineclientcertificateselection.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qwebenginedownloadrequest.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qwebenginepage.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineCore/qwebenginequotarequest.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineWidgets/QWebEngineView \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineWidgets/qtwebenginewidgetsglobal.h \
+  E:/Qt/6.7.3/msvc2019_64/include/QtWebEngineWidgets/qwebengineview.h \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QLabel \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QMainWindow \
   E:/Qt/6.7.3/msvc2019_64/include/QtWidgets/QMessageBox \

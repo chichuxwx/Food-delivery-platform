@@ -14,6 +14,7 @@ class task_inform : public QWidget
 public:
     explicit task_inform(QString account,QWidget *parent = nullptr);//修改
     ~task_inform();
+    void onOrderClicked(const QVariantMap &orderInfo);
 
 private slots:
     void on_pushButton_3_clicked();

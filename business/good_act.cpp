@@ -31,6 +31,21 @@ void good_act::on_pushButton_2_clicked()//修改 理论上来说这里应该设�
     value_desc=ui->lineEdit_value_desc->text().toLongLong(&ok,10);
     QMessageBox::information(this,"成功","设置成功");
     //信息更新
+    QJsonObject loginCommand;
+    loginCommand["command"] = "store";
+    QJsonDocument loginDoc(loginCommand);
+    QByteArray loginData = loginDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(loginData);
+
+    // 发送账号和密码
+    QJsonObject credentials;
+    credentials["满"] = value;
+    credentials["减"] = value_desc;
+    QJsonDocument credentialsDoc(credentials);
+    QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
+    ServerConnectionManager::instance().sendData(credentialsData);
+
+    QMessageBox::information(this,"成功","设置成功");
 
 
 }

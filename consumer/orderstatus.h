@@ -16,17 +16,18 @@ class OrderStatus : public QWidget
 public:
     explicit OrderStatus(QString account,QWidget *parent = nullptr);
     ~OrderStatus();
+    void order_dispaly();
+    void onSellerClicked();
 
 private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_clicked();
 
-    void on_pushButton_5_clicked();
-
-    void on_pushButton_6_clicked();
-
     void on_pushButton_4_clicked();
+
+signals:
+    void clicked();
 
 private:
     Ui::OrderStatus *ui;

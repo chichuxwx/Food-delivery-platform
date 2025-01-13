@@ -73,7 +73,7 @@ void customer::settle_cart(const QString &account) {
 }
 
 // 获取购物车信息
-QList<QVariantMap> customer::get_cart_infor(const QString &account) {
+QList<QVariantMap> customer::get_cart_infor(const QString account) {
     if (account.isEmpty()) {
         qDebug() << "Error: Account is empty.";
         return {};

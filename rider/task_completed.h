@@ -14,6 +14,7 @@ class task_completed : public QWidget
 public:
     explicit task_completed(QString account,QWidget *parent = nullptr);//修改
     ~task_completed();
+    void onOrderClicked();
 
 private slots:
     void on_pushButton_2_clicked();

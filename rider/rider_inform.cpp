@@ -1,6 +1,6 @@
 #include"../head.h"
 rider_inform::rider_inform(QString account,QWidget *parent)//修改
-    : QWidget(parent)
+    : account(account),QWidget(parent)
     , ui(new Ui::rider_inform)
 {
     ui->setupUi(this);

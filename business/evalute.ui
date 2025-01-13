@@ -23,76 +23,86 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>果粒橙外卖-商家端</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <property name="windowIcon">
+   <iconset resource="../Image.qrc">
+    <normaloff>:/image/lt_cml.jpg</normaloff>:/image/lt_cml.jpg</iconset>
+  </property>
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>100</width>
-     <height>80</height>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>60</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>100</width>
-     <height>80</height>
+     <width>60</width>
+     <height>20</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>100</width>
-     <height>80</height>
+     <width>60</width>
+     <height>20</height>
     </size>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <family>Microsoft YaHei</family>
+     <pointsize>-1</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，使用 #fad37f */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 9px; /* 圆角 */
+    color: #000000; /* 文本颜色，黑色 */
+    font-size: 9px;
+}
+
+QPushButton:hover {
+	color:#ffffff;
+    background-color: rgba(99, 132, 233, 0.8); /* 悬浮时背景颜色 */
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
    </property>
    <property name="text">
     <string>返回</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>100</y>
-     <width>600</width>
-     <height>100</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>600</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>600</width>
-     <height>100</height>
-    </size>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>订单评价</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>240</y>
+     <y>230</y>
      <width>500</width>
      <height>500</height>
     </rect>
@@ -104,7 +114,42 @@
     </size>
    </property>
   </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>225</x>
+     <y>60</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>150</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>150</width>
+     <height>50</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;订单评价&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Image.qrc"/>
+ </resources>
  <connections/>
 </ui>

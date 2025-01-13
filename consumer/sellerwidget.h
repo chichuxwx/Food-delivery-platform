@@ -10,7 +10,7 @@ class SellerWidget : public QFrame
 {
     Q_OBJECT
 public:
-    explicit SellerWidget(const QVariantMap &sellerInfo, QWidget *parent = nullptr);
+    explicit SellerWidget(QString account,const QVariantMap &sellerInfo, QWidget *parent = nullptr);
 
     QVariantMap getSellerInfo() const;
 
@@ -23,7 +23,7 @@ protected:
 private:
     QVariantMap m_sellerInfo;
     QLabel *imageLabel;
-
+    QString account;
     // 工具函数：将 QByteArray 转换为 QPixmap
     QPixmap byteArrayToPixmap(const QByteArray &byteArray);
 };

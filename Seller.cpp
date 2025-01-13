@@ -91,8 +91,8 @@ QList<QVariantMap> seller::search_selller_dish_information(const QString &seller
 }
 
 // 新增菜品
-void seller::add_new_dish(const QString &name, const QString &imagepath, const QString &description,
-                          const QString &seller_id, const double &price, const int &sales_number, const int &status) {
+void seller::add_new_dish(const QString name, const QString imagepath, const QString description,
+                          const QString seller_id, const double price, const int sales_number, const int status) {
     // 输入校验
     if (name.isEmpty() || seller_id.isEmpty() || description.isEmpty() || price < 0 || sales_number < 0) {
         qDebug() << "Error: Invalid input for adding new dish.";
@@ -102,7 +102,6 @@ void seller::add_new_dish(const QString &name, const QString &imagepath, const Q
     QFile imageFile(imagepath);
     if (!imageFile.exists()) {
         qDebug() << "Error: Image file does not exist at path:" << imagepath;
-        return;
     }
 
     // 开始事务

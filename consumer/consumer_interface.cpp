@@ -34,7 +34,7 @@ void Consumer_interface::displaySellers()
     layout->setAlignment(Qt::AlignTop);
 
     for (const QVariantMap &seller : sellers) {
-        SellerWidget *sellerWidget = new SellerWidget(seller, container);
+        SellerWidget *sellerWidget = new SellerWidget(account, seller, container);
         layout->addWidget(sellerWidget);
 
         // 连接 SellerWidget 的 clicked 信号到 Consumer_interface 的槽函数
@@ -52,11 +52,11 @@ void Consumer_interface::displaySellers()
 
 void Consumer_interface::onSellerClicked(const QVariantMap &sellerInfo)
 {
-    Storepage *store=new Storepage(account);
-    // 传递商家信息并显示 StorePage
-    store->setSellerInfo(sellerInfo);
+    Storepage *store = new Storepage(account,sellerInfo);  // 直接传递 sellerInfo
     store->show();
+    this->close();
 }
+
 // void Consumer_interface::on_pushButton_6_clicked()
 // {
 //     Storepage *store=new Storepage();
@@ -107,7 +107,7 @@ void Consumer_interface::on_pushButton_3_clicked()
     ServerConnectionManager::instance().sendData(Data);
     // 发送账号查询
     QJsonObject credentials;
-    //credentials["类型"] = account; //之后删
+    credentials["类型"] = account;
     QJsonDocument credentialsDoc(credentials);
     QByteArray credentialsData = credentialsDoc.toJson(QJsonDocument::Compact) + "\n";
     ServerConnectionManager::instance().sendData(credentialsData);

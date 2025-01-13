@@ -15,7 +15,8 @@ class Shoppingcart : public QWidget
 public:
     explicit Shoppingcart(QString account,QWidget *parent = nullptr);
     ~Shoppingcart();
-
+    QList<QVariantMap>cart={};
+    void displayCartItems(const QList<QVariantMap> &cartItems);
 private slots:
     void on_pushButton_clicked();
 
@@ -26,6 +27,7 @@ private:
     QString account;//修改
     all al;
     customer Cus;
+    double total_price;
 
 };
 

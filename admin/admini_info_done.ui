@@ -17,33 +17,12 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>果粒橙外卖-管理端</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>60</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>60</width>
-     <height>20</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>60</width>
-     <height>20</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>退出</string>
-   </property>
-  </widget>
+  <property name="windowIcon">
+   <iconset resource="../Image.qrc">
+    <normaloff>:/image/chick.gif</normaloff>:/image/chick.gif</iconset>
+  </property>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
@@ -63,7 +42,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;已处理投诉&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>210</x>
@@ -124,7 +103,76 @@
     </item>
    </layout>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>60</width>
+     <height>20</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，使用 #fad37f */
+    border: 2px solid #3f4041; /* 边框颜色 */
+    border-radius: 9px; /* 圆角 */
+    color: #000000; /* 文本颜色，黑色 */
+    font-size: 9px;
+}
+
+QPushButton:hover {
+    background-color: #3f4041; /* 悬浮时背景颜色 */
+    color: #ffffff;
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #484949; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #484949; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>label_7</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>pushButton</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Image.qrc"/>
+ </resources>
  <connections/>
 </ui>

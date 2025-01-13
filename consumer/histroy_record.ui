@@ -17,7 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>果粒橙外卖</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Image.qrc">
+    <normaloff>:/image/lt_cml.jpg</normaloff>:/image/lt_cml.jpg</iconset>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -181,6 +185,7 @@
 }
 
 QPushButton:hover {
+	color: #ffffff;
     background-color: rgba(99, 132, 233, 0.8); /* 悬浮时背景颜色 */
     border: none; /* 悬浮时无边框 */
 }
@@ -200,6 +205,8 @@ QPushButton:pressed {
   <zorder>groupBox</zorder>
   <zorder>pushButton</zorder>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Image.qrc"/>
+ </resources>
  <connections/>
 </ui>

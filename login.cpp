@@ -1,6 +1,7 @@
 #include "login.h"
 #include "ui_login.h"
 #include "head.h"
+#include<QMessageBox>
 login::login(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::login)
@@ -31,7 +32,7 @@ void login::on_pushButton_2_clicked()
 
 void login::on_pushButton_3_clicked()
 {
-    Consumer_interface *ConsumerInterface = new Consumer_interface("123");
+    Consumer_interface *ConsumerInterface = new Consumer_interface(account);
     ConsumerInterface->show();
     this->close();
 }
@@ -83,19 +84,19 @@ void login::on_pushButton_clicked()
         ConsumerInterface->show();
         this->close();
     }else if(usertype==2){
-        Rider_main *ridermain = new Rider_main(account);
-        ridermain->show();
-        this->close();
-    }else if(usertype==3){
         shangjia *sjmain = new shangjia(account);
         sjmain->show();
+        this->close();
+    }else if(usertype==3){
+        Rider_main *ridermain = new Rider_main(account);
+        ridermain->show();
         this->close();
     }else if(usertype==4){
         admini_main *adminMain = new admini_main();
         adminMain->show();
         this->close();
     }else{
-        this->close();
+        QMessageBox::information(this,"错误","账号或密码错误");
     }
 }
 

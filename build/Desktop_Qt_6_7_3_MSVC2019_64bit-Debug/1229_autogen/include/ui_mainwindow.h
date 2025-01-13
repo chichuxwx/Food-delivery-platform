@@ -28,12 +28,19 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton_2;
-    QWidget *widget;
+    QLabel *label_6;
     QLabel *label;
     QWidget *layoutWidget_3;
     QHBoxLayout *horizontalLayout_5;
     QPushButton *pushButton;
+    QLabel *label_5;
+    QPushButton *pushButton_2;
+    QWidget *layoutWidget_2;
+    QHBoxLayout *horizontalLayout_4;
+    QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox_3;
+    QCheckBox *checkBox_4;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -45,13 +52,6 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_4;
     QLineEdit *lineEdit_3;
-    QWidget *layoutWidget_2;
-    QHBoxLayout *horizontalLayout_4;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_4;
-    QLabel *label_5;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -68,38 +68,13 @@ public:
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setStyleSheet(QString::fromUtf8(""));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(10, 10, 60, 20));
-        pushButton_2->setMinimumSize(QSize(60, 20));
-        pushButton_2->setMaximumSize(QSize(60, 20));
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\344\275\277\347\224\250 #fad37f */\n"
-"    border: 2px solid rgba(99, 132, 233, 0.8); /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
-"    border-radius: 9px; /* \345\234\206\350\247\222 */\n"
-"    color: #000000; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\351\273\221\350\211\262 */\n"
-"    font-size: 9px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgba(99, 132, 233, 0.8); /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
-"    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
-"    border-color: #4"
-                        "682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
-"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
-"}\n"
-""));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(0, 0, 600, 800));
-        widget->setStyleSheet(QString::fromUtf8("background-image: url(:/image/bg_2.png);"));
-        label = new QLabel(widget);
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(0, 0, 600, 800));
+        label_6->setStyleSheet(QString::fromUtf8("background-image: url(:/image/bg_2.png);"));
+        label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(260, 60, 60, 50));
+        label->setGeometry(QRect(270, 60, 60, 50));
         label->setMinimumSize(QSize(60, 50));
         label->setMaximumSize(QSize(60, 50));
         QFont font;
@@ -107,9 +82,9 @@ public:
         font.setPointSize(14);
         label->setFont(font);
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        layoutWidget_3 = new QWidget(widget);
+        layoutWidget_3 = new QWidget(centralwidget);
         layoutWidget_3->setObjectName("layoutWidget_3");
-        layoutWidget_3->setGeometry(QRect(200, 420, 206, 32));
+        layoutWidget_3->setGeometry(QRect(200, 415, 206, 32));
         horizontalLayout_5 = new QHBoxLayout(layoutWidget_3);
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -130,23 +105,94 @@ public:
 "}\n"
 "\n"
 "QPushButton:hover {\n"
+"	color: #ffffff;\n"
 "    background-color: rgba(99, 132, 233, 0.8); \n"
 "    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
-"    border-color: #4682b4; /* \346"
-                        "\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-co"
+                        "lor: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
 "    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
 "}\n"
 ""));
 
         horizontalLayout_5->addWidget(pushButton, 0, Qt::AlignmentFlag::AlignVCenter);
 
-        layoutWidget = new QWidget(widget);
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(400, 170, 150, 35));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
+        label_5->setSizePolicy(sizePolicy);
+        label_5->setMinimumSize(QSize(150, 35));
+        label_5->setMaximumSize(QSize(150, 35));
+        label_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"background-color: transparent;\n"
+"}\n"
+""));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(10, 10, 60, 20));
+        pushButton_2->setMinimumSize(QSize(60, 20));
+        pushButton_2->setMaximumSize(QSize(60, 20));
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\344\275\277\347\224\250 #fad37f */\n"
+"    border: 2px solid rgba(99, 132, 233, 0.8); /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 9px; /* \345\234\206\350\247\222 */\n"
+"    color: #000000; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\351\273\221\350\211\262 */\n"
+"    font-size: 9px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #ffffff;\n"
+"    background-color: rgba(99, 132, 233, 0.8); /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
+"    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
+""
+                        "    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
+        layoutWidget_2 = new QWidget(centralwidget);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(180, 375, 251, 31));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget_2);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        checkBox = new QCheckBox(layoutWidget_2);
+        checkBox->setObjectName("checkBox");
+        checkBox->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+"background-color: transparent;\n"
+"}\n"
+""));
+
+        horizontalLayout_4->addWidget(checkBox);
+
+        checkBox_2 = new QCheckBox(layoutWidget_2);
+        checkBox_2->setObjectName("checkBox_2");
+
+        horizontalLayout_4->addWidget(checkBox_2);
+
+        checkBox_3 = new QCheckBox(layoutWidget_2);
+        checkBox_3->setObjectName("checkBox_3");
+
+        horizontalLayout_4->addWidget(checkBox_3);
+
+        checkBox_4 = new QCheckBox(layoutWidget_2);
+        checkBox_4->setObjectName("checkBox_4");
+
+        horizontalLayout_4->addWidget(checkBox_4);
+
+        layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(190, 150, 211, 191));
+        layoutWidget->setGeometry(QRect(200, 155, 211, 191));
         verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -154,9 +200,6 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName("label_2");
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(label_2->sizePolicy().hasHeightForWidth());
         label_2->setSizePolicy(sizePolicy);
         label_2->setMinimumSize(QSize(55, 30));
@@ -236,50 +279,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_3);
 
-        layoutWidget_2 = new QWidget(widget);
-        layoutWidget_2->setObjectName("layoutWidget_2");
-        layoutWidget_2->setGeometry(QRect(180, 380, 251, 31));
-        horizontalLayout_4 = new QHBoxLayout(layoutWidget_2);
-        horizontalLayout_4->setObjectName("horizontalLayout_4");
-        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        checkBox = new QCheckBox(layoutWidget_2);
-        checkBox->setObjectName("checkBox");
-        checkBox->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
-"background-color: transparent;\n"
-"}\n"
-""));
-
-        horizontalLayout_4->addWidget(checkBox);
-
-        checkBox_2 = new QCheckBox(layoutWidget_2);
-        checkBox_2->setObjectName("checkBox_2");
-
-        horizontalLayout_4->addWidget(checkBox_2);
-
-        checkBox_3 = new QCheckBox(layoutWidget_2);
-        checkBox_3->setObjectName("checkBox_3");
-
-        horizontalLayout_4->addWidget(checkBox_3);
-
-        checkBox_4 = new QCheckBox(layoutWidget_2);
-        checkBox_4->setObjectName("checkBox_4");
-
-        horizontalLayout_4->addWidget(checkBox_4);
-
-        label_5 = new QLabel(widget);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(390, 165, 150, 35));
-        sizePolicy.setHeightForWidth(label_5->sizePolicy().hasHeightForWidth());
-        label_5->setSizePolicy(sizePolicy);
-        label_5->setMinimumSize(QSize(150, 35));
-        label_5->setMaximumSize(QSize(150, 35));
-        label_5->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"background-color: transparent;\n"
-"}\n"
-""));
         MainWindow->setCentralWidget(centralwidget);
-        widget->raise();
-        pushButton_2->raise();
 
         retranslateUi(MainWindow);
 
@@ -289,12 +289,15 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\346\236\234\347\262\222\346\251\231\345\244\226\345\215\226", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
-#if QT_CONFIG(whatsthis)
-        widget->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p>q</p></body></html>", nullptr));
-#endif // QT_CONFIG(whatsthis)
+        label_6->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700;\">\346\263\250\345\206\214</span></p></body></html>", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\346\263\250\345\206\214", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:700; color:#ff0004;\">&quot;\351\224\231\350\257\257&quot; \350\264\246\345\217\267\345\277\205\351\241\273\346\230\257 9~12 \344\275\215\345\255\227\347\254\246\357\274\201</span></p></body></html>", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "\346\266\210\350\264\271\350\200\205", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("MainWindow", "\345\225\206\345\256\266", nullptr));
+        checkBox_3->setText(QCoreApplication::translate("MainWindow", "\351\252\221\346\211\213", nullptr));
+        checkBox_4->setText(QCoreApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700;\">\347\224\250\346\210\267\345\220\215</span></p></body></html>", nullptr));
         lineEdit->setText(QString());
         lineEdit->setPlaceholderText(QCoreApplication::translate("MainWindow", "\350\257\267\350\276\223\345\205\245\347\224\250\346\210\267\345\220\215", nullptr));
@@ -304,11 +307,6 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:10pt; font-weight:700;\">\347\241\256\350\256\244\345\257\206\347\240\201</span></p></body></html>", nullptr));
         lineEdit_3->setText(QString());
         lineEdit_3->setPlaceholderText(QCoreApplication::translate("MainWindow", "\350\257\267\347\241\256\350\256\244\345\257\206\347\240\201", nullptr));
-        checkBox->setText(QCoreApplication::translate("MainWindow", "\346\266\210\350\264\271\350\200\205", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("MainWindow", "\345\225\206\345\256\266", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("MainWindow", "\351\252\221\346\211\213", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("MainWindow", "\347\256\241\347\220\206\345\221\230", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:700; color:#ff0004;\">&quot;\351\224\231\350\257\257&quot; \350\264\246\345\217\267\345\277\205\351\241\273\346\230\257 9~12 \344\275\215\345\255\227\347\254\246\357\274\201</span></p></body></html>", nullptr));
     } // retranslateUi
 
 };

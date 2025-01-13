@@ -17,6 +17,7 @@ public:
 
 private slots:
     void on_pushButton_back_clicked();
+    void displayDishes();
 
     void on_pushButton_add_good_clicked();
 

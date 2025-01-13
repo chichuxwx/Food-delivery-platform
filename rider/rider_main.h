@@ -23,7 +23,7 @@ private slots:
     void on_pushButton_clicked();
     void updateTimeLabel(const QString &time); // 更新槽函数名称和参数
     void countThreadFinished();
-
+    void onOrderClicked(const QVariantMap &orderInfo);
 private:
     // 时间线程相关
     QThread *timeThread;

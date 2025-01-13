@@ -18,7 +18,7 @@ public:
     unique_seller get_seller_unique(const QString &seller_id);
     void add_cart(const QVariantMap &order_infor);
     void settle_cart(const QString &account);
-    QList<QVariantMap>get_cart_infor(const QString &account);
+    QList<QVariantMap>get_cart_infor(const QString account);
     QVariantMap get_customer_infor(const QString &account);
     QString get_customer_add(const QString &account);
     void update_customer_infor(const QString &account,const QString &name,const QString &address,const QString &phone_number,const QByteArray &image);

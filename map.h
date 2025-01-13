@@ -2,23 +2,30 @@
 #define MAP_H
 
 #include <QWidget>
+#include <QWebEngineView>
+#include "database/database.h"
 
-// 确保包含由 Qt Designer 自动生成的 ui_map.h 文件
-#include "ui_map.h"
+namespace Ui {
+class Map;
+}
 
 class Map : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit Map(QWidget *parent = nullptr);
+    explicit Map(QString account,QWidget *parent = nullptr);
     ~Map();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_getCoordsButton_clicked();  // 按钮点击槽
 
 private:
-    Ui::Map *ui; // 指向 UI 的指针
+    Ui::Map *ui;  // 自动生成的 UI 对象
+    QWebEngineView *view;  // 用于展示地图的 QWebEngineView
+    double mapLng, mapLat;  // 存储地图中心的经纬度
+    QString account;
+    Database db;
 };
 
 #endif // MAP_H

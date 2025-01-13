@@ -1,7 +1,10 @@
 #include "database/database.h"
 #include "all.h"
-
+#include<iostream>
 // 注册函数
+all::all(){
+    std::cout<<"fuck";
+}
 int all::sign_in(const QString &account, const QString &password, const int &who) {
     // 输入校验
     if (account.isEmpty() || password.isEmpty() || (who < 1 || who > 4)) {
@@ -10,10 +13,26 @@ int all::sign_in(const QString &account, const QString &password, const int &who
     }
 
     int result = database.add_general_table(account, password, who);
+
     if (result == 0) {
         qDebug() << "Sign-in failed: Account already exists.";
     } else {
         qDebug() << "Sign-in successful.";
+        if(who==1)
+        {
+            database.add_customer(account,password);
+
+        }
+        else if(who==2)
+        {
+            database.add_seller(account,password);
+
+        }
+        else if(who==3)
+        {
+            database.addRider(account,password);
+        }
+        else database.addAdmin(account,password);
     }
     return result;
 }
@@ -36,7 +55,7 @@ QList<QVariantMap> all::select_orders_somebody(const QString &account, const int
     }
 
     // 获取用户标识符
-    int userType = database.select_general_table(account);
+    int userType = database.select_general_table2(account);
     if (userType == -1) {
         qDebug() << "Error: Account does not exist.";
         return {};
@@ -57,8 +76,17 @@ QList<QVariantMap> all::select_orders_somebody(const QString &account, const int
 }
 
 // 更新订单状态
+void all::update_order_statu(const int &order_id, const int &statu,QString &account) {
+    if (order_id < 0 || statu < 0) {
+        qDebug() << "Invalid input for updating order status.";
+        return;
+    }
+    database.update_order_statu(order_id, statu,account);
+    qDebug() << "Order status updated: order_id=" << order_id << ", status=" << statu;
+}
+
 void all::update_order_statu(const int &order_id, const int &statu) {
-    if (order_id <= 0 || statu < 0) {
+    if (order_id < 0 || statu < 0) {
         qDebug() << "Invalid input for updating order status.";
         return;
     }

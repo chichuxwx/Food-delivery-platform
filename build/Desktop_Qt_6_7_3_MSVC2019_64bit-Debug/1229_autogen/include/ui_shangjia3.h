@@ -10,12 +10,12 @@
 #define UI_SHANGJIA3_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -23,122 +23,226 @@ QT_BEGIN_NAMESPACE
 class Ui_shangjia3
 {
 public:
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout;
+    QLabel *label_2;
+    QWidget *layoutWidget_2;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_10;
+    QPushButton *pushButton_5;
+    QWidget *layoutWidget_3;
+    QHBoxLayout *horizontalLayout_4;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
-    QWidget *layoutWidget1;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QWidget *widget;
-    QGridLayout *gridLayout;
-    QTextBrowser *textBrowser;
-    QLabel *label;
-    QTextBrowser *textBrowser_2;
-    QTextBrowser *textBrowser_3;
-    QTextBrowser *textBrowser_4;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
 
     void setupUi(QWidget *shangjia3)
     {
         if (shangjia3->objectName().isEmpty())
             shangjia3->setObjectName("shangjia3");
         shangjia3->resize(600, 800);
-        layoutWidget = new QWidget(shangjia3);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(0, 0, 601, 42));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
-        horizontalLayout->setObjectName("horizontalLayout");
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(175, 40));
-        pushButton->setMaximumSize(QSize(175, 40));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Microsoft YaHei")});
-        pushButton->setFont(font);
-
-        horizontalLayout->addWidget(pushButton);
-
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setMinimumSize(QSize(175, 40));
-        pushButton_2->setMaximumSize(QSize(175, 40));
-        pushButton_2->setFont(font);
-
-        horizontalLayout->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(layoutWidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setMinimumSize(QSize(175, 40));
-        pushButton_3->setMaximumSize(QSize(175, 40));
-        pushButton_3->setFont(font);
-
-        horizontalLayout->addWidget(pushButton_3);
-
-        layoutWidget1 = new QWidget(shangjia3);
-        layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(0, 760, 601, 42));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_4 = new QPushButton(layoutWidget1);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/lt_cml.jpg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        shangjia3->setWindowIcon(icon);
+        label_2 = new QLabel(shangjia3);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(0, 0, 600, 800));
+        label_2->setStyleSheet(QString::fromUtf8("background-image: url(:/image/bg_2.png);"));
+        layoutWidget_2 = new QWidget(shangjia3);
+        layoutWidget_2->setObjectName("layoutWidget_2");
+        layoutWidget_2->setGeometry(QRect(0, 760, 601, 42));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget_2);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        pushButton_4 = new QPushButton(layoutWidget_2);
         pushButton_4->setObjectName("pushButton_4");
         pushButton_4->setMinimumSize(QSize(175, 40));
         pushButton_4->setMaximumSize(QSize(175, 40));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Microsoft YaHei")});
+        font.setBold(true);
         pushButton_4->setFont(font);
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #6384e9; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\350\223\235\350\211\262 */\n"
+"    border: 2px solid #6384e9; /* \350\276\271\346\241\206\351\242\234\350\211\262\344\270\216\350\203\214\346\231\257\350\211\262\347\233\270\345\220\214 */\n"
+"    border-radius: 20px; /* \345\234\206\350\247\222 */\n"
+"    color: #ffffff; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\347\231\275\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #5076c6; /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\350\211\262\345\217\230\346\267\261 */\n"
+"    border: 2px solid #5076c6; /* \346\202\254\346\265\256\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\345\217\230\346\267\261 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #3a5d8f; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\350\211\262\345\217\230\345\276\227\346\233\264\346\267"
+                        "\261 */\n"
+"    border-color: #3a5d8f; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\345\217\230\345\276\227\346\233\264\346\267\261 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
 
-        horizontalLayout_2->addWidget(pushButton_4);
+        horizontalLayout_3->addWidget(pushButton_4);
 
-        pushButton_6 = new QPushButton(layoutWidget1);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setMinimumSize(QSize(175, 40));
-        pushButton_6->setMaximumSize(QSize(175, 40));
-        pushButton_6->setFont(font);
+        pushButton_10 = new QPushButton(layoutWidget_2);
+        pushButton_10->setObjectName("pushButton_10");
+        pushButton_10->setMinimumSize(QSize(175, 40));
+        pushButton_10->setMaximumSize(QSize(175, 40));
+        pushButton_10->setFont(font);
+        pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\347\231\275\350\211\262 */\n"
+"    border: 2px solid rgba(99, 132, 233, 0.8); /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 15px; /* \345\234\206\350\247\222 */\n"
+"    color: #081439; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\346\267\261\350\223\235\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #ffffff;\n"
+"    background-color: rgba(99, 132, 233, 0.8); \n"
+"    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
+"    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241"
+                        "\206\351\242\234\350\211\262 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
 
-        horizontalLayout_2->addWidget(pushButton_6);
+        horizontalLayout_3->addWidget(pushButton_10);
 
-        pushButton_5 = new QPushButton(layoutWidget1);
+        pushButton_5 = new QPushButton(layoutWidget_2);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setMinimumSize(QSize(175, 40));
         pushButton_5->setMaximumSize(QSize(175, 40));
         pushButton_5->setFont(font);
+        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\347\231\275\350\211\262 */\n"
+"    border: 2px solid rgba(99, 132, 233, 0.8); /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 15px; /* \345\234\206\350\247\222 */\n"
+"    color: #081439; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\346\267\261\350\223\235\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #ffffff;\n"
+"    background-color: rgba(99, 132, 233, 0.8); \n"
+"    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
+"    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241"
+                        "\206\351\242\234\350\211\262 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
 
-        horizontalLayout_2->addWidget(pushButton_5);
+        horizontalLayout_3->addWidget(pushButton_5);
 
-        widget = new QWidget(shangjia3);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(50, 120, 501, 278));
-        gridLayout = new QGridLayout(widget);
-        gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        textBrowser = new QTextBrowser(widget);
-        textBrowser->setObjectName("textBrowser");
+        layoutWidget_3 = new QWidget(shangjia3);
+        layoutWidget_3->setObjectName("layoutWidget_3");
+        layoutWidget_3->setGeometry(QRect(0, 0, 601, 42));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget_3);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        pushButton = new QPushButton(layoutWidget_3);
+        pushButton->setObjectName("pushButton");
+        pushButton->setMinimumSize(QSize(175, 40));
+        pushButton->setMaximumSize(QSize(175, 40));
+        pushButton->setFont(font);
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\347\231\275\350\211\262 */\n"
+"    border: 2px solid #fad37f; /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 15px; /* \345\234\206\350\247\222 */\n"
+"    color: #081439; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\346\267\261\350\223\235\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #ffffff;\n"
+"    background-color: #fad37f; /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\345\222\214\350\276\271\346\241\206\347\233\270\345\220\214 */\n"
+"    border: 2px solid #fad37f; /* \346\202\254\346\265\256\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\345\222\214\350\203\214\346\231\257\347\233\270\345\220\214 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #f1e0a6; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242"
+                        "\234\350\211\262\345\217\230\346\265\205 */\n"
+"    border-color: #fad37f; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\344\277\235\346\214\201\344\270\215\345\217\230 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}"));
 
-        gridLayout->addWidget(textBrowser, 0, 0, 1, 2);
+        horizontalLayout_4->addWidget(pushButton);
 
-        label = new QLabel(widget);
-        label->setObjectName("label");
+        pushButton_2 = new QPushButton(layoutWidget_3);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setMinimumSize(QSize(175, 40));
+        pushButton_2->setMaximumSize(QSize(175, 40));
+        pushButton_2->setFont(font);
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #ffffff; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262\357\274\214\347\231\275\350\211\262 */\n"
+"    border: 2px solid #fad37f; /* \350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+"    border-radius: 15px; /* \345\234\206\350\247\222 */\n"
+"    color: #081439; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\346\267\261\350\223\235\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	color: #ffffff;\n"
+"    background-color: #fad37f; /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\345\222\214\350\276\271\346\241\206\347\233\270\345\220\214 */\n"
+"    border: 2px solid #fad37f; /* \346\202\254\346\265\256\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\345\222\214\350\203\214\346\231\257\347\233\270\345\220\214 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #f1e0a6; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242"
+                        "\234\350\211\262\345\217\230\346\265\205 */\n"
+"    border-color: #fad37f; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\344\277\235\346\214\201\344\270\215\345\217\230 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
 
-        gridLayout->addWidget(label, 1, 0, 2, 1);
+        horizontalLayout_4->addWidget(pushButton_2);
 
-        textBrowser_2 = new QTextBrowser(widget);
-        textBrowser_2->setObjectName("textBrowser_2");
+        pushButton_3 = new QPushButton(layoutWidget_3);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setMinimumSize(QSize(175, 40));
+        pushButton_3->setMaximumSize(QSize(175, 40));
+        pushButton_3->setFont(font);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    background-color: #fad37f; /* \351\273\230\350\256\244\350\203\214\346\231\257\350\211\262 */\n"
+"    border: 2px solid #fad37f; /* \351\273\230\350\256\244\350\276\271\346\241\206\351\242\234\350\211\262\344\270\216\350\203\214\346\231\257\350\211\262\347\233\270\345\220\214 */\n"
+"    border-radius: 20px; /* \345\234\206\350\247\222 */\n"
+"    color: #081439; /* \346\226\207\346\234\254\351\242\234\350\211\262\357\274\214\346\267\261\350\223\235\350\211\262 */\n"
+"    font-size: 11px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #f1c66f; /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\345\217\230\346\267\261 */\n"
+"    border: 2px solid #f1c66f; /* \346\202\254\346\265\256\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\344\270\216\350\203\214\346\231\257\350\211\262\347\233\270\345\220\214 */\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #081439; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231"
+                        "\257\351\242\234\350\211\262\346\233\264\346\267\261 */\n"
+"    border-color: #081439; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262\344\270\216\350\203\214\346\231\257\350\211\262\347\233\270\345\220\214 */\n"
+"    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
+"}\n"
+""));
 
-        gridLayout->addWidget(textBrowser_2, 1, 1, 1, 1);
+        horizontalLayout_4->addWidget(pushButton_3);
 
-        textBrowser_3 = new QTextBrowser(widget);
-        textBrowser_3->setObjectName("textBrowser_3");
-
-        gridLayout->addWidget(textBrowser_3, 2, 1, 1, 1);
-
-        textBrowser_4 = new QTextBrowser(widget);
-        textBrowser_4->setObjectName("textBrowser_4");
-
-        gridLayout->addWidget(textBrowser_4, 3, 0, 1, 2);
-
+        scrollArea = new QScrollArea(shangjia3);
+        scrollArea->setObjectName("scrollArea");
+        scrollArea->setGeometry(QRect(50, 80, 491, 461));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 489, 459));
+        scrollArea->setWidget(scrollAreaWidgetContents);
 
         retranslateUi(shangjia3);
 
@@ -147,46 +251,14 @@ public:
 
     void retranslateUi(QWidget *shangjia3)
     {
-        shangjia3->setWindowTitle(QCoreApplication::translate("shangjia3", "Form", nullptr));
+        shangjia3->setWindowTitle(QCoreApplication::translate("shangjia3", "\346\236\234\347\262\222\346\251\231\345\244\226\345\215\226-\345\225\206\345\256\266\347\253\257", nullptr));
+        label_2->setText(QString());
+        pushButton_4->setText(QCoreApplication::translate("shangjia3", "\350\256\242     \345\215\225", nullptr));
+        pushButton_10->setText(QCoreApplication::translate("shangjia3", "\345\267\245\344\275\234\345\217\260", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("shangjia3", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
         pushButton->setText(QCoreApplication::translate("shangjia3", "\346\226\260\344\273\273\345\212\241", nullptr));
         pushButton_2->setText(QCoreApplication::translate("shangjia3", "\345\276\205\351\200\201\350\276\276", nullptr));
         pushButton_3->setText(QCoreApplication::translate("shangjia3", "\345\267\262\351\200\201\350\276\276", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("shangjia3", "\350\256\242\345\215\225", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("shangjia3", "\345\267\245\344\275\234\345\217\260", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("shangjia3", "\344\270\252\344\272\272\344\277\241\346\201\257", nullptr));
-        textBrowser->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\350\256\242\345\215\2251</p></body></html>", nullptr));
-        label->setText(QCoreApplication::translate("shangjia3", "\350\256\242\345\215\225\344\277\241\346\201\257", nullptr));
-        textBrowser_2->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\350\217\234\345\223\201\345\217\212\350\247\204\346\240\274</p></body></html>", nullptr));
-        textBrowser_3->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\345\234\260\345\235\200\345\217\212\345\244\207\346\263\250</p></body></html>", nullptr));
-        textBrowser_4->setHtml(QCoreApplication::translate("shangjia3", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\350\256\242\345\215\225\350\257\204\344\273\267</p></body></html>", nullptr));
     } // retranslateUi
 
 };

@@ -36,10 +36,11 @@ namespace {
 struct qt_meta_stringdata_CLASSshangjiaENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSshangjiaENDCLASS = QtMocHelpers::stringData(
     "shangjia",
-    "on_pushButton_2_clicked",
+    "Clicked",
     "",
+    "orderInfo",
+    "on_pushButton_2_clicked",
     "on_pushButton_3_clicked",
-    "on_pushButton_7_clicked",
     "on_pushButton_clicked",
     "on_pushButton_6_clicked",
     "on_pushButton_5_clicked"
@@ -63,15 +64,15 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSshangjiaENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x08,    1 /* Private */,
-       3,    0,   51,    2, 0x08,    2 /* Private */,
-       4,    0,   52,    2, 0x08,    3 /* Private */,
-       5,    0,   53,    2, 0x08,    4 /* Private */,
-       6,    0,   54,    2, 0x08,    5 /* Private */,
-       7,    0,   55,    2, 0x08,    6 /* Private */,
+       1,    1,   50,    2, 0x08,    1 /* Private */,
+       4,    0,   53,    2, 0x08,    3 /* Private */,
+       5,    0,   54,    2, 0x08,    4 /* Private */,
+       6,    0,   55,    2, 0x08,    5 /* Private */,
+       7,    0,   56,    2, 0x08,    6 /* Private */,
+       8,    0,   57,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QVariantMap,    3,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -90,11 +91,12 @@ Q_CONSTINIT const QMetaObject shangjia::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSshangjiaENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<shangjia, std::true_type>,
+        // method 'Clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QVariantMap &, std::false_type>,
         // method 'on_pushButton_2_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_3_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_7_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -112,16 +114,15 @@ void shangjia::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         auto *_t = static_cast<shangjia *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
-        case 1: _t->on_pushButton_3_clicked(); break;
-        case 2: _t->on_pushButton_7_clicked(); break;
+        case 0: _t->Clicked((*reinterpret_cast< std::add_pointer_t<QVariantMap>>(_a[1]))); break;
+        case 1: _t->on_pushButton_2_clicked(); break;
+        case 2: _t->on_pushButton_3_clicked(); break;
         case 3: _t->on_pushButton_clicked(); break;
         case 4: _t->on_pushButton_6_clicked(); break;
         case 5: _t->on_pushButton_5_clicked(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *shangjia::metaObject() const

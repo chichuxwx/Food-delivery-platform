@@ -30,8 +30,8 @@ public:
 
 
     //新增菜品
-    void add_new_dish(const QString& name, const QString &imagepath, const QString &description,
-                      const QString &seller_id, const double& price, const int& sales_number, const int &status);
+    void add_new_dish(const QString name, const QString imagepath, const QString description,
+                      const QString seller_id, const double price, const int sales_number, const int status);
 
     //设定满减
 

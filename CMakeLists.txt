@@ -140,6 +140,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         StarRatingWidget.h
         Image.qrc
         all.cpp all.h customer.cpp customer.h rider.cpp rider.h Seller.cpp Seller.h
+        rider/orderwidget.h rider/orderwidget.cpp
+        business/dishwidget.cpp business/dishwidget.h consumer/history_orderwidget.cpp consumer/history_orderwidget.h
+        admin/admini_orderwidget.cpp admin/admini_orderwidget.h
+        admin/admini_orderwidget.cpp admin/admini_orderwidget.h
+        consumer/dish_widget.h consumer/dish_widget.cpp
+
+
     )
 else()
     if(ANDROID)

@@ -42,7 +42,7 @@ void rider::update_rider_information(const QString &account, const QString &phon
     success &= database.update_rider_phone(account, phone_number);
 
     // 更新等级
-    success &= database.update_rider_level(account, level);
+    success &= database.update_rider_level(account, level.toDouble());
 
     // 更新图片
     success &= database.update_rider_image(account, filepath);

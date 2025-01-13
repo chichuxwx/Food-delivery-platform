@@ -14,8 +14,8 @@ QPixmap SellerWidget::byteArrayToPixmap(const QByteArray &byteArray) {
     return pixmap;
 }
 
-SellerWidget::SellerWidget(const QVariantMap &sellerInfo, QWidget *parent)
-    : QFrame(parent), m_sellerInfo(sellerInfo)
+SellerWidget::SellerWidget(QString account,const QVariantMap &sellerInfo, QWidget *parent)
+    :account(account),QFrame(parent), m_sellerInfo(sellerInfo)
 {
     setFrameShape(QFrame::Box);
     setLineWidth(1);

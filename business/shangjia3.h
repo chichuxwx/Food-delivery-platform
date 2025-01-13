@@ -14,6 +14,7 @@ class shangjia3 : public QWidget
 public:
     explicit shangjia3(QString account,QWidget *parent = nullptr);
     ~shangjia3();
+    void displayorders();
 
 private slots:
     void on_pushButton_clicked();
@@ -27,6 +28,8 @@ private slots:
     void on_pushButton_6_clicked();
 
     void on_pushButton_5_clicked();
+
+    void on_pushButton_10_clicked();
 
 private:
     Ui::shangjia3 *ui;

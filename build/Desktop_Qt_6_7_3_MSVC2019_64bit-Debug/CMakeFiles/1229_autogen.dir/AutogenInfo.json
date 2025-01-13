@@ -971,6 +971,12 @@
 			null
 		],
 		[
+			"E:/Qtwork/1229/admin/admini_orderwidget.h",
+			"MU",
+			"6AXHBYGC25/moc_admini_orderwidget.cpp",
+			null
+		],
+		[
 			"E:/Qtwork/1229/admin/adminiwindow.h",
 			"MU",
 			"6AXHBYGC25/moc_adminiwindow.cpp",
@@ -981,6 +987,12 @@
 			"E:/Qtwork/1229/business/dishchange.h",
 			"MU",
 			"6A7BGRXJ44/moc_dishchange.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/business/dishwidget.h",
+			"MU",
+			"6A7BGRXJ44/moc_dishwidget.cpp",
 			null
 		],
 		[
@@ -1080,6 +1092,18 @@
 			null
 		],
 		[
+			"E:/Qtwork/1229/consumer/dish_widget.h",
+			"MU",
+			"VNFHWQKLGQ/moc_dish_widget.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/consumer/history_orderwidget.h",
+			"MU",
+			"VNFHWQKLGQ/moc_history_orderwidget.cpp",
+			null
+		],
+		[
 			"E:/Qtwork/1229/consumer/histroy_record.h",
 			"MU",
 			"VNFHWQKLGQ/moc_histroy_record.cpp",
@@ -1136,6 +1160,12 @@
 			"E:/Qtwork/1229/rider/order_review.h",
 			"MU",
 			"PRPB7REQVI/moc_order_review.cpp",
+			null
+		],
+		[
+			"E:/Qtwork/1229/rider/orderwidget.h",
+			"MU",
+			"PRPB7REQVI/moc_orderwidget.cpp",
 			null
 		],
 		[
@@ -1255,9 +1285,11 @@
 		[ "E:/Qtwork/1229/admin/admini_info.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_info_done.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/admini_main.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/admin/admini_orderwidget.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/admin/adminiwindow.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/all.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/dishchange.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/business/dishwidget.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/evalute.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/good_act.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/business/good_mange.cpp", "MU", null ],
@@ -1274,6 +1306,8 @@
 		[ "E:/Qtwork/1229/consumer/consumer_information.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/consumer_interface.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/detailedmenu.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/dish_widget.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/consumer/history_orderwidget.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/histroy_record.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/orderstatus.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/consumer/sellerwidget.cpp", "MU", null ],
@@ -1288,6 +1322,7 @@
 		[ "E:/Qtwork/1229/map.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/order_review.cpp", "MU", null ],
+		[ "E:/Qtwork/1229/rider/orderwidget.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_inform.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/rider_main.cpp", "MU", null ],
 		[ "E:/Qtwork/1229/rider/task_completed.cpp", "MU", null ],

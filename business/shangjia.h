@@ -14,13 +14,13 @@ class shangjia : public QWidget
 public:
     explicit shangjia(QString account,QWidget *parent = nullptr);
     ~shangjia();
-
+    void displayorders();
+private slots:
+    void Clicked(const QVariantMap &orderInfo);
 private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_3_clicked();
-
-    void on_pushButton_7_clicked();
 
     void on_pushButton_clicked();
 

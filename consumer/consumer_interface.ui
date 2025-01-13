@@ -23,8 +23,28 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>果粒橙外卖</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../Image.qrc">
+    <normaloff>:/image/lt_cml.jpg</normaloff>:/image/lt_cml.jpg</iconset>
+  </property>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/image/bg_2.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
@@ -46,34 +66,30 @@
      <height>20</height>
     </size>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，使用 #fad37f */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 9px; /* 圆角 */
+    color: #000000; /* 文本颜色，黑色 */
+    font-size: 9px;
+}
+
+QPushButton:hover {
+	color: #ffffff;
+    background-color: rgba(99, 132, 233, 0.8); /* 悬浮时背景颜色 */
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+   </property>
    <property name="text">
     <string>退出</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>40</y>
-     <width>211</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>请输入商家名……</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>40</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>搜索</string>
    </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
@@ -106,8 +122,35 @@
         <height>40</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #6384e9; /* 默认背景色，蓝色 */
+    border: 2px solid #6384e9; /* 边框颜色与背景色相同 */
+    border-radius: 20px; /* 圆角 */
+    color: #ffffff; /* 文本颜色，白色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+    background-color: #5076c6; /* 悬浮时背景色变深 */
+    border: 2px solid #5076c6; /* 悬浮时边框颜色变深 */
+}
+
+QPushButton:pressed {
+    background-color: #3a5d8f; /* 按下时背景色变得更深 */
+    border-color: #3a5d8f; /* 按下时边框颜色变得更深 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
-       <string>点餐</string>
+       <string>点     餐</string>
       </property>
      </widget>
     </item>
@@ -130,6 +173,34 @@
         <width>175</width>
         <height>40</height>
        </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+	color: #ffffff;
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
       </property>
       <property name="text">
        <string>订单状态</string>
@@ -156,6 +227,34 @@
         <height>40</height>
        </size>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #ffffff; /* 默认背景色，白色 */
+    border: 2px solid rgba(99, 132, 233, 0.8); /* 边框颜色 */
+    border-radius: 15px; /* 圆角 */
+    color: #081439; /* 文本颜色，深蓝色 */
+    font-size: 11px;
+}
+
+QPushButton:hover {
+	color: #ffffff;
+    background-color: rgba(99, 132, 233, 0.8); 
+    border: none; /* 悬浮时无边框 */
+}
+
+QPushButton:pressed {
+    background-color: #b0c4de; /* 按下时背景颜色，稍微偏亮的蓝色 */
+    border-color: #4682b4; /* 按下时边框颜色 */
+    transform: scale(0.95); /* 按下时按钮略微缩小 */
+}
+</string>
+      </property>
       <property name="text">
        <string>个人信息</string>
       </property>
@@ -163,13 +262,39 @@
     </item>
    </layout>
   </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>40</y>
+     <width>211</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入商家名……</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>40</y>
+     <width>21</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>搜索</string>
+   </property>
+  </widget>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>110</y>
-     <width>471</width>
-     <height>581</height>
+     <y>80</y>
+     <width>481</width>
+     <height>641</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -180,13 +305,15 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>469</width>
-      <height>579</height>
+      <width>479</width>
+      <height>639</height>
      </rect>
     </property>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Image.qrc"/>
+ </resources>
  <connections/>
 </ui>

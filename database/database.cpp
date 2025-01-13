@@ -3,6 +3,7 @@
 #include <QVariantMap>
 #include <QList>
 #include<QFile>
+#include<QDebug>
 // Database::Database(const QString &hostName, const QString &databaseName, const QString &userName, const QString &password)
 //     : m_hostName(hostName), m_databaseName(databaseName), m_userName(userName), m_password(password), m_db(nullptr)
 // {
@@ -12,6 +13,7 @@
 Database::Database()
 {
     //初始化数据库连接
+    qDebug() << "ok";
     connectToDatabase();
 }
 Database::~Database()
@@ -24,8 +26,9 @@ Database::~Database()
 
 bool Database::connectToDatabase()
 {
+    m_db=nullptr;
     if (!m_db) {
-        m_db = new QSqlDatabase(QSqlDatabase::addDatabase("ODBC")); // 或者使用 "QMYSQL8" 根据您的 MySQL 版本
+        m_db = new QSqlDatabase(QSqlDatabase::addDatabase("QODBC"));
     }
 
     m_db->setHostName(m_hostName);
@@ -44,7 +47,7 @@ bool Database::connectToDatabase()
     return true;
 }
 
-bool Database::executeQuery(const QString &queryStr)
+bool Database::executeQuery(const QString queryStr)
 {
     QSqlQuery query(*m_db);
 
@@ -57,7 +60,7 @@ bool Database::executeQuery(const QString &queryStr)
     return true;
 }
 
-QVariant Database::executeScalarQuery(const QString &queryStr)
+QVariant Database::executeScalarQuery(const QString queryStr)
 {
     QSqlQuery query(*m_db);
     QVariant map;
@@ -112,16 +115,18 @@ QVariant Database::executeScalarQuery(const QString &queryStr)
 //     return resultSet; // 返回一个包含所有行的结果集
 // }
 
-void Database::addRider(const QString &account, const QString &password)
+void Database::addRider(const QString account, const QString password)
 {
+    int id=get_id_user("rider");
     QSqlQuery query(*m_db);
     // 准备插入的SQL语句
-    query.prepare("INSERT INTO rider (account, password) "
-                  "VALUES (:account, :password)");
+    query.prepare("INSERT INTO rider (id,account, password) "
+                  "VALUES (:id,:account, :password)");
 
     // 绑定传入的账号和密码参数
     query.bindValue(":account", account);
     query.bindValue(":password", password);
+    query.bindValue(":id",id);
 
     // 执行查询
     if (!query.exec()) {
@@ -134,7 +139,7 @@ void Database::addRider(const QString &account, const QString &password)
     return ;
 }
 
-bool Database::update_rider_phone(const QString &account,const QString &phone_number)
+bool Database::update_rider_phone(const QString account,const QString phone_number)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE rider SET phone =:phone WHERE account = :account ");
@@ -150,14 +155,19 @@ bool Database::update_rider_phone(const QString &account,const QString &phone_nu
     qDebug()<<"Rider:phone change successfully!";
     return true;
 }
-bool Database::update_rider_level(const QString &account,const QString &newlevel)
+bool Database::update_rider_level(const QString account,const double newlevel)
 {
     QSqlQuery query(*m_db);
-    query.prepare("UPDATE rider SET level=:level WHERE account = :account ");
-
+    int level;
+    int new_level=0;
+    query.prepare("SELECT level FROM customer WHERE account = :account");
     query.bindValue(":account",account);
-    query.bindValue(":level",newlevel);
-
+    query.exec();
+    level=query.value("level").toInt();
+    query.prepare("UPDATE customer SET level=:level WHERE account = :account ");
+    query.bindValue(":account",account);
+    new_level=0.4*newlevel+level;
+    query.bindValue(":level",new_level);
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:level"<<query.lastError();
         return false;
@@ -166,7 +176,7 @@ bool Database::update_rider_level(const QString &account,const QString &newlevel
     qDebug()<<"Rider:level change successfully!";
     return true;
 }
-bool Database::update_rider_image(const QString &account,const QString &imagepath)
+bool Database::update_rider_image(const QString account,const QString imagepath)
 {
 
     QFile imagefile(imagepath);
@@ -192,7 +202,7 @@ bool Database::update_rider_image(const QString &account,const QString &imagepat
     qDebug()<<"Rider:image change successfully!";
     return true;
 }
-QVariantMap Database::select_rider_information(const QString &account) {
+QVariantMap Database::select_rider_information(const QString account) {
     QVariantMap riderInfo;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -218,16 +228,18 @@ QVariantMap Database::select_rider_information(const QString &account) {
     }
     return riderInfo;
 }
-void Database::addAdmin(const QString &account, const QString &password)
+void Database::addAdmin(const QString account, const QString password)
 {
+    int id=get_id_user("admin");
     QSqlQuery query(*m_db);
     // 准备插入的SQL语句
-    query.prepare("INSERT INTO admin (account, password) "
-                  "VALUES (:account, :password)");
+    query.prepare("INSERT INTO admin (id,account, password) "
+                  "VALUES (:id,:account, :password)");
 
     // 绑定传入的账号和密码参数
     query.bindValue(":account", account);
     query.bindValue(":password", password);
+    query.bindValue(":id",id);
 
     // 执行查询
     if (!query.exec()) {
@@ -239,10 +251,11 @@ void Database::addAdmin(const QString &account, const QString &password)
     qDebug() << "Adminr added successfully!";
     return ;
 }
-void Database::addOrders(const QString &seller_id,const QString &customer_id,const QString &dish_name,
-                         const double &dish_consumption_amount,const int &status,
-                         const QString &remark,const int &dish_amount,const int &order_id)
+void Database::addOrders(const QString seller_id,const QString customer_id,const QString dish_name,
+                         const double dish_consumption_amount,const int status,
+                         const QString remark,const int dish_amount,int order_id)
 {
+    // int order_id=get_id_order();
     QSqlQuery query(*m_db);
     query.prepare("INSERT INTO orders (seller_id,customer_id,dish_name,consumption_amount,status,"
                   "remark,dish_amount,order_id)"
@@ -254,6 +267,7 @@ void Database::addOrders(const QString &seller_id,const QString &customer_id,con
     query.bindValue(":remark",remark);
     query.bindValue(":amount",dish_amount);
     query.bindValue(":order_id",order_id);
+    query.bindValue(":status", status);
     // 执行查询
     if (!query.exec()) {
         qDebug() << "Error inserting data into orders table:" << query.lastError();
@@ -264,13 +278,13 @@ void Database::addOrders(const QString &seller_id,const QString &customer_id,con
     return ;
 }
 
-QList<QVariantMap>Database::select_orders_information_seller(const QString &seller_id,const int  &statu) {
+QList<QVariantMap>Database::select_orders_information_seller(const QString seller_id,const int  statu) {
     QList<QVariantMap> orders_infor;
     // 创建SQL查询
     QSqlQuery query(*m_db);
 
     // 准备查询语句
-    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,rider_id "
+    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,rider_id,order_id "
                   "FROM orders WHERE seller_id = :seller_id AND status=:status");
     query.bindValue(":seller_id", seller_id);
     query.bindValue(":status",statu);
@@ -291,13 +305,14 @@ QList<QVariantMap>Database::select_orders_information_seller(const QString &sell
         order_infor["remark"] = query.value("remark").toString();
         order_infor["dish_amount"] = query.value("dish_amount").toInt();
         order_infor["rider_id"] = query.value("rider_id").toString();
+        order_infor["order_id"] = query.value("order_id").toInt();
         orders_infor.append(order_infor);
 
     }
 
     return orders_infor;
 }
-QList<QVariantMap>Database::select_orders_information_customer(const QString &customer_id,const int  &statu) {
+QList<QVariantMap>Database::select_orders_information_customer(const QString customer_id,const int  statu) {
     QList<QVariantMap> orders_infor;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -331,13 +346,13 @@ QList<QVariantMap>Database::select_orders_information_customer(const QString &cu
 
     return orders_infor;
 }
-QList<QVariantMap>Database::select_orders_information_rider(const QString &rider_id,const int  &statu) {
+QList<QVariantMap>Database::select_orders_information_rider(const QString rider_id,const int  statu) {
     QList<QVariantMap> orders_infor;
     // 创建SQL查询
     QSqlQuery query(*m_db);
 
     // 准备查询语句
-    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,seller_id "
+    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,seller_id,order_id "
                   "FROM orders WHERE rider_id = :rider_id AND status=:status");
     query.bindValue(":rider_id", rider_id);
     query.bindValue(":status",statu);
@@ -358,16 +373,32 @@ QList<QVariantMap>Database::select_orders_information_rider(const QString &rider
         order_infor["remark"] = query.value("remark").toString();
         order_infor["dish_amount"] = query.value("dish_amount").toInt();
         order_infor["seller_id"] = query.value("seller_id").toString();
+        order_infor["order_id"] = query.value("order_id").toInt();
         orders_infor.append(order_infor);
 
     }
 
     return orders_infor;
 }
-void Database::update_order_statu(const int &order_id,const int &statu)
+void Database::update_order_statu(const int order_id,const int statu,QString account)
 {
     QSqlQuery query(*m_db);
-    query.prepare("UPDATE orders SET status=:status WHERE order_id=:order_id");
+    query.prepare("UPDATE orders SET status = :status, rider_id = :account WHERE order_id = :order_id");
+    query.bindValue(":order_id", order_id);
+    query.bindValue(":status", statu);
+    query.bindValue(":account", account);
+    if(!query.exec()){
+        qDebug()<<"Error updating data of rider:image"<<query.lastError();
+        return ;
+    }
+
+    qDebug()<<"Rider:image change successfully!";
+    return ;
+}
+void Database::update_order_statu(const int order_id,const int statu)
+{
+    QSqlQuery query(*m_db);
+    query.prepare("UPDATE orders SET `status`=:status WHERE `order_id`=:order_id");
     query.bindValue(":order_id",order_id);
     query.bindValue(":status",statu);
     if(!query.exec()){
@@ -378,13 +409,43 @@ void Database::update_order_statu(const int &order_id,const int &statu)
     qDebug()<<"Rider:image change successfully!";
     return ;
 }
+
+QList<QVariantMap>Database::select_orders_information_rider(int statu) {
+    QList<QVariantMap> orders_infor;
+    // 创建SQL查询
+    QSqlQuery query(*m_db);
+
+    // 准备查询语句
+    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,order_id "
+                  "FROM orders WHERE `status`=:statu");
+    query.bindValue(":statu", statu);
+    // 执行查询
+    if (!query.exec()) {
+        qDebug() << "Error querying order information:" << query.lastError();
+        return orders_infor;
+    }
+    // 检查是否有结果
+    while(query.next()) {
+        // 填充 QVariantMap
+        QVariantMap order_infor;
+        order_infor["customer_id"] = query.value("customer_id").toString();
+        order_infor["dish_name"] = query.value("dish_name").toString();
+        order_infor["consumption_amount"] = query.value("consumption_amount").toDouble();
+        order_infor["remark"] = query.value("remark").toString();
+        order_infor["dish_amount"] = query.value("dish_amount").toInt();
+        order_infor["order_id"] = query.value("order_id").toInt();
+        orders_infor.append(order_infor);
+    }
+    return orders_infor;
+}
+
 QList<QVariantMap>Database::select_orders_information_all(void) {
     QList<QVariantMap> orders_infor;
     // 创建SQL查询
     QSqlQuery query(*m_db);
 
     // 准备查询语句
-    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,rider_id "
+    query.prepare("SELECT customer_id,dish_name,consumption_amount,remark,dish_amount,rider_id,seller_id "
                   "FROM orders ");
     // 执行查询
     if (!query.exec()) {
@@ -401,12 +462,13 @@ QList<QVariantMap>Database::select_orders_information_all(void) {
         order_infor["remark"] = query.value("remark").toString();
         order_infor["dish_amount"] = query.value("dish_amount").toInt();
         order_infor["rider_id"] = query.value("rider_id").toString();
+        order_infor["seller_id"] = query.value("seller_id").toString();
         orders_infor.append(order_infor);
     }
     return orders_infor;
 }
-bool Database::addDish(const QString& name,const QString &imagepath,const QString &description,
-             const QString &seller_id,const double& price,const int& sales_number,const int &status)
+bool Database::addDish(const QString name,const QString imagepath,const QString description,
+             const QString seller_id,const double price,const int sales_number,const int status)
 {
     QFile imagefile(imagepath);
     if (!imagefile.open(QIODevice::ReadOnly)) {
@@ -416,7 +478,7 @@ bool Database::addDish(const QString& name,const QString &imagepath,const QStrin
     QByteArray image = imagefile.readAll();
     imagefile.close();
     QSqlQuery query(*m_db);
-    query.prepare("INSERT INTO dish (seller_id,name,image,description,status,sales_number,price"
+    query.prepare("INSERT INTO dish (seller_id,name,image,description,status,sales_number,price)"
                   "VALUES (:seller_id,:name,:image,:description,:status,:sales_number,:price)");
     query.bindValue(":seller_id",seller_id);
     query.bindValue(":name",name);
@@ -434,7 +496,7 @@ bool Database::addDish(const QString& name,const QString &imagepath,const QStrin
     qDebug() << "dish added successfully!";
     return true ;
 }
-QList<QVariantMap>Database::select_dish_information(const QString &seller_id)
+QList<QVariantMap>Database::select_dish_information(const QString seller_id)
 {
     QList<QVariantMap> dishes_infor;
     // 创建SQL查询
@@ -462,6 +524,7 @@ QList<QVariantMap>Database::select_dish_information(const QString &seller_id)
         dish_infor["status"] = query.value("status").toInt();
         dish_infor["sales_number"] = query.value("sales_number").toInt();
         dish_infor["price"] = query.value("price").toDouble();
+        dish_infor["seller_id"]=seller_id;
         dishes_infor.append(dish_infor);
 
     }
@@ -469,14 +532,34 @@ QList<QVariantMap>Database::select_dish_information(const QString &seller_id)
     return dishes_infor;
 }
 
-bool Database::update_dish(const QString & seller_id,const QString &name,const double&price,const int &sales_number)
+bool Database::update_dish(const QString seller_id, const QString name, const double price,
+                           const int sales_number, const QString old_name)
 {
     QSqlQuery query(*m_db);
-    query.prepare("UPDATE orders SET price=:price,sales_number=:sales_number WHERE seller_id=:seller_id AND name=:name");
+    query.prepare("UPDATE dish SET price = :price, sales_number = :sales_number, name = :name "
+                  "WHERE seller_id = :seller_id AND name = :old_name");
+
+    query.bindValue(":price", price);
+    query.bindValue(":sales_number", sales_number);
+    query.bindValue(":name", name);
+    query.bindValue(":seller_id", seller_id);
+    query.bindValue(":old_name", old_name);
+
+    if (!query.exec()) {
+        qDebug() << "Error updating dish data: " << query.lastError();
+        return false;
+    }
+    return true;
+}
+
+bool Database::update_dish(const QString  seller_id,const QString name,const double price,const int sales_number)
+{
+    QSqlQuery query(*m_db);
+    query.prepare("UPDATE dish SET price=:price,sales_number=:sales_number,name=:name WHERE seller_id=:seller_id");
     query.bindValue(":price",price);
     query.bindValue(":sales_number",sales_number);
     query.bindValue(":seller_id",seller_id);
-    query.bindValue(":sales_number",sales_number);
+    query.bindValue(":name",name);
     if(!query.exec()){
         qDebug()<<"Error updating data of rider:image"<<query.lastError();
         return false;
@@ -485,8 +568,8 @@ bool Database::update_dish(const QString & seller_id,const QString &name,const d
     qDebug()<<"Rider:image change successfully!";
     return true;
 }
-bool Database::add_cart(const QString &seller_id,const QString &customer_id,
-                        const QString &dish_name,const double price,const int quantity,const QString &note)
+bool Database::add_cart(const QString seller_id,const QString customer_id,
+                        const QString dish_name,const double price,const int quantity,const QString note)
 {
     QSqlQuery query(*m_db);
     // 准备插入的SQL语句
@@ -511,7 +594,7 @@ bool Database::add_cart(const QString &seller_id,const QString &customer_id,
     return true;
 }
 
-QList<QVariantMap> Database::select_cart_information(const QString &customer_id) {
+QList<QVariantMap> Database::select_cart_information(const QString customer_id) {
     QList<QVariantMap> cart_infor;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -526,7 +609,7 @@ QList<QVariantMap> Database::select_cart_information(const QString &customer_id)
     }
     // 检查是否有结果
     while(query.next()) {
-        QVariantMap cartInfo;
+        QVariantMap cartInfo={};
         // 填充 QVariantMap
         cartInfo["seller_id"] = query.value("seller_id").toString();
         cartInfo["customer_id"] = query.value("customer_id").toString();
@@ -538,7 +621,7 @@ QList<QVariantMap> Database::select_cart_information(const QString &customer_id)
     }
     return cart_infor;
 }
-bool Database::delete_cart(const QString &customer_id) {
+bool Database::delete_cart(const QString customer_id) {
     // 创建SQL查询
     QSqlQuery query(*m_db);
 
@@ -554,7 +637,7 @@ bool Database::delete_cart(const QString &customer_id) {
     return true;
 }
 
-int Database::select_general_table(const QString &account,const QString &password)
+int Database::select_general_table(const QString account,const QString password)
 {
     QSqlQuery query(*m_db);
     query.prepare("SELECT * FROM general_table WHERE account=:account AND password=:password ");
@@ -585,7 +668,7 @@ int Database::select_general_table(const QString &account,const QString &passwor
         else return -1;//账号不存在返回-1
     }
 }
-bool Database::add_general_table(const QString &account,const QString &password,const int &identifier)
+bool Database::add_general_table(const QString account,const QString password,const int identifier)
 {
     if(Database::select_general_table(account,password)>0)return 0;
     else
@@ -610,10 +693,10 @@ bool Database::add_general_table(const QString &account,const QString &password,
         return 1;
     }
 }
-int Database::select_general_table(const QString &account)//账号存在返回标识符，账号不存在返回-1
+int Database::select_general_table2(const QString account)//账号存在返回标识符，账号不存在返回-1
 {
     QSqlQuery query2(*m_db);
-    query2.prepare("SELECT * FROM general_table WHERE account=':account' ");
+    query2.prepare("SELECT * FROM general_table WHERE account=:account ");
     query2.bindValue(":account", account);
     if (!query2.exec())
     {
@@ -626,17 +709,18 @@ int Database::select_general_table(const QString &account)//账号存在返回�
     }
     else return -1;//账号不存在返回-1
 }
-void Database::add_customer(const QString &account,const QString &password)
+void Database::add_customer(const QString account,const QString password)
 {
     QSqlQuery query(*m_db);
+    int id=get_id_user("customer");
     // 准备插入的SQL语句
-    query.prepare("INSERT INTO customer (account, password) "
-                  "VALUES (:account, :password)");
+    query.prepare("INSERT INTO customer (id,account, password) "
+                  "VALUES (:id,:account, :password)");
 
     // 绑定传入的账号和密码参数
     query.bindValue(":account", account);
     query.bindValue(":password", password);
-
+    query.bindValue(":id",id);
     // 执行
     if (!query.exec()) {
         qDebug() << "Error inserting data into customer table:" << query.lastError();
@@ -646,7 +730,7 @@ void Database::add_customer(const QString &account,const QString &password)
     qDebug() << "customer added successfully!";
     return;
 }
-QVariantMap Database::select_customer_information(const QString &account) {
+QVariantMap Database::select_customer_information(const QString account) {
     QVariantMap customerInfo;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -677,7 +761,7 @@ QVariantMap Database::select_customer_information(const QString &account) {
     }
     return customerInfo;
 }
-bool  Database::update_customer_img(const QString &account,const QString &imagepath)
+bool  Database::update_customer_img(const QString account,const QString imagepath)
 {
 
     QFile imagefile(imagepath);
@@ -703,7 +787,7 @@ bool  Database::update_customer_img(const QString &account,const QString &imagep
     qDebug()<<"customer:image change successfully!";
     return true;
 }
-bool Database::update_customer_address(const QString &account,const QString &address)
+bool Database::update_customer_address(const QString account,const QString address)
 {
 
     QSqlQuery query(*m_db);
@@ -719,7 +803,7 @@ bool Database::update_customer_address(const QString &account,const QString &add
     qDebug()<<"customer:address change successfully!";
     return true;
 }
-QString Database::select_customer_address(const QString &account) {
+QString Database::select_customer_address(const QString account) {
     QString s;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -742,7 +826,7 @@ QString Database::select_customer_address(const QString &account) {
     }
     return s;
 }
-bool  Database::update_customer_phone(const QString &account,const QString &phone)
+bool  Database::update_customer_phone(const QString account,const QString phone)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE customer SET phone=:phone WHERE account = :account ");
@@ -758,7 +842,7 @@ bool  Database::update_customer_phone(const QString &account,const QString &phon
     return true;
 }
 
-void Database::add_seller(const QString &account,const QString &password)
+void Database::add_seller(const QString account,const QString password)
 {
     QSqlQuery query(*m_db);
     // 准备插入的SQL语句
@@ -808,7 +892,7 @@ QList<QVariantMap> Database::select_seller_information(void) {
     }
     return seller_infor;
 }
-QString Database::select_seller_shop_name(const QString &account) {
+QString Database::select_seller_shop_name(const QString account) {
     QString s;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -831,7 +915,7 @@ QString Database::select_seller_shop_name(const QString &account) {
     }
     return s;
 }
-QString Database::select_seller_phone(const QString &account) {
+QString Database::select_seller_phone(const QString account) {
     QString s;
     // 创建SQL查询
     QSqlQuery query(*m_db);
@@ -854,7 +938,7 @@ QString Database::select_seller_phone(const QString &account) {
     }
     return s;
 }
-QByteArray Database::select_seller_img(const QString &account)
+QByteArray Database::select_seller_img(const QString account)
 {
     QByteArray imagedata;
     // 创建SQL查询
@@ -879,7 +963,7 @@ QByteArray Database::select_seller_img(const QString &account)
     return imagedata;
 
 }
-QString Database::get_account_byshop(const QString &shop_name)
+QString Database::get_account_byshop(const QString shop_name)
 {
     QString account;
     // 创建SQL查询
@@ -902,7 +986,7 @@ QString Database::get_account_byshop(const QString &shop_name)
     }
     return account;
 }
-bool Database::update_seller_shop_name(const QString &account,const QString &shop_name)
+bool Database::update_seller_shop_name(const QString account,const QString shop_name)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE seller SET shop_name=:shop_name WHERE account = :account ");
@@ -917,7 +1001,7 @@ bool Database::update_seller_shop_name(const QString &account,const QString &sho
     qDebug()<<"seller:shop_name change successfully!";
     return true;
 }
-bool Database::update_seller_phone(const QString &account,const QString &phone)
+bool Database::update_seller_phone(const QString account,const QString phone)
 {
     QSqlQuery query(*m_db);
     query.prepare("UPDATE seller SET phone=:phone WHERE account = :account ");
@@ -932,7 +1016,7 @@ bool Database::update_seller_phone(const QString &account,const QString &phone)
     qDebug()<<"seller:phone change successfully!";
     return true;
 }
-bool Database::update_seller_img(const QString &account,const QString &imagepath)
+bool Database::update_seller_img(const QString account,const QString imagepath)
 {
 
     QFile imagefile(imagepath);
@@ -957,4 +1041,49 @@ bool Database::update_seller_img(const QString &account,const QString &imagepath
 
     qDebug()<<"seller:image change successfully!";
     return true;
+}
+int Database::get_id_user(QString tablename)
+{
+
+    // 查询最后一条数据的id
+    QSqlQuery query(*m_db);
+    QString acc=QString("SELECT id FROM %1 ORDER BY id DESC LIMIT 1").arg(tablename);
+    query.prepare(acc);
+
+    if (!query.exec())
+    {
+        qCritical() << "Failed to execute query:" << query.lastError().text();
+        return 0; // 查询执行失败，返回0
+    }
+
+    // 如果查询结果为空，返回0
+    if (!query.next()) {
+        return 0;
+    }
+
+    // 获取最后一条数据的id
+    int lastId = query.value(0).toInt();
+    return lastId;
+}
+int Database::get_id_order()
+{
+    // 查询最后一条数据的id
+    QSqlQuery query(*m_db);
+    QString acc=QString("SELECT order_id FROM orders ORDER BY order_id DESC LIMIT 1");
+    query.prepare(acc);
+
+    if (!query.exec())
+    {
+        qCritical() << "Failed to execute query:" << query.lastError().text();
+        return 0; // 查询执行失败，返回0
+    }
+
+    // 如果查询结果为空，返回0
+    if (!query.next()) {
+        return 0;
+    }
+
+    // 获取最后一条数据的id
+    int lastId = query.value(0).toInt();
+    return lastId;
 }

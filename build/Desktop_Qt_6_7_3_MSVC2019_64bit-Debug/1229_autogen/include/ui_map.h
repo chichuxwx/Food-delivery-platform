@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWebEngineWidgets/QWebEngineView>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,7 +20,6 @@ class Ui_Map
 {
 public:
     QWebEngineView *webView;
-    QPushButton *pushButton;
 
     void setupUi(QWidget *Map)
     {
@@ -31,9 +29,6 @@ public:
         webView = new QWebEngineView(Map);
         webView->setObjectName("webView");
         webView->setGeometry(QRect(0, 0, 788, 588));
-        pushButton = new QPushButton(Map);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(665, 557, 61, 21));
 
         retranslateUi(Map);
 
@@ -43,7 +38,6 @@ public:
     void retranslateUi(QWidget *Map)
     {
         Map->setWindowTitle(QCoreApplication::translate("Map", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("Map", "\351\200\200\345\207\272", nullptr));
     } // retranslateUi
 
 };

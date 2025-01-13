@@ -10,6 +10,7 @@
 #define UI_HISTROY_RECORD_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
@@ -46,6 +47,9 @@ public:
             histroy_record->setObjectName("histroy_record");
         histroy_record->resize(600, 800);
         histroy_record->setMinimumSize(QSize(600, 800));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/image/lt_cml.jpg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        histroy_record->setWindowIcon(icon);
         groupBox = new QGroupBox(histroy_record);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(30, 110, 531, 221));
@@ -138,14 +142,15 @@ public:
 "}\n"
 "\n"
 "QPushButton:hover {\n"
+"	color: #ffffff;\n"
 "    background-color: rgba(99, 132, 233, 0.8); /* \346\202\254\346\265\256\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262 */\n"
 "    border: none; /* \346\202\254\346\265\256\346\227\266\346\227\240\350\276\271\346\241\206 */\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
 "    background-color: #b0c4de; /* \346\214\211\344\270\213\346\227\266\350\203\214\346\231\257\351\242\234\350\211\262\357\274\214\347\250\215\345\276\256\345\201\217\344\272\256\347\232\204\350\223\235\350\211\262 */\n"
-"    border-color: #4"
-                        "682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
+""
+                        "    border-color: #4682b4; /* \346\214\211\344\270\213\346\227\266\350\276\271\346\241\206\351\242\234\350\211\262 */\n"
 "    transform: scale(0.95); /* \346\214\211\344\270\213\346\227\266\346\214\211\351\222\256\347\225\245\345\276\256\347\274\251\345\260\217 */\n"
 "}\n"
 ""));
@@ -160,7 +165,7 @@ public:
 
     void retranslateUi(QWidget *histroy_record)
     {
-        histroy_record->setWindowTitle(QCoreApplication::translate("histroy_record", "Form", nullptr));
+        histroy_record->setWindowTitle(QCoreApplication::translate("histroy_record", "\346\236\234\347\262\222\346\251\231\345\244\226\345\215\226", nullptr));
         groupBox->setTitle(QCoreApplication::translate("histroy_record", "\350\256\242\345\215\225\344\270\200", nullptr));
         label->setText(QCoreApplication::translate("histroy_record", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">\345\225\206\345\256\266\345\220\215\347\247\260\357\274\232</span></p></body></html>", nullptr));
         label_8->setText(QCoreApplication::translate("histroy_record", "<html><head/><body><p><span style=\" font-size:14pt; font-weight:700;\">xxxxxxxxxx</span></p></body></html>", nullptr));

@@ -26,10 +26,15 @@ private slots:
 
     void on_pushButton_back_clicked();
 
+    void on_pushButton_2_clicked();
+
+signals:
+
 private:
     Ui::dishchange *ui;
     QString account;
     seller sl;
+    QString fileName;
 };
 
 #endif // DISHCHANGE_H
