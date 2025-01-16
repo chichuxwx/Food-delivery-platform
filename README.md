@@ -1,0 +1,5 @@
+Qt版本6.8.1
+下载对应的QWebEngineWidget
+新版本的MSVC不支持上述插件，需要下载MSVC2019或以下版本
+地图功能用JS实现，使用时请换成自己申请的秘钥
+下载QT Location以及对应的Web三件套
